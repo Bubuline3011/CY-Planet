@@ -13,7 +13,7 @@ body {
 }
 
 body.connexion, body.inscription {
-    background-image: url('img/galaxies.jpg');
+    background-image: url('img/image-acceuil.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -161,6 +161,7 @@ header {
     padding: 15px 30px;
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
     z-index: 1000;
+    height: 75px;
 }
 
 header .logo {
@@ -220,7 +221,7 @@ header nav ul li a:hover {
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);/* Ajoute une ombre pour détacher l'image */
 }
 
-.hero img {
+.hero img { /*texte a l'interieur de l'image*/
     width: 100%;
     max-width: 1800px;
     height: auto;
@@ -259,13 +260,13 @@ header nav ul li a:hover {
 
 footer {
     text-align: center;
-    padding: 15px;
-    position: absolute;
+    padding: 10px;
+    position: fixed;
     bottom: 0;
     width: 100%;
     background: rgba(0, 0, 0, 0.8);
     color: white;
-    font-size: 14px;
+    font-size: 15px;
 }
 
 /* Section Destinations */
@@ -274,10 +275,10 @@ footer {
     text-align: center;
     background-color: #f4f4f9; /* Fond clair pour séparer la section */
     margin: 0 auto; /* Centre la section */
-    width: 90%; /* Ajuste la largeur de la section */
+    width: 100%; /* Ajuste la largeur de la section */
     border-radius: 15px; /* Coins arrondis pour un look cohérent */
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
-    margin-top: 50px; /* Espacement sous l'image d'accueil */
+    margin-top: 20px; /* Espacement sous l'image d'accueil */
 }
 
 .destination-list {
@@ -300,8 +301,8 @@ footer {
     text-decoration: none; /* Supprime le soulignement des liens */
     color: inherit; /* Garde la couleur par défaut */
     margin: 20px auto;
-    max-width: 300px; /* Limite la largeur des cartes */
-    border: 1px solid #ddd; /* Bord léger autour de chaque destination */
+    max-width: 450px; /* Limite la largeur des cartes */
+    border: 2px solid #ddd; /* Bord léger autour de chaque destination */
     border-radius: 15px; /* Arrondi des coins */
     overflow: hidden; /* Coupe tout débordement (utile pour les images) */
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); /* Ombre légère */
