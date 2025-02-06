@@ -107,7 +107,7 @@ body.acceuil .image-acceuil {
 .boite .button {
     width: 100%;
     height: 45px;
-    background: #fff;
+    background: white;
     border: none;
     outline: none;
     border-radius: 40px;
@@ -117,6 +117,10 @@ body.acceuil .image-acceuil {
     color: #333;
     font-weight: 600;
 } 
+
+.boite .button:hover{
+    background: linear-gradient(45deg, #ff9f1c, #ff4f00);
+}
 
 .boite .lien-inscription {
     font-size: 14.5px;
@@ -153,7 +157,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    background: rgba(25, 0, 50, 0.9);
+    background: linear-gradient(45deg, #9b5de5, #5a189a);
     color: white;
     display: flex;
     justify-content: space-between;
@@ -199,7 +203,8 @@ header nav ul li a {
 }
 
 header nav ul li a:hover {
-    background-color: #5a189a;
+    background: linear-gradient(45deg, #ff9f1c, #ff4f00);
+    box-shadow: 0px 0px 15px rgba(255, 159, 28, 0.8);
     box-shadow: 0px 0px 10px rgba(106, 3, 248, 0.8);
 }
 
@@ -361,12 +366,12 @@ footer {
 
 .presentation p {
     font-size: 1.2rem;
-    color: #333;
+    color: black;
     line-height: 1.6;
     margin-bottom: 15px;
 }
 
-/* 🔍 Barre de Recherche */
+/* Barre de Recherche */
 .search-bar {
     text-align: center;
     margin: 30px auto;
@@ -409,7 +414,7 @@ footer {
 }
 
 .search-bar button:hover {
-    background-color: #ff9f1c;
+   background: linear-gradient(45deg, #ff9f1c, #ff4f00);
 }
 
 .logo-container {
@@ -422,4 +427,3 @@ footer {
     max-width: 100%; /* Empêche que le logo dépasse sur mobile */
     opacity: 0.9; /* Légère transparence pour l’esthétique */
 }
-
