@@ -4,7 +4,7 @@
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
 }
-
+/*Partie inscription et connexion*/
 body {
     display: flex;
     justify-content: center;
@@ -340,3 +340,86 @@ footer {
 .destinations .destination:hover h3 {
     color: #ff9f1c; /* Change le titre en orange au survol */
 }
+
+/*Partie présentation*/
+
+.presentation {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #f4f4f9;
+    border-radius: 15px;
+    max-width: 900px;
+    margin: 40px auto;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.presentation h2 {
+    font-size: 2.5rem;
+    color: #5a189a;
+    margin-bottom: 20px;
+}
+
+.presentation p {
+    font-size: 1.2rem;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* 🔍 Barre de Recherche */
+.search-bar {
+    text-align: center;
+    margin: 30px auto;
+    padding: 20px;
+    background: white;
+    max-width: 600px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.search-bar form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.search-bar input {
+    width: 70%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+}
+
+.search-bar button {
+    padding: 10px 20px;
+    background-color: #5a189a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-bar button:hover {
+    background-color: #ff9f1c;
+}
+
+.logo-container {
+    text-align: center; /* Centre l'image */
+    margin-top: 20px; /* Ajoute un espace entre la barre de recherche et le logo */
+}
+
+.logo-container img {
+    width: 150px; /* Ajuste la taille du logo */
+    max-width: 100%; /* Empêche que le logo dépasse sur mobile */
+    opacity: 0.9; /* Légère transparence pour l’esthétique */
+}
+
