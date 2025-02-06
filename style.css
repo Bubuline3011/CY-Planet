@@ -298,7 +298,7 @@ footer {
 .destinations h2 {
     font-size: 2rem;
     margin-bottom: 30px;
-    color: #333;
+    color: black;
 }
 /* Chaque destination */
 .destination {
