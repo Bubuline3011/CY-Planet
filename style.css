@@ -427,3 +427,95 @@ footer {
     max-width: 100%; /* Empêche que le logo dépasse sur mobile */
     opacity: 0.9; /* Légère transparence pour l’esthétique */
 }
+
+/* page profil */
+
+body.profil {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color:#f4f4f9;
+}
+
+/* Conteneur principal du profil */
+.profil-container {
+    width: 450px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    text-align: center;
+}
+
+/* Titre du profil */
+.profil-container h2 {
+    font-size: 28px;
+    color: #5a189a;
+    margin-bottom: 20px;
+}
+
+/* Bloc des informations utilisateur */
+.profil-info {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+/* Chaque champ d'information */
+
+.profil-champ {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(90, 24, 154, 0.1);
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin: 10px 0;
+}
+
+/* Labels des champs */
+.profil-label {
+    font-weight: bold;
+    color: #333;
+}
+
+/* Texte des informations */
+.profil-champ span {
+    color: #555;
+    flex-grow: 1;
+    text-align: right;
+    padding-right: 10px;
+}
+
+/* Boutons de modification */
+.modifier-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: #5a189a;
+    transition: color 0.3s ease;
+}
+
+.modifier-btn:hover {
+    color: #ff9f1c;
+}
+
+/* Bouton de sauvegarde */
+.button-sauvegarder {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 25px;
+    background: linear-gradient(45deg, #ff9f1c, #ff4f00);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: 20px;
+}
+
+.button-sauvegarder:hover {
+    background: linear-gradient(45deg, #9b5de5, #5a189a);
+}
