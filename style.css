@@ -50,14 +50,14 @@ body.acceuil .image-acceuil {
     text-align: center;
 }
 
-.boite .input-box {
+.boite .saisie {
     position: relative;
     width: 100%;
     height: 50px;
     margin: 30px 0;
 }
 
-.input-box input{
+.saisie input{
     width: 100%;
     height: 100%;
     background: transparent;
@@ -70,11 +70,11 @@ body.acceuil .image-acceuil {
     padding: 20px 45px 20px 20px;
 }
 
-.input-box input::placeholder {
+.saisie input::placeholder {
     color: #fff;
 }
 
-.input-box i {
+.saisie i {
     position: absolute;
     right: 15px;
     top: 50%;
@@ -208,7 +208,7 @@ header nav ul li a:hover {
     box-shadow: 0px 0px 10px rgba(106, 3, 248, 0.8);
 }
 
-.hero {
+.principal {
     background-image: url('img/image-acceuil.jpg'); /* Image en arrière-plan */
     background-size: cover; /* L'image couvre toute la section */
     background-position: center; /* Centre l'image */
@@ -226,7 +226,7 @@ header nav ul li a:hover {
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);/* Ajoute une ombre pour détacher l'image */
 }
 
-.hero img { /*texte a l'interieur de l'image*/
+.principal img { /*texte a l'interieur de l'image*/
     width: 100%;
     max-width: 1800px;
     height: auto;
@@ -238,7 +238,7 @@ header nav ul li a:hover {
 
 
 /* Style pour le conteneur de contenu (texte et bouton) */
-.hero-content {
+.principal-contenue {
     background: rgba(17, 0, 51, 0.6); /* Fond semi-transparent */
     padding: 20px;
     border-radius: 15px;
@@ -246,7 +246,7 @@ header nav ul li a:hover {
     max-width: 600px;
 }
 /* Bouton */
-.hero .btn {
+.principal .btn {
     display: inline-block;
     margin-top: 20px;
     padding: 10px 20px;
@@ -258,7 +258,7 @@ header nav ul li a:hover {
     transition: all 0.3s ease;
 }
 
-.hero .btn:hover {
+.principal .btn:hover {
     background: linear-gradient(45deg, #ff9f1c, #ff4f00);
     box-shadow: 0px 0px 15px rgba(255, 159, 28, 0.8);
 }
@@ -286,7 +286,7 @@ footer {
     margin-top: 20px; /* Espacement sous l'image d'accueil */
 }
 
-.destination-list {
+.destination-liste {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -372,7 +372,7 @@ footer {
 }
 
 /* Barre de Recherche */
-.search-bar {
+.barre-recherche {
     text-align: center;
     margin: 30px auto;
     padding: 20px;
@@ -382,19 +382,19 @@ footer {
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-.search-bar h3 {
+.barre-recherche h3 {
     font-size: 1.5rem;
     color: #333;
     margin-bottom: 10px;
 }
 
-.search-bar form {
+.barre-recherche form {
     display: flex;
     justify-content: center;
     gap: 10px;
 }
 
-.search-bar input {
+.barre-recherche input {
     width: 70%;
     padding: 10px;
     border-radius: 5px;
@@ -402,7 +402,7 @@ footer {
     font-size: 1rem;
 }
 
-.search-bar button {
+.barre-recherche button {
     padding: 10px 20px;
     background-color: #5a189a;
     color: white;
@@ -413,16 +413,16 @@ footer {
     transition: background-color 0.3s ease;
 }
 
-.search-bar button:hover {
+.barre-recherche button:hover {
    background: linear-gradient(45deg, #ff9f1c, #ff4f00);
 }
 
-.logo-container {
+.logo-encadrer {
     text-align: center; /* Centre l'image */
     margin-top: 20px; /* Ajoute un espace entre la barre de recherche et le logo */
 }
 
-.logo-container img {
+.logo-encadrer img {
     width: 150px; /* Ajuste la taille du logo */
     max-width: 100%; /* Empêche que le logo dépasse sur mobile */
     opacity: 0.9; /* Légère transparence pour l’esthétique */

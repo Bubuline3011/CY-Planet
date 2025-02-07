@@ -10,36 +10,52 @@
 </head>
 
 <body class="inscription">
+	<header>
+        <a href="acceuil.html" class="logo">
+            <h1> Planet Vacation </h1>
+            <img src="img/A_modern_and_futuristic_logo_for_'Planet_Vacation'.jpg" alt="Planet Vacation logo">
+        </a>
+        <nav>
+            <ul>
+                <li><a href="presentation.html">A propos</a></li>
+                <li><a href="destinations.html">Destinations</a></li>
+                <li><a href="recherche.html">Recherche</a></li>
+                <li><a href="profil.html">Mon profil</a></li>
+                <li><a href="connexion.html">Connexion</a></li>
+                <li><a href="inscription.html">Inscription</a></li>
+            </ul>
+        </nav>
+    </header>
     <div class="boite">
         <form action="acceuil.html" method="POST">
             <h1>Inscription</h1>
 
-            <div class="input-box">
+            <div class="saisie">
                 <input type="text" name="nom" placeholder="Nom" required autocomplete="family-name">
                 <i class='bx bx-user'></i>
             </div>
 
-            <div class="input-box">
+            <div class="saisie">
                 <input type="text" name="prenom" placeholder="Prénom" required autocomplete="given-name">
                 <i class='bx bx-user'></i>
             </div>
 
-            <div class="input-box">
+            <div class="saisie">
                 <input type="email" name="mail" placeholder="Email" required autocomplete="email">
                 <i class='bx bx-envelope'></i>
             </div>
 
-            <div class="input-box">
+            <div class="saisie">
                 <input type="password" name="password" placeholder="Mot de passe" required autocomplete="new-password">
                 <i class='bx bx-lock'></i>
             </div>
 
-            <div class="input-box">
+            <div class="saisie">
                 <input type="number" name="age" placeholder="Âge" required min="1">
                 <i class='bx bx-calendar'></i>
             </div>
 
-            <div class="input-box">
+            <div class="saisie">
                 <input type="tel" name="telephone" placeholder="Numéro de téléphone" required autocomplete="tel">
                 <i class='bx bx-phone'></i>
             </div>
