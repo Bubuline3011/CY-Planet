@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset=""UTF-8"> <!--pour affichier correctment les accents -->
+   <meta name=""viewport" content="width=device-width",initial-scale=1.0">  <!--pour affichier correctement sur tout les type d'ecran -->
+  <title>Créez votre voyage idéal</title>
+   <link rel="stylesheet" href="style.css">
+</head>
+<body><div>
+    <h3> Trouvez votre séjour idéal</h3>
+    </div>
+    <form >
+        <!--Sélection de destination-->
+        <label for="destination">Destination : </label>
+        <select id="destination" name="destination" on change="updateoptions()"> 
+            <option value="" disabled selected>Choisissez une destination</option>
+            <option value="Footbolis ">Footbolis </option>
+            <option value="AquaWorld ">AquaWorld</option>
+            <option value="Musicaria ">Musicaria </option>
+            <option value="Adventuris  ">Adventuris </option>
+            <option value="Médiévalia  ">Médiévalia </option>
+            <option value="Dreamara">Dreamara</option>
+            <option value="Ludopolis ">Ludopolis</option>
+        </select>
+<div>  <label for="date"> Date de départ :</label>
+       <input type="date" name="date" min="2024-02-07"> <!--pn change le min avec js pour recuperer la date exact de jour-->
+</div>
+
+<div>  <label for="date"> Date de Retour :</label> 
+       <input type="date" name="date" min="2024-02-07">
+</div>
+
+
+
+
+
+        </form>
+</body>
+
+
+
+
+
+
+
+
+
+</html>
