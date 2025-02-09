@@ -491,5 +491,66 @@ button[type="button"] {
     cursor: pointer;
     transition: background 0.3s ease;
 }
+/* page profil */
+
+body.profil {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color:white;
+}
+
+/* Bloc des informations utilisateur */
+.profil-info {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+/* Chaque champ d'information */
+
+.profil-champ {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(247, 245, 249, 0.1);
+    padding: 2px 10px;
+    border-radius: 40px;
+    margin: 10px 0;
+}
+
+.profil-champ input {
+    background: transparent;
+    color: white;
+    width: 60%; 
+    height: 25px;
+    border-radius: 6px;
+    border: 1px solid #ccc; /*sert a regler l'epaisseur des contour et leurs couleurs*/
+    padding-left: 3px; /*ajouter un espace a gauche*/
+}
+
+/* Texte des informations */
+.profil-champ label {
+    color: white;
+    text-align: left;
+    padding-right: 10px;
+}
+
+/* Boutons de modification */
+.button[type="button"] {
+    background: #edeaf0;
+    color: rgb(239, 230, 230);
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.modifier-btn:hover {
+    color: #ff9f1c;
+}
+
 
 
