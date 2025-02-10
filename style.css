@@ -1,22 +1,40 @@
+/* Harmonisation des styles pour toutes les pages */
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
 }
-/*Partie inscription et connexion*/
+
+/* Applique une mise en page centrée à toutes les pages */
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
 }
-
-body.connexion, body.inscription, body.profil {
+/*Partie inscription et connexion*/
+body.connexion, body.inscription, body.profil, body.recherche, body.admin{
+    padding-top: 80px;
     background-image: url('img/image-acceuil.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+}
+/*Champs des formulaires*/
+input, select {
+    width: 100%;
+    height: 45px;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 40px;
+    font-size: 16px;
+    color: #fff;
+    padding: 10px;
+    text-align: left;
+    margin-bottom: 15px;
 }
 
 body.acceuil {
@@ -34,7 +52,7 @@ body.acceuil .image-acceuil {
 }
 
 
-.boite, .profil-container{
+.boite {
     width: 420px;
     background: transparent;
     border: 2px solid rgba(255, 255, 255, .2);
@@ -83,24 +101,24 @@ body.acceuil .image-acceuil {
     color: white;
 }
 
-.boite .oublie-rappeler {
+.boite .oublie {
     display: flex;
     justify-content: space-between;
     font-size: 14.5px;
     margin: -15px 0 15px;
 }
 
-.oublie-rappeler label input{
+.oublie label input{
     accent-color: #fff;
     margin-right: 3px;
 }
 
-.oublie-rappeler a{
+.oublie a{
     color: #fff;
     text-decoration: none;
 }
 
-.oublie-rappeler a:hover{
+.oublie a:hover{
     text-decoration: underline;
 }
 
@@ -355,7 +373,7 @@ footer {
 
 .presentation p {
     font-size: 1.2rem;
-    color: black;
+    color:  black;
     line-height: 1.6;
     margin-bottom: 15px;
 }
@@ -419,12 +437,15 @@ footer {
 
 /* page profil */
 
-body.profil {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color:white;
+.profil-container {
+    width: 550px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    color: #fff;
+    border-radius: 10px;
+    padding: 30px 40px;
 }
 
 /* Bloc des informations utilisateur */
@@ -439,20 +460,27 @@ body.profil {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(90, 24, 154, 0.1);
+    background: transparent;
     padding: 2px 10px;
     border-radius: 40px;
     margin: 10px 0;
 }
 
+.profil-champ label {
+    flex: 1; /* Laisse le label prendre l’espace nécessaire */
+    white-space: nowrap;
+}
+
 .profil-champ input {
+    width: 100%;
     background: transparent;
-    color: white;
-    width: 60%; 
-    height: 25px;
-    border-radius: 6px;
-    border: 1px solid #ccc; /*sert a regler l'epaisseur des contour et leurs couleurs*/
-    padding-left: 3px; /*ajouter un espace a gauche*/
+    border: 2px solid rgba(255, 255, 255, .2);
+    outline: none;
+    border-radius: 30px;
+    font-size: 16px;
+    color: #fff;
+    padding: 15px 20px;
+    text-align: center;
 }
 
 /* Texte des informations */
@@ -476,4 +504,181 @@ body.profil {
 .modifier-btn:hover {
     color: #ff9f1c;
 }
+
+/* Style pour le bouton Accès Admin dans la page de profil */
+.acces-admin {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.acces-admin .button, .recherche-boite .button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #000000;
+    background: white;
+    text-decoration: none;
+    border-radius: 30px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.acces-admin .button:hover, .recherche-boite .button:hover {
+    background: linear-gradient(45deg, #ff9f1c, #ff4f00);
+    transform: translateY(-2px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+
+/*Partie Recherche*/
+
+/* Section principale de recherche */
+.recherche {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #ffffff;
+    border-radius: 15px;
+    max-width: 900px;
+    margin: 40px auto;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.recherche h1 {
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+
+.recherche fieldset{
+    font-size: rem;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+
+fieldset {
+    background: b;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 15px auto;
+    width: 80%;
+    border: 1px solid #ddd;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.recherche-boite {
+    width: 500px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    color: #fff;
+    border-radius: 10px;
+    padding: 30px 40px;
+}
+
+
+/*Partie Admin*/
+
+/* Styles pour la page d'administration */
+
+
+.admin-contenue {
+    margin: 80px auto;
+    border-radius: 15px;
+    max-width: 1000px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 1000px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(20px);
+    color: #fff;
+    padding: 30px 40px;
+}
+
+.admin-contenue h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+/* Tableau */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+thead {
+    background: linear-gradient(45deg, #9b5de5, #5a189a);
+    color: white;
+}
+
+thead th {
+    padding: 10px;
+    font-size: 1rem;
+    text-align: center;
+}
+
+tbody tr {
+    background: #ffffff;
+    transition: background 0.3s ease;
+}
+
+tbody td {
+    padding: 10px;
+    text-align: center;
+    font-size: 0.95rem;
+    color: #333;
+}
+
+/* Boutons */
+button {
+    border: none;
+    border-radius: 20px;
+    padding: 5px 15px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.vip-btn {
+    background: #ffd700;
+    color: white;
+}
+
+.vip-btn:hover {
+    background: #e6c200;
+}
+
+.ban-btn {
+    background: #ff4f00;
+    color: white;
+}
+
+.ban-btn:hover {
+    background: #e64500;
+}
+
+.normal-btn {
+    background: #5a189a;
+    color: white;
+}
+
+.normal-btn:hover {
+    background: #4e1482;
+}
+
+.voir-btn {
+    background: #9b5de5;
+    color: white;
+}
+
+.voir-btn:hover {
+    background: #8651c5;
+}
+
 
