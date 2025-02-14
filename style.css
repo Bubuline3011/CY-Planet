@@ -505,6 +505,7 @@ footer {
 
 .modifier-btn:hover {
     color: #ff9f1c;
+    transform: scale(1.1);
 }
 
 /* Style pour le bouton Accès Admin dans la page de profil */
