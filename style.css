@@ -175,10 +175,6 @@ header {
     height: 75px;
 }
 
-header h1{
-    padding-top: 30px;
-}
-
 header .logo {
     display: flex;
     align-items: center;
