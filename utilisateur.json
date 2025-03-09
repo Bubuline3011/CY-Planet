@@ -1,0 +1,36 @@
+[ 
+	{
+		"email": "yonabulard78@gmail.com",
+		"motdepasse": "yona19",
+		"role": "admin",
+		"prenom": "Yona",
+		"nom": "Bulard",
+		"age": 19,
+		"telephone": "0646807561",
+        	"date_inscription": "2024-01-15",
+        	"derniere_connexion": "2025-03-09"
+    	},
+    	{
+        	"email": "attiakarin20@gmail.com",
+		"motdepasse": "karen21",
+		"role": "admin",
+		"prenom": "Karen",
+		"nom": "Attia",
+		"age": 21,
+		"telephone": "0612345678",
+        	"date_inscription": "2024-01-15",
+        	"derniere_connexion": "2025-03-09 "
+    	},
+    	{
+        	"email": "Alakallel95@gmail.com",
+		"motdepasse": "Ala20",
+		"role": "normal",
+		"prenom": "Ala",
+		"nom": "Kallel",
+		"age": 20,
+		"telephone": "0691011123",
+        	"date_inscription": "2024-01-15",
+        	"derniere_connexion": "2025-03-09 "
+    	}
+]
+
