@@ -45,22 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body class="connexion">
-	<header>
-        <a href="acceuil.html" class="logo">
-            <h1> Cosmo Trip </h1>
-            <img src="img/logo.png" alt="Planet Vacation logo">
-        </a>
-        <nav>
-            <ul>
-                <li><a href="presentation.html">A propos</a></li>
-                <li><a href="destinations.html">Destinations</a></li>
-                <li><a href="recherche.html">Recherche</a></li>
-                <li><a href="profil.html">Mon profil</a></li>
-                <li><a href="connexion.html">Connexion</a></li>
-                <li><a href="inscription.html">Inscription</a></li>
-            </ul>
-        </nav>
-    </header>
+	<?php include 'header.php'; ?> <!-- Inclusion du header dynamique -->
     <div class="boite">
         <form action="connexion.php" method="POST">
             <h1>Connexion</h1>
