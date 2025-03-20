@@ -1,6 +1,6 @@
 <?php
 // Charger tous les fichiers JSON des planètes
-$planetes = glob('Voyage/.json');
+$planetes = glob('Voyage/*.json');
 $destination = isset($_POST['destination']) ? trim($_POST['destination']) : '';
 $date_depart = isset($_POST['date_depart']) ? $_POST['date_depart'] : '';
 $date_retour = isset($_POST['date_retour']) ? $_POST['date_retour'] : '';
