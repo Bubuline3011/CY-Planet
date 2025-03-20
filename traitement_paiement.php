@@ -2,21 +2,18 @@
 session_start();
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-echo "<pre>";
-print_r($_POST);
-echo "</pre>";
-exit();
-$usersFile = "utilisateur.json";
-$usersData = json_decode(file_get_contents($usersFile), true) ?? [];
 
 if (!isset($_SESSION['connecte']) || !isset($_SESSION['email'])) {
     header("Location: connexion.php");
     exit();
 }
+require('getapikey.php');
+$usersFile = "utilisateur.json";
+$usersData = json_decode(file_get_contents($usersFile), true) ?? [];
 
 // Vérification des données reçues
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $numero_carte = str_replace(' ', '', $_POST['numero_carte']); // Enlève les espaces pour CY Bank
+    $numero_carte = str_replace('/\s+/', '', $_POST['numero_carte']); // Enlève les espaces pour CY Bank
     $nom_proprietaire = $_POST['nom_proprietaire'];
     $expiration = $_POST['expiration'];
     $cvv = $_POST['cvv'];
@@ -44,20 +41,15 @@ foreach ($usersData as &$user) {
             "cvv" => $cvv
         ];
         file_put_contents($usersFile, json_encode($usersData, JSON_PRETTY_PRINT));
-        if (json_last_error() !== JSON_ERROR_NONE) {
-    die("Erreur d'encodage JSON : " . json_last_error_msg());
-}
         break;
     }
 }
     }
     // Génération des infos pour CY Bank
-    // Chargement de la clé API et génération du hash
-    require('getapikey.php');
     $code_vendeur = "MI-5_E"; 
     $api_key = getAPIKey($code_vendeur); // Récupération dynamique de l'API Key
     if ($api_key === "zzzz") {
-        die("Erreur : Clé API invalide pour le vendeur " . $code_vendeur);
+        die("Erreur : Clé API invalide pour le vendeur ");
     }
     $transaction_id = uniqid();
     $retour_url = "http://localhost/retour_paiement.php";

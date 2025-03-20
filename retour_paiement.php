@@ -18,7 +18,8 @@ $message = null;
 
 if ($control !== $control_hash) {
     $erreur = "Erreur : paiement non valide.";
-} elseif ($statut === "accepted") {
+} 
+elseif ($statut === "accepted") {
     foreach ($usersData as &$user) {
         if ($user['email'] === $_SESSION['email']) {
             $user['voyages_achetes'][] = [
@@ -27,11 +28,6 @@ if ($control !== $control_hash) {
                 "date" => date("Y-m-d H:i:s")
             ];
             file_put_contents($usersFile, json_encode($usersData, JSON_PRETTY_PRINT));
-            if (isset($user['coordonnees_bancaires']['numero_carte'])) {
-                $numero_carte_affiche = chunk_split($user['coordonnees_bancaires']['numero_carte'], 4, ' ');
-		echo "<p>Carte utilisée : " . htmlspecialchars($numero_carte_affiche) . "</p>";
-	
-            }
             break;
         }
     }

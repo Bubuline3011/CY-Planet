@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nom = trim($_POST['nom']);
     $prenom = trim($_POST['prenom']);
     $email = trim($_POST['email']);
-    $password = $_POST['password'];
+    $motdepasse = $_POST['motdepasse'];
     $age = trim($_POST['age']);
     $telephone = trim($_POST['telephone']);
     
@@ -108,7 +108,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
 
             <div class="saisie">
-                <input type="password" name="password" placeholder="Mot de passe" required autocomplete="new-password">
+                <input type="password" name="motdepasse" placeholder="Mot de passe" required autocomplete="new-password">
                 <i class='bx bx-lock'></i>
             </div>
 

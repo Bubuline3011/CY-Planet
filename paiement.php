@@ -6,7 +6,7 @@ if (!isset($_SESSION['connecte']) || !isset($_SESSION['email'])) {
 }
 
 // Récupération des infos du voyage sélectionné
-$voyage = $_SESSION['voyage_selectionne'] ?? ['titre' => 'Voyage inconnu', 'prix' => 0];
+$voyage = $_SESSION['voyage_selectionne'] ?? ['titre' => 'Voyage inconnu', 'prix' => 0, 'id' => ''];
 ?>
 
 <!DOCTYPE html>
@@ -25,20 +25,19 @@ $voyage = $_SESSION['voyage_selectionne'] ?? ['titre' => 'Voyage inconnu', 'prix
 
         <form action="traitement_paiement.php" method="POST">
             <label>Numéro de carte bancaire :</label>
-            <input type="text" name="numero_carte" id="numero_carte" maxlength="19" placeholder="5555123456789000" required>
-
+            <input type="text" name="numero_carte" pattern="\d{16}" required>
 
             <label>Nom du propriétaire :</label>
             <input type="text" name="nom_proprietaire" required placeholder="Nom sur la carte">
 
-            <label>Date d’expiration :</label>
-            <input type="month" id="expiration" name="expiration" required placeholder="AAAA-MM">
+            <label>Date d’expiration (MM/YY) :</label>
+        	<input type="text" name="expiration" pattern="(0[1-9]|1[0-2])\/\d{2}" required>
 
             <label>Cryptogramme :</label>
             <input type="text" name="cvv" pattern="\d{3}" required placeholder="3 chiffres">
 
-            <input type="hidden" name="voyage_id" value="<?= $voyage['id'] ?? ''; ?>">
-            <input type="hidden" name="montant" value="<?= number_format($voyage['prix'], 2, '.', ''); ?>">
+             <input type="hidden" name="voyage_id" value="<?= $voyage['id']; ?>">
+        <input type="hidden" name="montant" value="<?= number_format($voyage['prix'], 2, '.', ''); ?>">
 
             <button type="submit" class="button">Valider et payer</button>
         </form>
