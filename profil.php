@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Utilisateur</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body class="profil">
+    <?php include 'header.php'; ?>
+    <div class="profil-container">
+        <h2>Mon Profil</h2>
+
+        <div class="profil-info">
+            <div class="profil-champ">
+                <label>Nom :</label>
+                <input type="text" value="Bulard" disabled>
+                <button class="modifier-btn"><i class='bx bxs-edit-alt'></i></button>
+            </div>
+            <div class="profil-champ">
+                <label>Prénom :</label>
+                <input type="text" value="Yona" disabled>
+                <button class="modifier-btn"><i class='bx bxs-edit-alt'></i></button>
+            </div>
+
+            <div class="profil-champ">
+                <label>Email :</label>
+                <input type="email" value="yonabulard78@gmail.com" disabled>
+                <button class="modifier-btn"><i class='bx bxs-edit-alt'></i></button>
+            </div>
+
+            <div class="profil-champ">
+                <label>Mot de passe :</label>
+                <input type="password" value="12345678" disabled>
+                <button class="modifier-btn"><i class='bx bxs-edit-alt'></i></button>
+            </div>
+
+            <div class="profil-champ">
+                <label>Âge :</label>
+                <input type="number" value="25" disabled>
+                <button class="modifier-btn"><i class='bx bxs-edit-alt'></i></button></button>
+            </div>
+    
+            <div class="profil-champ">
+                <label>Téléphone :</label>
+                <input type="tel" value="+33 6 12 34 56 78" disabled>
+                <button class="modifier-btn"><i class='bx bxs-edit-alt'></i></button></button>
+            </div>
+        </div>
+        <button class="button-sauvegarder">Sauvegarder</button>
+        <!-- Bouton Admin -->
+        <div class="acces-admin">
+            <a href="admin.html" class="button">Accès Admin</a>
+        </div>
+    </div>
+    <footer>
+        <p>&copy 2025 Cosmo Trip. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>
