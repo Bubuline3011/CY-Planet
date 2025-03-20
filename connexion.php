@@ -4,9 +4,9 @@ session_start();
 // Si l'utilisateur est déjà connecté, on le redirige vers sa page principale
 if (isset($_SESSION['connecte']) && $_SESSION['connecte'] === true) {
     if ($_SESSION['role'] === 'admin') {
-        header("Location: admin_dashboard.php"); // Redirige les admins vers leur espace
+        header("Location: admin.php"); // Redirige les admins vers leur espace
     } else {
-        header("Location: accueil.php"); // Redirige les utilisateurs normaux vers l'accueil
+        header("Location: acceuil.php"); // Redirige les utilisateurs normaux vers l'accueil
     }
     exit();
 }

@@ -19,6 +19,7 @@ if (session_status() === PHP_SESSION_NONE) {
             <?php if (!empty($_SESSION['email'])): ?>
             	<li><a href="profil.php">Mon profil</a></li>
                 <li><a href="deconnexion.php">Déconnexion</a></li>
+                <li><a href="paiement.php">Paiement</a></li>
             <?php else: ?>
                 <li><a href="connexion.php">Connexion</a></li>
                 <li><a href="inscription.php">Inscription</a></li>
