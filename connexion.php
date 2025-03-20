@@ -1,6 +1,16 @@
 <?php
 session_start();
 
+// Si l'utilisateur est déjà connecté, on le redirige vers sa page principale
+if (isset($_SESSION['connecte']) && $_SESSION['connecte'] === true) {
+    if ($_SESSION['role'] === 'admin') {
+        header("Location: admin_dashboard.php"); // Redirige les admins vers leur espace
+    } else {
+        header("Location: accueil.php"); // Redirige les utilisateurs normaux vers l'accueil
+    }
+    exit();
+}
+
 // Charger le fichier JSON contenant les utilisateurs
 $usersFile = 'utilisateur.json';
 $usersData = json_decode(file_get_contents($usersFile), true);
@@ -23,7 +33,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             // Rediriger vers la page d'accueil
             
-            header("Location: acceuil.php");
+            // Rediriger selon le rôle de l'utilisateur
+		if ($user['role'] === 'admin') {
+    			header("Location: admin.php"); // Page des admins
+		} else {
+    			header("Location: acceuil.php"); // Page utilisateur normal
+		}
             exit();
         }
     }

@@ -1,5 +1,8 @@
 <?php
-session_start();
+// Vérifier si une session existe, sinon la démarrer
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 ?>
 
 <header>
@@ -12,9 +15,9 @@ session_start();
             <li><a href="presentation.php">À propos</a></li>
             <li><a href="destinations.php">Destinations</a></li>
             <li><a href="recherche.php">Recherche</a></li>
-            <li><a href="profil.php">Mon profil</a></li>
 
-            <?php if (isset($_SESSION['email'])): ?>
+            <?php if (!empty($_SESSION['email'])): ?>
+            	<li><a href="profil.php">Mon profil</a></li>
                 <li><a href="deconnexion.php">Déconnexion</a></li>
             <?php else: ?>
                 <li><a href="connexion.php">Connexion</a></li>
