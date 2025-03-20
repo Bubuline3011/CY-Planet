@@ -1,6 +1,7 @@
 <?php
-// Charger tous les fichiers JSON des planètes
+// Charger tous les fichiers JSON depuis le bon dossier "Voyage/"
 $planetes = glob('Voyage/*.json');
+
 $destination = isset($_POST['destination']) ? trim($_POST['destination']) : '';
 $date_depart = isset($_POST['date_depart']) ? $_POST['date_depart'] : '';
 $date_retour = isset($_POST['date_retour']) ? $_POST['date_retour'] : '';
@@ -10,7 +11,9 @@ $resultat = null;
 if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($destination)) {
     foreach ($planetes as $file) {
         $planete = json_decode(file_get_contents($file), true);
-        if (strcasecmp($planete['titre'], $destination) == 0) {
+
+        // Vérifier que le fichier JSON est bien structuré
+        if (isset($planete['titre']) && strcasecmp(trim($planete['titre']), $destination) == 0) {
             $resultat = $planete;
             break;
         }
@@ -36,13 +39,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($destination)) {
             <label for="destination">Destination :</label>
             <select id="destination" name="destination" required> 
                 <option value="" disabled selected>Choisissez une destination</option>
-                <option value="Footbolis">Footbolis</option>
-                <option value="AquaWorld">AquaWorld</option>
-                <option value="Musicaria">Musicaria</option>
-                <option value="Adventuris">Adventuris</option>
-                <option value="Médiévalia">Médiévalia</option>
-                <option value="Dreamara">Dreamara</option>
-                <option value="Ludopolis">Ludopolis</option>
+                <option value="footbolis">Footbolis</option>
+                <option value="aquaworld">AquaWorld</option>
+                <option value="musicaria">Musicaria</option>
+                <option value="adventuris">Adventuris</option>
+                <option value="medievalia">Médiévalia</option>
+                <option value="dreamara">Dreamara</option>
+                <option value="ludopolis">Ludopolis</option>
             </select>
     
             <div>
@@ -63,25 +66,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($destination)) {
             <div class="resultat-container">
                 <h2>🌍 Destination trouvée : <?php echo htmlspecialchars($resultat['titre']); ?></h2>
 
-                <!-- Affichage de l’image -->
                 <img src="<?php echo htmlspecialchars($resultat['image']); ?>" alt="<?php echo htmlspecialchars($resultat['titre']); ?>" class="image-planete">
 
                 <p><strong>Thème :</strong> <?php echo htmlspecialchars($resultat['theme']); ?></p>
                 <p><strong>Description :</strong> <?php echo htmlspecialchars($resultat['description']); ?></p>
 
-                <h3>📍 Hébergements disponibles :</h3>
-                <ul>
-                    <?php 
-                    $hebergements = ['Hôtels-bulles flottants', 'Hôtel Galactique', 'Château Cybernétique', 'Suite Thématique'];
-                    foreach ($resultat['activites'] as $activite) :
-                        if (in_array($activite['nom'], $hebergements)) : ?>
-                            <li><?php echo htmlspecialchars($activite['nom']); ?> - <?php echo htmlspecialchars($activite['prix']); ?>€</li>
-                        <?php endif;
-                    endforeach; 
-                    ?>
-                </ul>
-
-                <h3>🎯 Activités disponibles :</h3>
+                <h3>📍 Activités disponibles :</h3>
                 <ul>
                     <?php foreach ($resultat['activites'] as $activite) : ?>
                         <li><?php echo htmlspecialchars($activite['nom']); ?> - <?php echo htmlspecialchars($activite['description']); ?> (<?php echo htmlspecialchars($activite['prix']); ?>€)</li>
@@ -90,8 +80,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($destination)) {
 
                 <a href="voyage_detail.php?id=<?php echo htmlspecialchars($resultat['id']); ?>" class="button">Voir plus</a>
             </div>
-        <?php elseif ($_SERVER["REQUEST_METHOD"] == "POST") : ?>
-            <p style="color:red;">⚠️ Aucune destination trouvée. Veuillez réessayer.</p>
+        <?php else : ?>
+            <p style="color:red; font-weight:bold;">⚠️ Aucune destination trouvée. Vérifiez le nom et réessayez.</p>
         <?php endif; ?>
     </div>
     
