@@ -39,18 +39,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!isset($erreur)) {
         // Définition du rôle par défaut (normal)
         $nouvel_utilisateur = [
-            "email" => $email,
-            "motdepasse" => $password,
-            "role" => "normal",
-            "prenom" => $prenom,
-            "nom" => $nom,
-            "age" => (int)$age,
-            "telephone" => $telephone,
-            "date_inscription" => date("Y-m-d"),
-            "derniere_connexion" => null,
-            "voyages_consultes" => [],
-            "voyages_achetes" => []
-        ];
+    	"email" => $_POST['email'],
+    	"motdepasse" => $_POST['motdepasse'],
+    	"role" => "normal",
+    	"prenom" => $_POST['prenom'],
+    	"nom" => $_POST['nom'],
+    	"age" => (int)$_POST['age'],
+    	"telephone" => $_POST['telephone'],
+    	"date_inscription" => date("Y-m-d"),
+    	"derniere_connexion" => null,
+    	"voyages_consultes" => [],
+    	"voyages_achetes" => [],
+    	"coordonnees_bancaires" => [
+        	"numero_carte" => "",
+        	"date_expiration" => "",
+       		"cvv" => ""
+    	] // ✅ Section ajoutée ici
+];
 
         // Ajouter le nouvel utilisateur au fichier JSON
         $usersData[] = $nouvel_utilisateur;

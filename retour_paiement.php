@@ -9,7 +9,8 @@ $vendeur = $_GET['vendeur'] ?? '';
 $statut = $_GET['status'] ?? ''; // accepted ou denied
 $control = $_GET['control'] ?? '';
 
-$api_key = "zzzz"; // À récupérer dynamiquement via getAPIKey()
+require('getapikey.php'); // Récupération dynamique de la clé API
+$api_key = getAPIKey($vendeur);
 $control_hash = md5($api_key . "#" . $transaction . "#" . $montant . "#" . $vendeur . "#" . $statut);
 
 $erreur = null;
@@ -26,12 +27,17 @@ if ($control !== $control_hash) {
                 "date" => date("Y-m-d H:i:s")
             ];
             file_put_contents($usersFile, json_encode($usersData, JSON_PRETTY_PRINT));
+            if (isset($user['coordonnees_bancaires']['numero_carte'])) {
+                $numero_carte_affiche = chunk_split($user['coordonnees_bancaires']['numero_carte'], 4, ' ');
+		echo "<p>Carte utilisée : " . htmlspecialchars($numero_carte_affiche) . "</p>";
+	
+            }
             break;
         }
     }
-    $message = "✅ Paiement accepté ! Votre voyage a été ajouté à vos achats.";
+    $message = "Paiement accepté ! Votre voyage a été ajouté à vos achats.";
 } else {
-    $erreur = "❌ Paiement refusé. Veuillez réessayer.";
+    $erreur = "Paiement refusé. Veuillez réessayer.";
 }
 ?>
 
@@ -50,14 +56,15 @@ if ($control !== $control_hash) {
         <?php if ($message): ?>
             <p class="message-confirmation"><?= htmlspecialchars($message); ?></p>
             <div class="retour-container">
-                <a href="profil.php">Voir mes voyages</a>
+                <a href="profil.php" class="button">Voir mes voyages</a>
             </div>
         <?php endif; ?>
 
         <?php if ($erreur): ?>
             <p class="message-erreur"><?= htmlspecialchars($erreur); ?></p>
             <div class="retour-container">
-                <a href="paiement.php">Retour au paiement</a>
+                <a href="paiement.php" class="button">Recommencer le paiement</a>
+                <a href="voyage.php" class="button">Modifier mon voyage</a>
             </div>
         <?php endif; ?>
     </div>

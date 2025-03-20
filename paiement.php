@@ -25,7 +25,8 @@ $voyage = $_SESSION['voyage_selectionne'] ?? ['titre' => 'Voyage inconnu', 'prix
 
         <form action="traitement_paiement.php" method="POST">
             <label>Numéro de carte bancaire :</label>
-            <input type="text" name="numero_carte" pattern="\d{16}" required placeholder="16 chiffres">
+            <input type="text" name="numero_carte" id="numero_carte" maxlength="19" placeholder="5555123456789000" required>
+
 
             <label>Nom du propriétaire :</label>
             <input type="text" name="nom_proprietaire" required placeholder="Nom sur la carte">

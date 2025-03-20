@@ -1,13 +1,22 @@
 <?php
 session_start();
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+echo "<pre>";
+print_r($_POST);
+echo "</pre>";
+exit();
+$usersFile = "utilisateur.json";
+$usersData = json_decode(file_get_contents($usersFile), true) ?? [];
+
 if (!isset($_SESSION['connecte']) || !isset($_SESSION['email'])) {
     header("Location: connexion.php");
     exit();
 }
 
-// Vérification des données
+// Vérification des données reçues
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $numero_carte = $_POST['numero_carte'];
+    $numero_carte = str_replace(' ', '', $_POST['numero_carte']); // Enlève les espaces pour CY Bank
     $nom_proprietaire = $_POST['nom_proprietaire'];
     $expiration = $_POST['expiration'];
     $cvv = $_POST['cvv'];
@@ -21,18 +30,41 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Vérifier que le cryptogramme est valide (3 chiffres)
     if (!preg_match("/^\d{3}$/", $cvv)) {
-        die("Cryptogramme invalide.");
+        die("CVV invalide.");
     }
+    
 
-    // Génération des infos pour CY Bank
-    $transaction_id = uniqid(); // Génère un ID unique
-    $code_vendeur = "MI-5_E"; // Remplace par ton code projet
-    $retour_url = "http://localhost/retour_paiement.php";
-    $api_key = "zzzz"; // À récupérer dynamiquement via getAPIKey()
 
-    $control_hash = md5($api_key . "#" . $transaction_id . "#" . $montant . "#" . $code_vendeur . "#" . $retour_url);
+	// Enregistrement dans utilisateur.json
+foreach ($usersData as &$user) {
+    if ($user['email'] === $_SESSION['email']) {
+        $user['coordonnees_bancaires'] = [
+            "numero_carte" => $numero_carte,
+            "date_expiration" => $expiration,
+            "cvv" => $cvv
+        ];
+        file_put_contents($usersFile, json_encode($usersData, JSON_PRETTY_PRINT));
+        if (json_last_error() !== JSON_ERROR_NONE) {
+    die("Erreur d'encodage JSON : " . json_last_error_msg());
 }
-
+        break;
+    }
+}
+    }
+    // Génération des infos pour CY Bank
+    // Chargement de la clé API et génération du hash
+    require('getapikey.php');
+    $code_vendeur = "MI-5_E"; 
+    $api_key = getAPIKey($code_vendeur); // Récupération dynamique de l'API Key
+    if ($api_key === "zzzz") {
+        die("Erreur : Clé API invalide pour le vendeur " . $code_vendeur);
+    }
+    $transaction_id = uniqid();
+    $retour_url = "http://localhost/retour_paiement.php";
+   
+    $montant_format = number_format((float)$montant, 2, '.', ''); // Assure 2 décimales
+    $control_hash = md5($api_key . "#" . $transaction_id . "#" . $montant_format . "#" . $code_vendeur . "#" . $retour_url);
+}
 ?>
 
 <!DOCTYPE html>
@@ -46,10 +78,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="paiement-container">
         <h2>Validation du paiement</h2>
         <p>Votre paiement est en cours de traitement...</p>
-
+	<p>Votre paiement est prêt à être envoyé à la banque.</p>
+        <p>Veuillez confirmer le paiement.</p>
         <form action="https://www.plateforme-smc.fr/cybank/index.php" method="POST">
             <input type="hidden" name="transaction" value="<?= $transaction_id; ?>">
-            <input type="hidden" name="montant" value="<?= number_format($montant, 2, '.', ''); ?>">
+            <input type="hidden" name="montant" value="<?= $montant_format; ?>">
             <input type="hidden" name="vendeur" value="<?= $code_vendeur; ?>">
             <input type="hidden" name="retour" value="<?= $retour_url; ?>">
             <input type="hidden" name="control" value="<?= $control_hash; ?>">
