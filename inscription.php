@@ -1,3 +1,60 @@
+<?php
+session_start();
+
+$usersFile = 'utilisateur.json';
+$usersData = json_decode(file_get_contents($usersFile), true);
+
+// Vérification si le formulaire est soumis
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $nom = trim($_POST['nom']);
+    $prenom = trim($_POST['prenom']);
+    $email = trim($_POST['email']);
+    $password = $_POST['password'];
+    $age = trim($_POST['age']);
+    $telephone = trim($_POST['telephone']);
+    
+    // Vérification si l'email est déjà utilisé
+    foreach ($usersData as $user) {
+        if ($user['email'] === $email) {
+            $erreur = "Cet email est déjà utilisé. Veuillez en choisir un autre.";
+            break;
+        }
+    }
+
+    if (!isset($erreur)) {
+        // Définition du rôle par défaut (normal)
+        $nouvel_utilisateur = [
+            "email" => $email,
+            "motdepasse" => $password,
+            "role" => "normal",
+            "prenom" => $prenom,
+            "nom" => $nom,
+            "age" => (int)$age,
+            "telephone" => $telephone,
+            "date_inscription" => date("Y-m-d"),
+            "derniere_connexion" => null,
+            "voyages_consultes" => [],
+            "voyages_achetes" => []
+        ];
+
+        // Ajouter le nouvel utilisateur au fichier JSON
+        $usersData[] = $nouvel_utilisateur;
+        file_put_contents($usersFile, json_encode($usersData, JSON_PRETTY_PRINT));
+
+        // Connexion automatique après inscription (optionnel)
+        $_SESSION['email'] = $email;
+        $_SESSION['role'] = "normal";
+        $_SESSION['prenom'] = $prenom;
+        $_SESSION['nom'] = $nom;
+        $_SESSION['connecte'] = true;
+
+        // Redirection vers la page d'accueil
+        header("Location: acceuil.php");
+        exit();
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -12,9 +69,9 @@
 <body class="inscription">
 	<?php include 'header.php'; ?>
     <div class="boite">
-        <form action="acceuil.html" method="POST">
+        <form action="inscription.php" method="POST">
             <h1>Inscription</h1>
-
+		<?php if (isset($erreur)) echo "<p style='color: red;'>$erreur</p>"; ?>
             <div class="saisie">
                 <input type="text" name="nom" placeholder="Nom" required autocomplete="family-name">
                 <i class='bx bx-user'></i>
@@ -48,7 +105,7 @@
             <button type="submit" class="button">S'inscrire</button>
 
             <div class="lien-inscription">
-                <p>Vous avez déjà un compte ? <a href="connexion.html">Se connecter</a></p>
+                <p>Vous avez déjà un compte ? <a href="connexion.php">Se connecter</a></p>
             </div>
         </form>
     </div>

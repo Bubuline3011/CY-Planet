@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'] ?? '';
     $password = $_POST['password'] ?? '';
 
-    foreach ($usersData as $user) {
+    foreach ($usersData as &$user) {
         if ($user['email'] === $email && $user['motdepasse'] === $password) {
             // Stocker les informations utilisateur en session
             $_SESSION['email'] = $user['email'];
@@ -82,7 +82,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <button type="submit" class="button">Se connecter</button>
 
             <div class="lien-inscription">
-                <p>Vous n'avez pas de compte ? <a href="inscription.html">S'inscrire</a></p>
+                <p>Vous n'avez pas de compte ? <a href="inscription.php">S'inscrire</a></p>
             </div>
         </form>
     </div>
