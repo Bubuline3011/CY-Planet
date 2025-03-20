@@ -1,0 +1,57 @@
+{
+    "id": 3,
+    "titre": "Musicaria - La Planète Musicale",
+    "image": "Musicaria.jpg",
+    "date_depart": "2025-08-10",
+    "date_retour": "2025-08-20",
+    "duree": 10,
+    "specificites": "Planète où la musique est la seule langue, avec des concerts en gravité zéro.",
+    "prix_total": 2600,
+    "etapes": [
+        {
+            "titre": "Concert Intergalactique",
+            "date_arrivee": "2025-08-10",
+            "date_depart": "2025-08-14",
+            "duree": 4,
+            "position": {
+                "gps": "10.0000, 20.0000",
+                "nom_lieu": "Grand Théâtre Spatial"
+            },
+            "options": [
+                {
+                    "type": "spectacle",
+                    "nom": "Concert Gravité Zéro",
+                    "prix_par_personne": 300
+                },
+                {
+                    "type": "hébergement",
+                    "nom": "Suite Sonore",
+                    "prix_par_personne": 200
+                }
+            ],
+            "activites": [
+    {
+        "nom": "Concert en Gravité Zéro",
+        "description": "Assistez à un concert flottant avec des artistes galactiques.",
+        "prix": 180
+    },
+    {
+        "nom": "Création musicale en symbiose",
+        "description": "Composez une mélodie en interaction avec les vibrations de la planète.",
+        "prix": 130
+    },
+    {
+        "nom": "Dancefloors lumineux",
+        "description": "Dansez sur un sol qui réagit aux vibrations sonores.",
+        "prix": 90
+    },
+    {
+        "nom": "Cours de DJ intergalactique",
+        "description": "Apprenez à mixer avec des technologies de pointe.",
+        "prix": 150
+    }
+]
+
+        }
+    ]
+}
