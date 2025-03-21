@@ -13,17 +13,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $age = trim($_POST['age']);
     $telephone = trim($_POST['telephone']);
     
-    // ✅ Vérifier si l'email est valide
+    // Vérifier si l'email est valide
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $erreur = "L'adresse email n'est pas valide.";
     }
 
-    // ✅ Vérifier si l'âge est un nombre valide
+    //Vérifier si l'âge est un nombre valide
     elseif (!is_numeric($age) || (int)$age <= 0) {
         $erreur = "L'âge doit être un nombre valide.";
     }
 
-    // ✅ Vérifier si le téléphone est valide (10 chiffres en France)
+    //Vérifier si le téléphone est valide (10 chiffres en France)
     elseif (!preg_match('/^[0-9]{10}$/', $telephone)) {
         $erreur = "Le numéro de téléphone doit contenir 10 chiffres.";
     }
