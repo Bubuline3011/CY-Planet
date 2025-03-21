@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$usersFile = 'utilisateur.json';
+$usersFile = 'data/utilisateur.json';
 $usersData = json_decode(file_get_contents($usersFile), true);
 
 // Vérification si le formulaire est soumis
@@ -54,7 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         	"numero_carte" => "",
         	"date_expiration" => "",
        		"cvv" => ""
-    	] // ✅ Section ajoutée ici
+    	]
 ];
 
         // Ajouter le nouvel utilisateur au fichier JSON
