@@ -1,51 +1,55 @@
 <?php
-session_start();
-file_put_contents("debug_retour.txt", print_r($_GET, true) . "\n", FILE_APPEND);
+include("getapikey.php");
 
-$usersFile = "utilisateur.json";
-$usersData = json_decode(file_get_contents($usersFile), true) ?? [];
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Récupérer les paramètres envoyés par CY Bank
+    $transaction = $_GET["transaction"] ?? "";
+    $montant = $_GET["montant"] ?? "";
+    $vendeur = $_GET["vendeur"] ?? "";
+    $statut = $_GET["statut"] ?? "";
+    $control_recu = $_GET["control"] ?? "";
 
-$transaction = $_GET['transaction'] ?? '';
-$montant = $_GET['montant'] ?? '';
-$vendeur = $_GET['vendeur'] ?? '';
-$statut = $_GET['status'] ?? '';
-$control = $_GET['control'] ?? '';
-
-require('getapikey.php');
-$api_key = getAPIKey($vendeur);
-echo "<pre>";
-echo "=== DEBUG RETOUR PAIEMENT ===\n";
-echo "Transaction reçue : " . $transaction . "\n";
-echo "Montant reçu : " . $montant . "\n";
-echo "Vendeur reçu : " . $vendeur . "\n";
-echo "Statut reçu : '" . $statut . "' (avec guillemets pour voir les espaces)\n";
-echo "Control attendu : " . $control_hash . "\n";
-echo "Control reçu : " . $control . "\n";
-echo "</pre>";
-exit();
-
-$statut = trim(strtolower($_GET['status']));
-$control_hash = md5($api_key . "#" . $transaction . "#" . $montant . "#" . $vendeur . "#" . $statut);
-
-if ($control !== $control_hash) {
-    die("Erreur: paiement non valide.");
-}
-
-if ($statut === "accepted") {
-    foreach ($usersData as &$user) {
-        if ($user['email'] === $_SESSION['email']) {
-            $user['voyages_achetes'][] = [
-                "transaction" => $transaction,
-                "montant" => $montant,
-                "date" => date("Y-m-d H:i:s")
-            ];
-            file_put_contents($usersFile, json_encode($usersData, JSON_PRETTY_PRINT));
-            break;
-        }
+    // Vérification des valeurs reçues
+    if (empty($transaction) || empty($montant) || empty($vendeur) || empty($statut) || empty($control_recu)) {
+        die("Erreur : paramètres de retour invalides.");
     }
-    echo "<p>Paiement accepté !</p>";
-} else {
-    echo "<p>Paiement refusé. Veuillez réessayer.</p>";
+
+    // Récupérer la clé API du vendeur
+    $api_key = getAPIKey($vendeur);
+
+    // Recalcul de la valeur de contrôle attendue
+    $control_attendu = md5($api_key."#".$transaction."#". $montant."#".$vendeur."#".$statut."#");
+
+    // Vérification de l'intégrité des données
+    if ($control_attendu !== $control_recu) {
+        die("Erreur : contrôle d'intégrité échoué. Données modifiées ou corrompues.");
+    }
+
+    // Traitement en fonction du statut
+    if ($statut === "accepted") {
+        echo "<h2>Paiement accepté ✅</h2>";
+        echo "<p>Transaction : $transaction</p>";
+        echo "<p>Montant : $montant $</p>";
+        echo "<p>Merci pour votre achat ! Vous allez être redirigé vers votre espace client.</p>";
+        
+        // Ici, on peut ajouter un enregistrement en base de données ou envoyer un email de confirmation
+        
+        // Redirection après 5 secondes
+        header("refresh:5;url=espace_client.php");
+    } 
+    else {
+        echo "<h2>Paiement refusé ❌</h2>";
+        echo "<p>Transaction : $transaction</p>";
+        echo "<p>Montant : $montant $</p>";
+        echo "<p>Le paiement a été refusé. Vérifiez vos informations bancaires et réessayez.</p>";
+        
+        // Redirection après 5 secondes
+        header("refresh:5;url=page_paiement.php");
+    }
+} 
+else {
+    echo "Accès interdit.";
 }
 ?>
+
 
