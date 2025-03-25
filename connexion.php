@@ -12,7 +12,7 @@ if (isset($_SESSION['connecte']) && $_SESSION['connecte'] === true) {
 }
 
 // Charger le fichier JSON contenant les utilisateurs
-$usersFile = 'utilisateur.json';
+$usersFile = 'data/utilisateur.json';
 $usersData = json_decode(file_get_contents($usersFile), true);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

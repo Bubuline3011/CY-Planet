@@ -67,8 +67,8 @@ file_put_contents("debug_envoi.txt", "Transaction: $transaction_id | Montant: $m
     <input type="hidden" name="montant" value="<?= $montant_format; ?>">
     <input type="hidden" name="vendeur" value="<?= $code_vendeur; ?>">
     <input type="hidden" name="retour" value="<?= $retour_url; ?>">
-    <input type="hidden" name="control" value="<?= $control_hash; ?>">
-    <button type="submit">Confirmer le paiement</button>
+    <input type="hidden" name="control" value="<?= $control; ?>">
+    <input type="submit" value="Valider et payer">
 </form>
 
 
