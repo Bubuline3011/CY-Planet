@@ -8,7 +8,7 @@
         "age": 19,
         "telephone": "0646807561",
         "date_inscription": "2024-01-15",
-        "derniere_connexion": "2025-03-20",
+        "derniere_connexion": "2025-03-25",
         "voyages_consultes": [
             {
                 "id": 1,
@@ -23,12 +23,7 @@
                 "date_achat": "2025-03-08",
                 "prix_total": 1800
             }
-        ],
-        "coordonnees_bancaires": {
-            "numero_carte": "4444 2345 6545 6543",
-            "date_expiration": "05\/2025",
-            "cvv": "177"
-        }
+        ]
     },
     {
         "email": "attiakarin20@gmail.com",
@@ -54,12 +49,7 @@
                 "date_achat": "2025-03-06",
                 "prix_total": 2200
             }
-        ],
-        "coordonnees_bancaires": {
-            "numero_carte": "1000 0000 0000 0000",
-            "date_expiration": "05\/2029",
-            "cvv": "177"
-        }
+        ]
     },
     {
         "email": "Alakallel95@gmail.com",
@@ -70,7 +60,7 @@
         "age": 20,
         "telephone": "0691011123",
         "date_inscription": "2024-01-15",
-        "derniere_connexion": "2025-03-09",
+        "derniere_connexion": "2025-03-25",
         "voyages_consultes": [
             {
                 "id": 6,
@@ -90,11 +80,6 @@
                 "date_achat": "2025-03-07",
                 "prix_total": 1700
             }
-        ],
-        "coordonnees_bancaires": {
-            "numero_carte": "2000 0000 0000 0002",
-            "date_expiration": "08\/2027",
-            "cvv": "766"
-        }
+        ]
     }
 ]
