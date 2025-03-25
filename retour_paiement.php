@@ -1,16 +1,16 @@
 <?php
 include("getapikey.php");
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Récupérer les paramètres envoyés par CY Bank
+if ($_SERVER["REQUEST_METHOD"] == "GET") {
+    // Récupération des paramètres envoyés par CY Bank
     $transaction = $_GET["transaction"] ?? "";
     $montant = $_GET["montant"] ?? "";
     $vendeur = $_GET["vendeur"] ?? "";
-    $statut = $_GET["statut"] ?? "";
+    $status = $_GET["status"] ?? ""; // Correction ici (anciennement "statut")
     $control_recu = $_GET["control"] ?? "";
 
     // Vérification des valeurs reçues
-    if (empty($transaction) || empty($montant) || empty($vendeur) || empty($statut) || empty($control_recu)) {
+    if (empty($transaction) || empty($montant) || empty($vendeur) || empty($status) || empty($control_recu)) {
         die("Erreur : paramètres de retour invalides.");
     }
 
@@ -18,38 +18,37 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $api_key = getAPIKey($vendeur);
 
     // Recalcul de la valeur de contrôle attendue
-    $control_attendu = md5($api_key."#".$transaction."#". $montant."#".$vendeur."#".$statut."#");
+    $control_attendu = md5($api_key . "#" . $transaction . "#" . $montant . "#" . $vendeur . "#" . $status . "#");
 
     // Vérification de l'intégrité des données
     if ($control_attendu !== $control_recu) {
         die("Erreur : contrôle d'intégrité échoué. Données modifiées ou corrompues.");
     }
 
-    // Traitement en fonction du statut
-    if ($statut === "accepted") {
+    // Affichage du message en fonction du statut
+    if ($status === "accepted") {
         echo "<h2>Paiement accepté ✅</h2>";
         echo "<p>Transaction : $transaction</p>";
         echo "<p>Montant : $montant $</p>";
         echo "<p>Merci pour votre achat ! Vous allez être redirigé vers votre espace client.</p>";
-        
-        // Ici, on peut ajouter un enregistrement en base de données ou envoyer un email de confirmation
-        
-        // Redirection après 5 secondes
-        header("refresh:5;url=espace_client.php");
-    } 
-    else {
+
+        // Enregistrement de la transaction (ajouter ici du code pour stocker en base de données si nécessaire)
+
+        // Redirection après 5 secondes vers l'espace client
+        header("refresh:5;url=profil.php");
+    } else {
         echo "<h2>Paiement refusé ❌</h2>";
         echo "<p>Transaction : $transaction</p>";
         echo "<p>Montant : $montant $</p>";
         echo "<p>Le paiement a été refusé. Vérifiez vos informations bancaires et réessayez.</p>";
-        
-        // Redirection après 5 secondes
+
+        // Redirection après 5 secondes vers la page de paiement
         header("refresh:5;url=page_paiement.php");
     }
-} 
-else {
+} else {
     echo "Accès interdit.";
 }
 ?>
+
 
 
