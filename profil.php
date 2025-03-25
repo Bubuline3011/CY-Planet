@@ -100,6 +100,9 @@ if (!$user) {
         </div>
         <?php endif; ?>
     </div>
+    <footer>
+        <p>&copy 2025 Cosmo Trip. Tous droits réservés.</p>
+    </footer>
 </body>
 </html>
 
