@@ -1,0 +1,85 @@
+[
+    {
+        "email": "yonabulard78@gmail.com",
+        "motdepasse": "yona19",
+        "role": "admin",
+        "prenom": "Yona",
+        "nom": "Bulard",
+        "age": 19,
+        "telephone": "0646807561",
+        "date_inscription": "2024-01-15",
+        "derniere_connexion": "2025-03-25",
+        "voyages_consultes": [
+            {
+                "id": 1,
+                "nom": "Footbolis",
+                "date_consultation": "2025-03-05"
+            }
+        ],
+        "voyages_achetes": [
+            {
+                "id": 2,
+                "nom": "AquaWorld",
+                "date_achat": "2025-03-08",
+                "prix_total": 1800
+            }
+        ]
+    },
+    {
+        "email": "attiakarin20@gmail.com",
+        "motdepasse": "karen21",
+        "role": "admin",
+        "prenom": "Karen",
+        "nom": "Attia",
+        "age": 21,
+        "telephone": "0612345678",
+        "date_inscription": "2024-01-15",
+        "derniere_connexion": "2025-03-09",
+        "voyages_consultes": [
+            {
+                "id": 5,
+                "nom": "M\u00e9di\u00e9valia",
+                "date_consultation": "2025-03-04"
+            }
+        ],
+        "voyages_achetes": [
+            {
+                "id": 4,
+                "nom": "Adventuris",
+                "date_achat": "2025-03-06",
+                "prix_total": 2200
+            }
+        ]
+    },
+    {
+        "email": "Alakallel95@gmail.com",
+        "motdepasse": "Ala20",
+        "role": "normal",
+        "prenom": "Ala",
+        "nom": "Kallel",
+        "age": 20,
+        "telephone": "0691011123",
+        "date_inscription": "2024-01-15",
+        "derniere_connexion": "2025-03-09",
+        "voyages_consultes": [
+            {
+                "id": 6,
+                "nom": "Cin\u00e9R\u00e9alit\u00e9",
+                "date_consultation": "2025-03-02"
+            },
+            {
+                "id": 7,
+                "nom": "Dreamara",
+                "date_consultation": "2025-03-05"
+            }
+        ],
+        "voyages_achetes": [
+            {
+                "id": 8,
+                "nom": "Sportimax",
+                "date_achat": "2025-03-07",
+                "prix_total": 1700
+            }
+        ]
+    }
+]
