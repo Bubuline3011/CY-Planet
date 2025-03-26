@@ -686,6 +686,8 @@ button {
     cursor: pointer;
     font-weight: bold;
     transition: background-color 0.3s;
+    margin-bottom: 5px;
+    margin-top: 5px;
 }
 
 .voir-btn:hover {
