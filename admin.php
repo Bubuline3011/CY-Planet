@@ -1,3 +1,26 @@
+<?php
+session_start();
+
+// Vérification de l'accès admin
+if (!isset($_SESSION['email']) || $_SESSION['role'] !== 'admin') {
+    header("Location: connexion.php");
+    exit();
+}
+
+// Chargement des utilisateurs depuis le fichier JSON
+$utilisateurs = json_decode(file_get_contents("data/utilisateur.json"), true);
+
+// Pagination
+$utilisateursParPage = 10;
+$pageActuelle = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+$totalUtilisateurs = count($utilisateurs);
+$totalPages = ceil($totalUtilisateurs / $utilisateursParPage);
+
+// Découpe du tableau d'utilisateurs pour la page actuelle
+$debut = ($pageActuelle - 1) * $utilisateursParPage;
+$utilisateursPage = array_slice($utilisateurs, $debut, $utilisateursParPage);
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -22,44 +45,37 @@
                 </tr>
             </thead>
             <tbody>
+                <?php foreach ($utilisateursPage as $user): ?>
                 <tr>
-                    <td>Alice</td>
-                    <td>Dupont</td>
-                    <td>alice.dupont@example.com</td>
+                    <td><?= htmlspecialchars($user['nom']) ?></td>
+                    <td><?= htmlspecialchars($user['prenom']) ?></td>
+                    <td><?= htmlspecialchars($user['email']) ?></td>
                     <td>
                         <button class="vip-btn">VIP</button>
                         <button class="ban-btn">Bannir</button>
                         <button class="normal-btn">Normal</button>
                     </td>
-                    <td><button class="voir-btn">Voir</button></td>
+                    <td><a class="voir-btn" href="profil_utilisateur.php?email=<?= urlencode($user['email']) ?>">Voir</a></td>
+
+
                 </tr>
-                <tr>
-                    <td>Jean</td>
-                    <td>Martin</td>
-                    <td>jean.martin@example.com</td>
-                    <td>
-                        <button class="vip-btn">VIP</button>
-                        <button class="ban-btn">Bannir</button>
-                        <button class="normal-btn">Normal</button>
-                    </td>
-                    <td><button class="voir-btn">Voir</button></td>
-                </tr>
-                <tr>
-                    <td>Emma</td>
-                    <td>Lefèvre</td>
-                    <td>emma.lefevre@example.com</td>
-                    <td>
-                        <button class="vip-btn">VIP</button>
-                        <button class="ban-btn">Bannir</button>
-                        <button class="normal-btn">Normal</button>
-                    </td>
-                    <td><button class="voir-btn">Voir</button></td>
-                </tr>
+                <?php endforeach; ?>
             </tbody>
         </table>
+
+        <!-- Pagination -->
+        <div class="pagination">
+            <?php if ($pageActuelle > 1): ?>
+                <a href="?page=<?= $pageActuelle - 1 ?>" class="button">Page précédente</a>
+            <?php endif; ?>
+
+            <?php if ($pageActuelle < $totalPages): ?>
+                <a href="?page=<?= $pageActuelle + 1 ?>" class="button">Page suivante</a>
+            <?php endif; ?>
+        </div>
     </div>
     <footer>
-        <p>&copy 2025 Cosmo Trip. Tous droits réservés.</p>
+        <p>&copy; 2025 Cosmo Trip. Tous droits réservés.</p>
     </footer>
 </body>
 </html>
