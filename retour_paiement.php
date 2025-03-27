@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 include("getapikey.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
@@ -6,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     $transaction = $_GET["transaction"] ?? "";
     $montant = $_GET["montant"] ?? "";
     $vendeur = $_GET["vendeur"] ?? "";
-    $status = $_GET["status"] ?? ""; // Correction ici (anciennement "statut")
+    $status = $_GET["status"] ?? ""; 
     $control_recu = $_GET["control"] ?? "";
 
     // Vérification des valeurs reçues
@@ -48,6 +50,41 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 } else {
     echo "Accès interdit.";
 }
+
+// === MISE À JOUR DE utilisateur.json ===
+if (!isset($_SESSION['email']) || !isset($_SESSION['commande'])) {
+    echo "<p>Erreur : aucune commande ou utilisateur en session.</p>";
+    exit;
+}
+
+$email = $_SESSION['email'];
+$commande = $_SESSION['commande'];
+$commande['id'] = $commande['voyage_id']; // on force la présence de l'ID pour l’enregistrement
+
+$voyage_achete = [
+    "id" => $commande['voyage_id'],
+    "nom" => $commande['titre'],
+    "date_achat" => date('Y-m-d'),
+    "prix_total" => $commande['prix_total']
+];
+
+$utilisateur_path = "data/utilisateur.json";
+if (file_exists($utilisateur_path)) {
+    $utilisateurs = json_decode(file_get_contents($utilisateur_path), true);
+
+    foreach ($utilisateurs as &$user) {
+        if ($user['email'] === $email) {
+            if (!isset($user['voyages_achetes'])) {
+                $user['voyages_achetes'] = [];
+            }
+            $user['voyages_achetes'][] = $voyage_achete;
+            break;
+        }
+    }
+
+    file_put_contents($utilisateur_path, json_encode($utilisateurs, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
+}
+
 ?>
 
 

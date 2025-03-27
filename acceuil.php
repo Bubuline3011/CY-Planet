@@ -1,8 +1,10 @@
 <?php
 session_start();
+$voyages = json_decode(file_get_contents("data/voyage.json"), true);
 ?>
 
 <!DOCTYPE html>
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,34 +21,22 @@ session_start();
             <div class="principal-contenue">
                 <h1>Découvrez l'univers avec Cosmo Trip</h1>
                 <p>Voyagez vers des mondes extraordinaires grâce à nos vaisseaux et portails intergalactiques.</p>
-                <a href="destinations.html" class="btn">Voir les destinations</a>
+                <a href="destination.php" class="btn">Voir les destinations</a>
             </div>
         </section>
     
         <section class="destinations">
             <h2>🌍 Nos destinations les plus populaires</h2>
             <div class="destination-liste">
-                <!-- Destination Footbolis -->
-                <a href="Footbol.html" class="destination">
-                    <img src="img/Footbol.jpg" alt="Footbolis">
-                    <h3>Footbolis</h3>
-                    <p>Le paradis des amateurs de football intergalactique !</p>
+            <?php foreach (array_slice($voyages, 0, 3) as $voyage): ?>
+                <a class="destination" href="voyage_detail.php?id=<?= $voyage['id'] ?>">
+                    <img src="<?= htmlspecialchars($voyage['image']) ?>" alt="<?= htmlspecialchars($voyage['titre']) ?>">
+                    <h3><?= htmlspecialchars($voyage['titre']) ?></h3>
+                    <p>Note : <?= str_repeat('★', $voyage['note']) . str_repeat('☆', 5 - $voyage['note']) ?></p>
+                    <p><?= htmlspecialchars($voyage['prix']) ?> €</p>
                 </a>
-                
-                <!-- Destination Dreamara -->
-                <a href="Dreamara.html" class="destination">
-                    <img src="img/Dreamara.jpg" alt="Dreamara">
-                    <h3>Dreamara</h3>
-                    <p>Un retour dans un pays imaginaire</p>
-                </a>
-                
-                <!-- Destination AquaWorld -->
-                <a href="aquaworld.html" class="destination">
-                    <img src="img/AquaWorld.jpg" alt="AquaWorld">
-                    <h3>AquaWorld</h3>
-                    <p>Un voyage sous-marin dans un océan infini.</p>
-                </a>
-            </div>
+            <?php endforeach; ?>
+        </div>
         </section>
     </main>
     

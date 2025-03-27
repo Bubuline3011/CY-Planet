@@ -718,7 +718,7 @@ button {
 }
 
 
-/* 🌟 Styles pour la page de paiement */
+/* Styles pour la page de paiement */
 body.paiement, body.traitement-paiement, body.retour-paiement {
     padding-top: 80px;
     background-image: url('img/image-acceuil.jpg');
@@ -775,7 +775,7 @@ body.paiement, body.traitement-paiement, body.retour-paiement {
     color: #fff;
 }
 
-/* 🌟 Icônes dans les champs */
+/* Icônes dans les champs */
 .paiement-container .saisie i {
     position: absolute;
     right: 15px;
@@ -810,7 +810,7 @@ body.paiement, body.traitement-paiement, body.retour-paiement {
     background: linear-gradient(45deg, #ff9f1c, #ff4f00);
 }
 
-/* 🌟 Messages de confirmation et d'erreur */
+/* Messages de confirmation et d'erreur */
 .message-confirmation, .message-erreur {
     padding: 15px;
     border-radius: 8px;
@@ -831,7 +831,7 @@ body.paiement, body.traitement-paiement, body.retour-paiement {
     border: 2px solid #f00;
 }
 
-/* 🌟 Style pour les boutons de retour */
+/* Style pour les boutons de retour */
 .retour-container {
     text-align: center;
 }
@@ -872,5 +872,82 @@ body.paiement, body.traitement-paiement, body.retour-paiement {
 }
 
 .bouton-paiement:hover {
-    background: linear-gradient(45
+    background: linear-gradient(45);
+}
+ /*Partie destination accessible hors connexion sur le site*/
+ 
+.filtre-select {
+    width: auto;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 10px;
+    border: 2px solid #5a189a;
+    background-color: #ffffff; /* Fond blanc pour bien ressortir */
+    color: #5a189a;            /* Texte violet */
+    font-weight: bold;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filtre-select:hover {
+    background-color: #f4f4f9;
+    border-color: #ff9f1c;
+}
+
+.intro {
+    max-width: 900px;
+    margin: 0 auto 40px;
+    padding: 20px 30px;
+    background: linear-gradient(135deg, #fefefe, #f4f4f9);
+    border-left: 6px solid #5a189a;
+    border-radius: 15px;
+    box-shadow: 0px 4px 20px rgba(90, 24, 154, 0.1);
+    text-align: center;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #333;
+    font-family: "Poppins", sans-serif;
+    animation: fadeInIntro 1s ease-in-out;
+}
+
+.intro p {
+    margin-bottom: 10px;
+}
+
+@keyframes fadeInIntro {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.acheter-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    margin: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(45deg, #5a189a, #9b5de5);
+    border: none;
+    border-radius: 30px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.15);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    width: auto;
+}
+
+.acheter-btn:hover {
+    background: linear-gradient(45deg, #ff9f1c, #ff4f00);
+    transform: scale(1.05);
+    box-shadow: 0px 6px 15px rgba(0,0,0,0.25);
+}
+
+
+
+
+
 
