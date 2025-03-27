@@ -1,174 +1,95 @@
 [
-    {
-        "id": 1,
-        "nom": "Footbolis",
-        "date_depart": "2025-06-01",
-        "date_retour": "2025-06-07",
-        "prix": 1200,
-        "etapes": [
-            {
-                "nom": "Stade Gravitationnel",
-                "hebergements": ["Hôtel Galactique", "Chambre Orbitale"],
-                "activites": ["Match intergalactique", "Dribbles flottants", "Entraînement en apesanteur"],
-                "transport": ["Vaisseaux Spatial", "Portail interdimensionnel"],
-                "options": {
-                    "place_vip": false,
-                    "rencontre_joueur": true
-                }
-            }
-        ]
-    },
-    {
-        "id": 2,
-        "nom": "AquaWorld",
-        "date_depart": "2025-07-10",
-        "date_retour": "2025-07-20",
-        "prix": 1800,
-        "etapes": [
-            {
-                "nom": "Bulles sous-marines",
-                "hebergements": ["Hôtel sous-marin", "Capsule flottante"],
-                "activites": ["Plongée avec créatures géantes", "Jet-skis volants", "Exploration sous-marine"],
-                "transport": ["Train magnétique interstellaire", "Montgolfière spatiale"],
-                "options": {
-                    "plongée_vip": true,
-                    "cours_de_navigation": false
-                }
-            }
-        ]
-    },
-    {
-        "id": 3,
-        "nom": "Musicaria",
-        "date_depart": "2025-08-15",
-        "date_retour": "2025-08-25",
-        "prix": 1600,
-        "etapes": [
-            {
-                "nom": "Concert Gravité Zéro",
-                "hebergements": ["Chambre Sonore", "Suite Vibration"],
-                "activites": ["Concert en apesanteur", "Mix avec DJ galactique", "Création musicale interactive"],
-                "transport": ["Vaisseaux Spatial", "Portail interdimensionnel"],
-                "options": {
-                    "acces_backstage": true,
-                    "cours_de_dj": false
-                }
-            }
-        ]
-    },
-    {
-        "id": 4,
-        "nom": "Adventuris",
-        "date_depart": "2025-09-05",
-        "date_retour": "2025-09-15",
-        "prix": 2200,
-        "etapes": [
-            {
-                "nom": "Jungle Lumineuse",
-                "hebergements": ["Campement suspendu", "Hamac antigravité"],
-                "activites": ["Randonnée jungle lumineuse", "Spéléologie cristaux vivants", "Chasse au trésor"],
-                "transport": ["Voiture volante spatiale", "Vaisseaux Spatial"],
-                "options": {
-                    "guide_personnel": true,
-                    "nuit_sous_les_etoiles": true
-                }
-            }
-        ]
-    },
-    {
-        "id": 5,
-        "nom": "Médiévalia",
-        "date_depart": "2025-10-01",
-        "date_retour": "2025-10-10",
-        "prix": 1500,
-        "etapes": [
-            {
-                "nom": "Château Flottant",
-                "hebergements": ["Chambre chevalier", "Tour cybernétique"],
-                "activites": ["Joutes en lévitation", "Exploration forteresse magnétique", "Vaisseaux-dragons"],
-                "transport": ["Portail interdimensionnel", "Train magnétique interstellaire"],
-                "options": {
-                    "armure_personnalisee": true,
-                    "banquet_royal": false
-                }
-            }
-        ]
-    },
-    {
-        "id": 6,
-        "nom": "CinéRéalité",
-        "date_depart": "2025-11-05",
-        "date_retour": "2025-11-15",
-        "prix": 2000,
-        "etapes": [
-            {
-                "nom": "Studios Galactiques",
-                "hebergements": ["Loft Hollywoodien", "Ciné-Capsule"],
-                "activites": ["Immersion dans un film", "École de cascadeurs", "Effets spéciaux en réalité augmentée"],
-                "transport": ["Voiture volante spatiale", "Portail interdimensionnel"],
-                "options": {
-                    "scène_personnalisée": true,
-                    "stage_effets_speciaux": false
-                }
-            }
-        ]
-    },
-    {
-        "id": 7,
-        "nom": "Sportimax",
-        "date_depart": "2026-01-10",
-        "date_retour": "2026-01-20",
-        "prix": 1700,
-        "etapes": [
-            {
-                "nom": "Arènes Suspendues",
-                "hebergements": ["Camp sportif", "Hôtel ultra-tech"],
-                "activites": ["Parkour en gravité variable", "Marathon interstellaire", "Escalade sur falaises flottantes"],
-                "transport": ["Vaisseaux Spatial", "Train magnétique interstellaire"],
-                "options": {
-                    "coaching_sportif": true,
-                    "accès_vip_compétitions": false
-                }
-            }
-        ]
-    },
-    {
-        "id": 8,
-        "nom": "Ludopolis",
-        "date_depart": "2026-03-05",
-        "date_retour": "2026-03-15",
-        "prix": 1400,
-        "etapes": [
-            {
-                "nom": "Zone Escape Game",
-                "hebergements": ["Chambre énigmatique", "Hôtel illusion"],
-                "activites": ["Échecs vivants", "Jeux vidéo immersifs", "Escape rooms futuristes"],
-                "transport": ["Portail interdimensionnel", "Vaisseaux Spatial"],
-                "options": {
-                    "jeu_personnalisé": true,
-                    "tournoi_exclusif": false
-                }
-            }
-        ]
-    },
-    {
-        "id": 9,
-        "nom": "Dreamara",
-        "date_depart": "2026-05-01",
-        "date_retour": "2026-05-10",
-        "prix": 1800,
-        "etapes": [
-            {
-                "nom": "Forêt de bonbons",
-                "hebergements": ["Nid de Nuages", "Suite Arc-en-ciel"],
-                "activites": ["Tapis volant", "Rêves partagés", "Navigation sur rivières étoilées"],
-                "transport": ["Montgolfière spatiale", "Portail interdimensionnel"],
-                "options": {
-                    "rêve_interactif": true,
-                    "voyage_nocturne": false
-                }
-            }
-        ]
-    }
+  {
+    "titre": "Footbolis",
+    "prix": 12800,
+    "note": 5,
+    "image": "img/Footbol.jpg",
+    "date": "2025-03-25",
+    "description": "Planète dédiée au football avec stades gravitationnels, matchs intergalactiques et musée du foot galactique.",
+    "id": 1
+  },
+  {
+    "titre": "Gastrodelis",
+    "prix": 15750,
+    "note": 4,
+    "image": "img/Gastrodelis.jpg",
+    "date": "2025-03-20",
+    "description": "Un monde culinaire interplanétaire avec cours de cuisine spatiale et concours de chefs stellaires.",
+    "id": 2
+  },
+  {
+    "titre": "AquaWorld",
+    "prix": 10340,
+    "note": 4,
+    "image": "img/AquaWorld.jpg",
+    "date": "2025-03-22",
+    "description": "Planète océanique aux bulles sous-marines : plongée avec créatures géantes et hôtels-bulles flottants.",
+    "id": 3
+  },
+  {
+    "titre": "Musicaria",
+    "prix": 8760,
+    "note": 5,
+    "image": "img/Musicaria.jpg",
+    "date": "2025-03-18",
+    "description": "Un monde vibrant au rythme de la musique : concerts en apesanteur et dancefloors suspendus.",
+    "id": 4
+  },
+  {
+    "titre": "Sportimax",
+    "prix": 10500,
+    "note": 3,
+    "image": "img/Sportimax.jpg",
+    "date": "2025-03-19",
+    "description": "Planète du sport extrême : marathons aériens et parkour en gravité variable dans des arènes suspendues.",
+    "id": 5
+  },
+  {
+    "titre": "Ludopolis",
+    "prix": 18750,
+    "note": 4,
+    "image": "img/Ludopolis.jpg",
+    "date": "2025-03-16",
+    "description": "Monde du jeu géant : escape rooms futuristes, échecs vivants et compétitions intergalactiques.",
+    "id": 6
+  },
+  {
+    "titre": "CinéRéalité",
+    "prix": 16280,
+    "note": 5,
+    "image": "img/CinéRéalité.jpg",
+    "date": "2025-03-15",
+    "description": "Chaque ville est un film vivant : immersion interactive, cascades réelles et école de cinéma spatiale.",
+    "id": 7
+  },
+  {
+    "titre": "Médiévalia",
+    "prix": 20500,
+    "note": 4,
+    "image": "img/Médiévalia.jpg",
+    "date": "2025-03-17",
+    "description": "Planète médiévale futuriste avec châteaux flottants, chevaliers cybernétiques et tournois en lévitation.",
+    "id": 8
+  },
+  {
+    "titre": "Adventuris",
+    "prix": 13800,
+    "note": 5,
+    "image": "img/Adventuris.jpg",
+    "date": "2025-03-23",
+    "description": "Voyage d’exploration intergalactique : jungles lumineuses, spéléologie dans des cavernes cristallines.",
+    "id": 9
+  },
+  {
+    "titre": "Dreamara",
+    "prix": 22500,
+    "note": 4,
+    "image": "img/Dreamara.jpg",
+    "date": "2025-03-21",
+    "description": "Monde onirique fait de nuages moelleux, tapis volants et forêts de bonbons arc-en-ciel.",
+    "id": 10
+  }
 ]
+
+
 

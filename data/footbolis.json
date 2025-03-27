@@ -1,206 +1,257 @@
 {
-    "id": 1,
-    "titre": "Footbolis - L'Expérience Football Intergalactique",
-    "date_depart": "2025-06-01",
-    "date_retour": "2025-06-10",
-    "duree": 10,
-    "specificites": "Voyage dédié aux passionnés de football avec des matchs en apesanteur et des rencontres avec des légendes du sport intergalactique.",
-    "personnes": [
+  "id": 1,
+  "titre": "Footbolis - L'Expérience Football Intergalactique",
+  "date_depart": "2025-06-01",
+  "date_retour": "2025-06-10",
+  "duree": 10,
+  "specificites": "Voyage dédié aux passionnés de football avec des matchs en apesanteur et des rencontres avec des légendes du sport intergalactique.",
+  "personnes": [
+    {
+      "nom": "Jean Dupont",
+      "age": 28,
+      "role": "participant"
+    },
+    {
+      "nom": "Marie Curie",
+      "age": 25,
+      "role": "accompagnatrice"
+    }
+  ],
+  "prix_total": 12800,
+  "etapes": [
+    {
+      "titre": "Stade Gravitationnel",
+      "date_arrivee": "2025-06-01",
+      "date_depart": "2025-06-04",
+      "duree": 4,
+      "position": {
+        "gps": "34.0522, -118.2437",
+        "nom_lieu": "Stade Spatial de Footbolis"
+      },
+      "options": [
         {
-            "nom": "Jean Dupont",
-            "age": 28,
-            "role": "participant"
+          "type": "activité sportive",
+          "nom": "Match Intergalactique",
+          "valeurs_possibles": [
+            "Place standard",
+            "Place VIP",
+            "Place VIP+"
+          ],
+          "choix_utilisateur": "Place VIP",
+          "personnes": 2,
+          "prix_par_personne": 200
         },
         {
-            "nom": "Marie Curie",
-            "age": 25,
-            "role": "accompagnatrice"
+          "type": "hébergement",
+          "nom": "Hôtel Galactique",
+          "valeurs_possibles": [
+            "Suite standard",
+            "Suite premium"
+          ],
+          "choix_utilisateur": "Suite premium",
+          "personnes": 2,
+          "prix_par_personne": 150
+        },
+        {
+          "type": "transport",
+          "nom": "Portail interdimensionnel",
+          "valeurs_possibles": [
+            "Vaisseaux Spatial",
+            "Portail interdimensionnel"
+          ],
+          "choix_utilisateur": "Portail interdimensionnel",
+          "personnes": 2,
+          "prix_par_personne": 50,
+          "autres_champs": {
+            "vitesse_moyenne": "500 000 km/h"
+          }
+        },
+        {
+          "type": "service",
+          "nom": "Garde d’enfants",
+          "valeurs_possibles": [
+            "Garde classique",
+            "Animation sportive"
+          ],
+          "choix_utilisateur": "Garde classique",
+          "personnes": 1,
+          "prix_par_personne": 100
+        },
+        {
+          "type": "service",
+          "nom": "Gestion du linge",
+          "valeurs_possibles": [
+            "Lavage simple",
+            "Pressing premium"
+          ],
+          "choix_utilisateur": "Lavage simple",
+          "personnes": 2,
+          "prix_par_personne": 20
         }
-    ],
-    "prix_total": 2400,
-    "etapes": [
+      ],
+      "personnes_supplementaires": [
         {
-            "titre": "Stade Gravitationnel",
-            "date_arrivee": "2025-06-01",
-            "date_depart": "2025-06-04",
-            "duree": 4,
-            "position": {
-                "gps": "34.0522, -118.2437",
-                "nom_lieu": "Stade Spatial de Footbolis"
-            },
-            "options": [
-                {
-                    "type": "activité sportive",
-                    "nom": "Match Intergalactique",
-                    "valeurs_possibles": ["Place standard", "Place VIP", "Place VIP+"],
-                    "choix_utilisateur": "Place VIP",
-                    "personnes": 2,
-                    "prix_par_personne": 200
-                },
-                {
-                    "type": "hébergement",
-                    "nom": "Hôtel Galactique",
-                    "valeurs_possibles": ["Suite standard", "Suite premium"],
-                    "choix_utilisateur": "Suite premium",
-                    "personnes": 2,
-                    "prix_par_personne": 150
-                },
-                {
-                    "type": "transport",
-                    "nom": "Portail interdimensionnel",
-                    "valeurs_possibles": ["Vaisseaux Spatial", "Portail interdimensionnel"],
-                    "choix_utilisateur": "Portail interdimensionnel",
-                    "personnes": 2,
-                    "prix_par_personne": 50,
-                    "autres_champs": {
-                        "vitesse_moyenne": "500 000 km/h"
-                    }
-                }
-                {
-                    "type": "service",
-                    "nom": "Garde d’enfants",
-                    "valeurs_possibles": ["Garde classique", "Animation sportive"],
-                    "choix_utilisateur": "Garde classique",
-                    "personnes": 1,
-                    "prix_par_personne": 100
-                },
-                {
-                    "type": "service",
-                    "nom": "Gestion du linge",
-                    "valeurs_possibles": ["Lavage simple", "Pressing premium"],
-                    "choix_utilisateur": "Lavage simple",
-                    "personnes": 2,
-                    "prix_par_personne": 20
-                }
-            ],
-            "personnes_supplementaires": [
-                {
-                    "nom": "Kylian Mbappé",
-                    "age": 26,
-                    "role": "invité spécial",
-                    "participation": ["Match Intergalactique", "Rencontre VIP"]
-                }
-            ]
-        },
-        {
-            "titre": "Musée du Football Galactique",
-            "date_arrivee": "2025-06-05",
-            "date_depart": "2025-06-07",
-            "duree": 3,
-            "position": {
-                "gps": "48.8566, 2.3522",
-                "nom_lieu": "Hall of Fame du Football Spatial"
-            },
-            "options": [
-                {
-                    "type": "activité culturelle",
-                    "nom": "Visite du Hall of Fame",
-                    "valeurs_possibles": ["Entrée simple", "Tour guidé privé"],
-                    "choix_utilisateur": "Tour guidé privé",
-                    "personnes": 2,
-                    "prix_par_personne": 80
-                },
-                {
-                    "type": "hébergement",
-                    "nom": "Chambre Collector",
-                    "valeurs_possibles": ["Chambre Standard", "Chambre VIP"],
-                    "choix_utilisateur": "Chambre VIP",
-                    "personnes": 2,
-                    "prix_par_personne": 130
-                }
-                {
-                    "type": "transport",
-                    "nom": "Portail interdimensionnel",
-                    "valeurs_possibles": ["Vaisseaux Spatial", "Portail interdimensionnel"],
-                    "choix_utilisateur": "Portail interdimensionnel",
-                    "personnes": 2,
-                    "prix_par_personne": 50,
-                    "autres_champs": {
-                        "vitesse_moyenne": "500 000 km/h"
-                    }
-                }
-                {
-                    "type": "service",
-                    "nom": "Garde d’enfants",
-                    "valeurs_possibles": ["Garde classique", "Animation sportive"],
-                    "choix_utilisateur": "Garde classique",
-                    "personnes": 1,
-                    "prix_par_personne": 100
-                },
-                {
-                    "type": "service",
-                    "nom": "Gestion du linge",
-                    "valeurs_possibles": ["Lavage simple", "Pressing premium"],
-                    "choix_utilisateur": "Lavage simple",
-                    "personnes": 2,
-                    "prix_par_personne": 20
-                }
-            ],
-            "personnes_supplementaires": []
-        },
-        {
-            "titre": "Stade d’Entraînement en Apesanteur",
-            "date_arrivee": "2025-06-08",
-            "date_depart": "2025-06-10",
-            "duree": 3,
-            "position": {
-                "gps": "51.5074, -0.1278",
-                "nom_lieu": "Académie Footbolis"
-            },
-            "options": [
-                {
-                    "type": "activité sportive",
-                    "nom": "Dribbles flottants",
-                    "valeurs_possibles": ["Mode libre", "Cours privé"],
-                    "choix_utilisateur": "Cours privé",
-                    "personnes": 2,
-                    "prix_par_personne": 120
-                },
-                {
-                    "type": "restauration",
-                    "nom": "Repas d’équipe avec joueurs",
-                    "valeurs_possibles": ["Buffet", "Menu 3 plats"],
-                    "choix_utilisateur": "Menu 3 plats",
-                    "personnes": 2,
-                    "prix_par_personne": 60
-                }
-                {
-                    "type": "transport",
-                    "nom": "Portail interdimensionnel",
-                    "valeurs_possibles": ["Vaisseaux Spatial", "Portail interdimensionnel"],
-                    "choix_utilisateur": "Portail interdimensionnel",
-                    "personnes": 2,
-                    "prix_par_personne": 50,
-                    "autres_champs": {
-                        "vitesse_moyenne": "500 000 km/h"
-                    }
-                }
-                {
-                    "type": "service",
-                    "nom": "Garde d’enfants",
-                    "valeurs_possibles": ["Garde classique", "Animation sportive"],
-                    "choix_utilisateur": "Garde classique",
-                    "personnes": 1,
-                    "prix_par_personne": 100
-                },
-                {
-                    "type": "service",
-                    "nom": "Gestion du linge",
-                    "valeurs_possibles": ["Lavage simple", "Pressing premium"],
-                    "choix_utilisateur": "Lavage simple",
-                    "personnes": 2,
-                    "prix_par_personne": 20
-                }
-            ],
-            "personnes_supplementaires": [
-                {
-                    "nom": "Cristiano Ronaldo",
-                    "age": 40,
-                    "role": "invité surprise",
-                    "participation": ["Dribbles flottants", "Repas VIP"]
-                }
-            ]
+          "nom": "Kylian Mbappé",
+          "age": 26,
+          "role": "invité spécial",
+          "participation": [
+            "Match Intergalactique",
+            "Rencontre VIP"
+          ]
         }
-    ]
+      ]
+    },
+    {
+      "titre": "Musée du Football Galactique",
+      "date_arrivee": "2025-06-05",
+      "date_depart": "2025-06-07",
+      "duree": 3,
+      "position": {
+        "gps": "48.8566, 2.3522",
+        "nom_lieu": "Hall of Fame du Football Spatial"
+      },
+      "options": [
+        {
+          "type": "activité culturelle",
+          "nom": "Visite du Hall of Fame",
+          "valeurs_possibles": [
+            "Entrée simple",
+            "Tour guidé privé"
+          ],
+          "choix_utilisateur": "Tour guidé privé",
+          "personnes": 2,
+          "prix_par_personne": 80
+        },
+        {
+          "type": "hébergement",
+          "nom": "Chambre Collector",
+          "valeurs_possibles": [
+            "Chambre Standard",
+            "Chambre VIP"
+          ],
+          "choix_utilisateur": "Chambre VIP",
+          "personnes": 2,
+          "prix_par_personne": 130
+        },
+        {
+          "type": "transport",
+          "nom": "Portail interdimensionnel",
+          "valeurs_possibles": [
+            "Vaisseaux Spatial",
+            "Portail interdimensionnel"
+          ],
+          "choix_utilisateur": "Portail interdimensionnel",
+          "personnes": 2,
+          "prix_par_personne": 50,
+          "autres_champs": {
+            "vitesse_moyenne": "500 000 km/h"
+          }
+        },
+        {
+          "type": "service",
+          "nom": "Garde d’enfants",
+          "valeurs_possibles": [
+            "Garde classique",
+            "Animation sportive"
+          ],
+          "choix_utilisateur": "Garde classique",
+          "personnes": 1,
+          "prix_par_personne": 100
+        },
+        {
+          "type": "service",
+          "nom": "Gestion du linge",
+          "valeurs_possibles": [
+            "Lavage simple",
+            "Pressing premium"
+          ],
+          "choix_utilisateur": "Lavage simple",
+          "personnes": 2,
+          "prix_par_personne": 20
+        }
+      ],
+      "personnes_supplementaires": []
+    },
+    {
+      "titre": "Stade d’Entraînement en Apesanteur",
+      "date_arrivee": "2025-06-08",
+      "date_depart": "2025-06-10",
+      "duree": 3,
+      "position": {
+        "gps": "51.5074, -0.1278",
+        "nom_lieu": "Académie Footbolis"
+      },
+      "options": [
+        {
+          "type": "activité sportive",
+          "nom": "Dribbles flottants",
+          "valeurs_possibles": [
+            "Mode libre",
+            "Cours privé"
+          ],
+          "choix_utilisateur": "Cours privé",
+          "personnes": 2,
+          "prix_par_personne": 120
+        },
+        {
+          "type": "restauration",
+          "nom": "Repas d’équipe avec joueurs",
+          "valeurs_possibles": [
+            "Buffet",
+            "Menu 3 plats"
+          ],
+          "choix_utilisateur": "Menu 3 plats",
+          "personnes": 2,
+          "prix_par_personne": 60
+        },
+        {
+          "type": "transport",
+          "nom": "Portail interdimensionnel",
+          "valeurs_possibles": [
+            "Vaisseaux Spatial",
+            "Portail interdimensionnel"
+          ],
+          "choix_utilisateur": "Portail interdimensionnel",
+          "personnes": 2,
+          "prix_par_personne": 50,
+          "autres_champs": {
+            "vitesse_moyenne": "500 000 km/h"
+          }
+        },
+        {
+          "type": "service",
+          "nom": "Garde d’enfants",
+          "valeurs_possibles": [
+            "Garde classique",
+            "Animation sportive"
+          ],
+          "choix_utilisateur": "Garde classique",
+          "personnes": 1,
+          "prix_par_personne": 100
+        },
+        {
+          "type": "service",
+          "nom": "Gestion du linge",
+          "valeurs_possibles": [
+            "Lavage simple",
+            "Pressing premium"
+          ],
+          "choix_utilisateur": "Lavage simple",
+          "personnes": 2,
+          "prix_par_personne": 20
+        }
+      ],
+      "personnes_supplementaires": [
+        {
+          "nom": "Cristiano Ronaldo",
+          "age": 40,
+          "role": "invité surprise",
+          "participation": [
+            "Dribbles flottants",
+            "Repas VIP"
+          ]
+        }
+      ]
+    }
+  ]
 }
-

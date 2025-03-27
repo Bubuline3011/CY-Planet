@@ -1,0 +1,49 @@
+{
+    "id": 4,
+    "titre": "Adventuris - La Planète des Explorateurs",
+    "image": "Adventuris.jpg",
+    "date_depart": "2026-01-05",
+    "date_retour": "2026-01-15",
+    "duree": 10,
+    "specificites": "Un monde d’aventure et d’exploration où les défis sont partout.",
+    "prix_total": 13800,
+    "etapes": [
+        {
+            "titre": "Jungle Luminescente",
+            "date_arrivee": "2026-01-05",
+            "date_depart": "2026-01-10",
+            "duree": 5,
+            "position": {
+                "gps": "-5.0000, 90.0000",
+                "nom_lieu": "Forêt des Étoiles"
+            },
+            "options": [
+                {"type": "expédition", "nom": "Randonnée extraterrestre", "prix_par_personne": 200},
+                {"type": "hébergement", "nom": "Campement de Luxe", "prix_par_personne": 250}
+            ]
+        }
+    ],
+    "activites": [
+    {
+        "nom": "Randonnée extraterrestre",
+        "description": "Parcourez des jungles bioluminescentes.",
+        "prix": 200
+    },
+    {
+        "nom": "Spéléologie dans des cavernes de cristaux",
+        "description": "Explorez des grottes où les pierres chantent.",
+        "prix": 180
+    },
+    {
+        "nom": "Mission d'exploration spatiale",
+        "description": "Découvrez de nouveaux biomes extraterrestres.",
+        "prix": 250
+    },
+    {
+        "nom": "Survie dans la jungle alien",
+        "description": "Apprenez à survivre dans un environnement hostile.",
+        "prix": 220
+    }
+]
+
+}

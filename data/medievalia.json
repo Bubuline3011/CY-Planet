@@ -1,0 +1,49 @@
+{
+    "id": 5,
+    "titre": "Médiévalia - L'Empire des Chevaliers Cybernétiques",
+    "image": "Médiévalia.jpg",
+    "date_depart": "2025-12-10",
+    "date_retour": "2025-12-20",
+    "duree": 10,
+    "specificites": "Un monde où le médiéval et la technologie fusionnent dans un univers unique.",
+    "prix_total": 20500,
+    "etapes": [
+        {
+            "titre": "Tournoi de Joutes en Lévitant",
+            "date_arrivee": "2025-12-10",
+            "date_depart": "2025-12-15",
+            "duree": 5,
+            "position": {
+                "gps": "30.0000, -20.0000",
+                "nom_lieu": "Forteresse Céleste"
+            },
+            "options": [
+                {"type": "expérience", "nom": "Combat d'épées laser", "prix_par_personne": 250},
+                {"type": "hébergement", "nom": "Château Cybernétique", "prix_par_personne": 300}
+            ]
+        }
+    ],
+ "activites": [
+    {
+        "nom": "Combat d'épées laser",
+        "description": "Affrontez d’autres participants dans des duels futuristes.",
+        "prix": 250
+    },
+    {
+        "nom": "Exploration de forteresses magnétiques",
+        "description": "Découvrez les mystères cachés des châteaux flottants.",
+        "prix": 200
+    },
+    {
+        "nom": "Tournoi de joutes en lévitation",
+        "description": "Affrontez d'autres chevaliers dans un tournoi en apesanteur.",
+        "prix": 300
+    },
+    {
+        "nom": "Chasse aux trésors intergalactique",
+        "description": "Partez à la recherche d’artefacts anciens.",
+        "prix": 220
+    }
+]
+   
+}
