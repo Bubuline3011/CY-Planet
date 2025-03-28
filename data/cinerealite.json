@@ -1,53 +1,76 @@
 {
-    "titre": "CinéRéalité",
-    "description": "Planète cinéma où les visiteurs vivent des films interactifs.",
+    "id": 8,
+    "titre": "CinéRéalité - Immersion Cinématographique",
+    "image": "CinéRéalité.jpg",
+    "date_depart": "2026-04-01",
+    "date_retour": "2026-04-10",
+    "duree": 10,
+    "specificites": "Planète cinéma où les visiteurs vivent des films interactifs.",
+    "prix_total": 3400,
     "etapes": [
         {
-            "titre": "Étape Alpha",
-            "lieu": "Zone spéciale de CinéRéalité",
-            "options": {
-                "activité": [
-                    "Activité unique 1 sur CinéRéalité",
-                    "Activité unique 2 sur CinéRéalité",
-                    "Expérience immersive 3 sur CinéRéalité"
-                ],
-                "hébergement": [
-                    "Cabine spéciale CinéRéalité",
-                    "Dôme flottant",
-                    "Refuge de luxe"
-                ],
-                "restauration": [
-                    "Buffet galactique",
-                    "Spécialités de CinéRéalité"
-                ],
-                "transport": [
-                    "Navette autonome",
-                    "Tapis volant interstellaire"
-                ]
-            }
+            "titre": "Studios Alpha",
+            "date_arrivee": "2026-04-01",
+            "date_depart": "2026-04-05",
+            "duree": 5,
+            "position": {
+                "gps": "45.0000, -73.0000",
+                "nom_lieu": "Zone spéciale de CinéRéalité"
+            },
+            "options": [
+                {
+                    "type": "activité",
+                    "nom": "Expérience immersive 3 sur CinéRéalité",
+                    "prix_par_personne": 210
+                },
+                {
+                    "type": "hébergement",
+                    "nom": "Dôme flottant",
+                    "prix_par_personne": 230
+                },
+                {
+                    "type": "restauration",
+                    "nom": "Spécialités de CinéRéalité",
+                    "prix_par_personne": 100
+                },
+                {
+                    "type": "transport",
+                    "nom": "Tapis volant interstellaire",
+                    "prix_par_personne": 65
+                }
+            ]
         },
         {
-            "titre": "Étape Beta",
-            "lieu": "Zone secondaire de CinéRéalité",
-            "options": {
-                "activité": [
-                    "Aventure secondaire 1 sur CinéRéalité",
-                    "Mini-jeu ou défi 2 sur CinéRéalité",
-                    "Rencontre guidée 3 sur CinéRéalité"
-                ],
-                "hébergement": [
-                    "Chambre capsule",
-                    "Hôtel conceptuel CinéRéalité"
-                ],
-                "restauration": [
-                    "Snack spatial",
-                    "Cantine locale"
-                ],
-                "transport": [
-                    "Module de téléportation",
-                    "Ascenseur orbital"
-                ]
-            }
+            "titre": "Backstage Galaxy",
+            "date_arrivee": "2026-04-06",
+            "date_depart": "2026-04-10",
+            "duree": 5,
+            "position": {
+                "gps": "45.5000, -73.5000",
+                "nom_lieu": "Zone secondaire de CinéRéalité"
+            },
+            "options": [
+                {
+                    "type": "activité",
+                    "nom": "Mini-jeu ou défi 2 sur CinéRéalité",
+                    "prix_par_personne": 180
+                },
+                {
+                    "type": "hébergement",
+                    "nom": "Hôtel conceptuel CinéRéalité",
+                    "prix_par_personne": 250
+                },
+                {
+                    "type": "restauration",
+                    "nom": "Cantine locale",
+                    "prix_par_personne": 85
+                },
+                {
+                    "type": "transport",
+                    "nom": "Ascenseur orbital",
+                    "prix_par_personne": 60
+                }
+            ]
         }
     ],
     "activites": [
