@@ -1,30 +1,76 @@
 {
-    "titre": "Gastrodelis",
-    "description": "Planète culinaire interstellaire pleine de spécialités exotiques.",
+    "id": 10,
+    "titre": "Gastrodelis - L'Odyssée Culinaire",
+    "image": "Gastrodelis.jpg",
+    "date_depart": "2026-03-01",
+    "date_retour": "2026-03-10",
+    "duree": 10,
+    "specificites": "Planète culinaire interstellaire pleine de spécialités exotiques.",
+    "prix_total": 3300,
     "etapes": [
         {
             "titre": "Région des Épices Étoilées",
-            "lieu": "Crater Gourmet",
-            "options": {
-                "activité": [
-                    "Cours de cuisine spatiale",
-                    "Atelier épices planétaires",
-                    "Visite de marché flottant",
-                    "Rencontre avec un chef étoilé"
-                ],
-                "hébergement": [
-                    "Suite gastronomique",
-                    "Hôtel des chefs"
-                ],
-                "restauration": [
-                    "Dégustation 7 plats",
-                    "Bar à soupes stellaires"
-                ],
-                "transport": [
-                    "Navette cuisine volante",
-                    "Chariot-épices à propulsion"
-                ]
-            }
+            "date_arrivee": "2026-03-01",
+            "date_depart": "2026-03-05",
+            "duree": 5,
+            "position": {
+                "gps": "12.3456, 78.9101",
+                "nom_lieu": "Crater Gourmet"
+            },
+            "options": [
+                {
+                    "type": "activité",
+                    "nom": "Cours de cuisine spatiale",
+                    "prix_par_personne": 200
+                },
+                {
+                    "type": "hébergement",
+                    "nom": "Suite gastronomique",
+                    "prix_par_personne": 250
+                },
+                {
+                    "type": "restauration",
+                    "nom": "Dégustation 7 plats",
+                    "prix_par_personne": 120
+                },
+                {
+                    "type": "transport",
+                    "nom": "Chariot-épices à propulsion",
+                    "prix_par_personne": 70
+                }
+            ]
+        },
+        {
+            "titre": "Atelier des Chefs Galactiques",
+            "date_arrivee": "2026-03-06",
+            "date_depart": "2026-03-10",
+            "duree": 5,
+            "position": {
+                "gps": "12.5000, 78.9500",
+                "nom_lieu": "Dôme des Saveurs"
+            },
+            "options": [
+                {
+                    "type": "activité",
+                    "nom": "Rencontre avec un chef étoilé",
+                    "prix_par_personne": 180
+                },
+                {
+                    "type": "hébergement",
+                    "nom": "Hôtel des chefs",
+                    "prix_par_personne": 230
+                },
+                {
+                    "type": "restauration",
+                    "nom": "Bar à soupes stellaires",
+                    "prix_par_personne": 90
+                },
+                {
+                    "type": "transport",
+                    "nom": "Navette cuisine volante",
+                    "prix_par_personne": 60
+                }
+            ]
         }
     ],
     "activites": [
