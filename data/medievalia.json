@@ -1,105 +1,128 @@
 {
-    "titre": "Médiévalia",
-    "description": "Planète médiévale futuriste avec châteaux flottants.",
+    "id": 5,
+    "titre": "Médiévalia - Le Futur au Moyen Âge",
+    "image": "medievalia.jpg",
+    "date_depart": "2025-07-01",
+    "date_retour": "2025-07-10",
+    "duree": 10,
+    "specificites": "Un monde de chevaliers cybernétiques et de châteaux flottants.",
+    "prix_total": 11600,
     "etapes": [
         {
-            "titre": "Étape Alpha",
-            "lieu": "Zone spéciale de Médiévalia",
-            "options": {
-                "activité": [
-                    "Activité unique 1 sur Médiévalia",
-                    "Activité unique 2 sur Médiévalia",
-                    "Expérience immersive 3 sur Médiévalia"
-                ],
-                "hébergement": [
-                    "Cabine spéciale Médiévalia",
-                    "Dôme flottant",
-                    "Refuge de luxe"
-                ],
-                "restauration": [
-                    "Buffet galactique",
-                    "Spécialités de Médiévalia"
-                ],
-                "transport": [
-                    "Navette autonome",
-                    "Tapis volant interstellaire"
-                ]
-            }
+            "titre": "Découverte de Forteresse Magnétique",
+            "date_arrivee": "2025-07-01",
+            "date_depart": "2025-07-05",
+            "duree": 5,
+            "position": {
+                "gps": "51.5074, -0.1278",
+                "nom_lieu": "Forteresse Magnétique"
+            },
+            "options": [
+                {
+                    "type": "activité principale",
+                    "nom": "Expérience immersive Médiévalia - Le Futur au Moyen Âge",
+                    "valeurs_possibles": [
+                        "Standard",
+                        "Premium",
+                        "VIP"
+                    ],
+                    "choix_utilisateur": "Premium",
+                    "personnes": 2,
+                    "prix_par_personne": 250
+                },
+                {
+                    "type": "hébergement",
+                    "nom": "Hôtel Médiévalia - Le Futur au Moyen Âge",
+                    "valeurs_possibles": [
+                        "Standard",
+                        "Luxe"
+                    ],
+                    "choix_utilisateur": "Luxe",
+                    "personnes": 2,
+                    "prix_par_personne": 180
+                },
+                {
+                    "type": "transport",
+                    "nom": "Portail interdimensionnel",
+                    "valeurs_possibles": [
+                        "Vaisseaux Spatial",
+                        "Portail interdimensionnel"
+                    ],
+                    "choix_utilisateur": "Portail interdimensionnel",
+                    "personnes": 2,
+                    "prix_par_personne": 50,
+                    "autres_champs": {
+                        "vitesse_moyenne": "500 000 km/h"
+                    }
+                },
+                {
+                    "type": "service",
+                    "nom": "Garde d’enfants",
+                    "valeurs_possibles": [
+                        "Garde classique",
+                        "Animation spécialisée"
+                    ],
+                    "choix_utilisateur": "Garde classique",
+                    "personnes": 1,
+                    "prix_par_personne": 100
+                },
+                {
+                    "type": "service",
+                    "nom": "Gestion du linge",
+                    "valeurs_possibles": [
+                        "Lavage simple",
+                        "Pressing premium"
+                    ],
+                    "choix_utilisateur": "Lavage simple",
+                    "personnes": 2,
+                    "prix_par_personne": 20
+                }
+            ],
+            "personnes_supplementaires": [
+                {
+                    "nom": "Invité spécial",
+                    "age": 35,
+                    "role": "conférencier galactique",
+                    "participation": [
+                        "Expérience immersive"
+                    ]
+                }
+            ]
         },
         {
-            "titre": "Étape Beta",
-            "lieu": "Zone secondaire de Médiévalia",
-            "options": {
-                "activité": [
-                    "Aventure secondaire 1 sur Médiévalia",
-                    "Mini-jeu ou défi 2 sur Médiévalia",
-                    "Rencontre guidée 3 sur Médiévalia"
-                ],
-                "hébergement": [
-                    "Chambre capsule",
-                    "Hôtel conceptuel Médiévalia"
-                ],
-                "restauration": [
-                    "Snack spatial",
-                    "Cantine locale"
-                ],
-                "transport": [
-                    "Module de téléportation",
-                    "Ascenseur orbital"
-                ]
-            }
-        }
-    ],
-    "activites": [
-        {
-            "nom": "Exploration guidée de Médiévalia",
-            "description": "Découvrez les secrets cachés de Médiévalia avec un guide expert.",
-            "prix": 200
-        },
-        {
-            "nom": "Aventure nocturne sur Médiévalia",
-            "description": "Balade sous les étoiles et phénomènes naturels uniques de Médiévalia.",
-            "prix": 180
-        },
-        {
-            "nom": "Survie extrême à Médiévalia",
-            "description": "Atelier immersif de survie dans les conditions hostiles de Médiévalia.",
-            "prix": 220
-        },
-        {
-            "nom": "Expédition scientifique sur Médiévalia",
-            "description": "Participez à une mission pour collecter des données extraterrestres.",
-            "prix": 250
-        },
-        {
-            "nom": "Construction d'abri sur Médiévalia",
-            "description": "Apprenez à bâtir votre propre refuge intergalactique.",
-            "prix": 160
-        },
-        {
-            "nom": "Découverte de la faune de Médiévalia",
-            "description": "Observez des créatures uniques dans leur habitat natif.",
-            "prix": 190
-        },
-        {
-            "nom": "Tyrolienne géante de Médiévalia",
-            "description": "Glissez à toute vitesse au-dessus des paysages spectaculaires de Médiévalia.",
-            "prix": 150
-        },
-        {
-            "nom": "Spéléologie de Médiévalia",
-            "description": "Explorez les profondeurs mystérieuses de grottes aux cristaux vivants.",
-            "prix": 210
-        },
-        {
-            "nom": "Parcours d’obstacles de Médiévalia",
-            "description": "Testez vos limites avec des épreuves physiques interstellaires.",
-            "prix": 170
-        },
-        {
-            "nom": "Croisière aérienne autour de Médiévalia",
-            "description": "Profitez d’une vue panoramique grâce à un vaisseau flottant.",
-            "prix": 230
+            "titre": "Exploration de Forteresse Magnétique - Zone 2",
+            "date_arrivee": "2025-07-06",
+            "date_depart": "2025-07-10",
+            "duree": 5,
+            "position": {
+                "gps": "51.5074, -0.1278",
+                "nom_lieu": "Forteresse Magnétique secondaire"
+            },
+            "options": [
+                {
+                    "type": "activité secondaire",
+                    "nom": "Découverte de Médiévalia - Le Futur au Moyen Âge",
+                    "valeurs_possibles": [
+                        "Autonome",
+                        "Guidée"
+                    ],
+                    "choix_utilisateur": "Guidée",
+                    "personnes": 2,
+                    "prix_par_personne": 150
+                },
+                {
+                    "type": "restauration",
+                    "nom": "Repas thématique",
+                    "valeurs_possibles": [
+                        "Menu local",
+                        "Menu cosmique"
+                    ],
+                    "choix_utilisateur": "Menu cosmique",
+                    "personnes": 2,
+                    "prix_par_personne": 60
+                }
+            ],
+            
         }
     ]
 }
