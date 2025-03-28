@@ -5,7 +5,7 @@
     "date_depart": "2026-01-05",
     "date_retour": "2026-01-15",
     "duree": 10,
-    "specificites": "Un monde d’aventure et d’exploration où les défis sont partout.",
+    "description": "Un monde d’aventure et d’exploration où les défis sont partout.",
     "prix_total": 3200,
     "etapes": [
         {
