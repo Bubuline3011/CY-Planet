@@ -43,7 +43,7 @@ if ($mot_cle !== '') {
      <!-- Section Recherche Rapide -->
      <section class="barre-recherche">
         <h3>🔍 Recherchez votre prochaine destination :</h3>
-        <form method="GET" action="recherche.php" style="text-align: center; margin: 20px 0;">
+        <form method="GET" action="presentation.php" style="text-align: center; margin: 20px 0;">
             <input type="text" name="motcle" placeholder="Rechercher un voyage..." required>
             <button type="submit">Rechercher</button>
         </form>
