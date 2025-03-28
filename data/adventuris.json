@@ -1,113 +1,56 @@
 {
     "id": 4,
-    "titre": "Adventuris - La Planète des Explorateurs",
-    "image": "Adventuris.jpg",
-    "date_depart": "2026-01-05",
-    "date_retour": "2026-01-15",
+    "titre": "Adventuris - Planète 4",
+    "image": "adventuris.jpg",
+    "date_depart": "2025-07-01",
+    "date_retour": "2025-07-10",
     "duree": 10,
-    "description": "Un monde d’aventure et d’exploration où les défis sont partout.",
-    "prix_total": 3200,
+    "description": "Description immersive de la planète adventuris.",
+    "prix_total": 3400,
     "etapes": [
         {
-            "titre": "Jungle Luminescente",
-            "date_arrivee": "2026-01-05",
-            "date_depart": "2026-01-10",
-            "duree": 5,
+            "titre": "Étape Alpha - Adventuris",
+            "date_arrivee": "2025-07-01",
+            "date_depart": "2025-07-05",
+            "duree": 4,
             "position": {
-                "gps": "-5.0000, 90.0000",
-                "nom_lieu": "Forêt des Étoiles"
+                "gps": "0.0000, 0.0000",
+                "nom_lieu": "Zone principale de Adventuris"
             },
             "options": [
                 {
-                    "type": "expédition",
-                    "nom": "Randonnée extraterrestre",
+                    "type": "activité",
+                    "nom": "Aventure principale sur Adventuris",
                     "prix_par_personne": 200
                 },
                 {
                     "type": "hébergement",
-                    "nom": "Campement de Luxe",
-                    "prix_par_personne": 250
+                    "nom": "Hébergement galactique",
+                    "prix_par_personne": 180
                 }
             ]
         },
         {
-            "titre": "Cavernes de Cristaux Vivants",
-            "date_arrivee": "2026-01-11",
-            "date_depart": "2026-01-15",
-            "duree": 5,
+            "titre": "Étape Beta - Adventuris",
+            "date_arrivee": "2025-07-06",
+            "date_depart": "2025-07-10",
+            "duree": 4,
             "position": {
-                "gps": "-4.5000, 89.5000",
-                "nom_lieu": "Grotte Chantante"
+                "gps": "0.0000, 0.0000",
+                "nom_lieu": "Zone secondaire de Adventuris"
             },
             "options": [
                 {
-                    "type": "expédition",
-                    "nom": "Spéléologie dans des cavernes de cristaux",
-                    "prix_par_personne": 180
-                },
-                {
-                    "type": "hébergement",
-                    "nom": "Refuge de Cristal",
-                    "prix_par_personne": 240
-                },
-                {
                     "type": "activité",
-                    "nom": "Exploration nocturne guidée",
-                    "prix_par_personne": 170
+                    "nom": "Aventure secondaire sur Adventuris",
+                    "prix_par_personne": 150
+                },
+                {
+                    "type": "restauration",
+                    "nom": "Buffet cosmique",
+                    "prix_par_personne": 60
                 }
             ]
-        }
-    ],
-    "activites": [
-        {
-            "nom": "Randonnée extraterrestre",
-            "description": "Parcourez des jungles bioluminescentes.",
-            "prix": 200
-        },
-        {
-            "nom": "Spéléologie dans des cavernes de cristaux",
-            "description": "Explorez des grottes où les pierres chantent.",
-            "prix": 180
-        },
-        {
-            "nom": "Mission d'exploration spatiale",
-            "description": "Découvrez de nouveaux biomes extraterrestres.",
-            "prix": 250
-        },
-        {
-            "nom": "Survie dans la jungle alien",
-            "description": "Apprenez à survivre dans un environnement hostile.",
-            "prix": 220
-        },
-        {
-            "nom": "Escalade de falaises mouvantes",
-            "description": "Grimpez des parois rocheuses qui changent de forme.",
-            "prix": 210
-        },
-        {
-            "nom": "Tyrolienne entre les cratères",
-            "description": "Glissez au-dessus de ravins magnétiques.",
-            "prix": 150
-        },
-        {
-            "nom": "Navigation sur rivière de lave tiède",
-            "description": "Pilotez un canoë thermique dans un décor spectaculaire.",
-            "prix": 230
-        },
-        {
-            "nom": "Construction d’un abri galactique",
-            "description": "Atelier de survie pour créer son abri extraterrestre.",
-            "prix": 160
-        },
-        {
-            "nom": "Découverte de la faune interstellaire",
-            "description": "Observez des créatures uniques dans leur habitat naturel.",
-            "prix": 190
-        },
-        {
-            "nom": "Exploration nocturne guidée",
-            "description": "Balade de nuit sous les aurores alien.",
-            "prix": 170
         }
     ]
 }
