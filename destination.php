@@ -61,7 +61,7 @@ switch ($filtre) {
                     <p><?= htmlspecialchars($voyage['description']) ?></p>
                     <form method="GET" action="voyage_detail.php">
                         <input type="hidden" name="id" value="<?= $voyage['id'] ?>">
-                        <button class="acheter-btn" type="submit">J’achète ce voyage</button>
+                        <button class="acheter-btn" type="submit">Reserver</button>
                     </form>
                 </a>
             <?php endforeach; ?>
