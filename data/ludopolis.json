@@ -5,7 +5,7 @@
     "date_depart": "2025-07-01",
     "date_retour": "2025-07-10",
     "duree": 10,
-    "specificites": "Une planète transformée en terrain de jeu géant : jeux de rôle, escape rooms, compétitions.",
+    "description": "Une planète transformée en terrain de jeu géant : jeux de rôle, escape rooms, compétitions.",
     "prix_total": 11200,
     "etapes": [
         {
