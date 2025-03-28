@@ -1,105 +1,140 @@
 {
-    "titre": "AquaWorld",
-    "description": "Planète océanique avec vie sous-marine et bulles flottantes.",
-    "etapes": [
+    "id": 2,
+    "titre": "AquaWorld - Aventure Sous-Marine",
+    "image": "aquaworld.jpg",
+    "date_depart": "2025-07-01",
+    "date_retour": "2025-07-10",
+    "duree": 10,
+    "specificites": "Plongée dans les océans d'une planète bleue, avec vie sous-marine fascinante.",
+    "personnes": [
         {
-            "titre": "Étape Alpha",
-            "lieu": "Zone spéciale de AquaWorld",
-            "options": {
-                "activité": [
-                    "Activité unique 1 sur AquaWorld",
-                    "Activité unique 2 sur AquaWorld",
-                    "Expérience immersive 3 sur AquaWorld"
-                ],
-                "hébergement": [
-                    "Cabine spéciale AquaWorld",
-                    "Dôme flottant",
-                    "Refuge de luxe"
-                ],
-                "restauration": [
-                    "Buffet galactique",
-                    "Spécialités de AquaWorld"
-                ],
-                "transport": [
-                    "Navette autonome",
-                    "Tapis volant interstellaire"
-                ]
-            }
+            "nom": "Jean Dupont",
+            "age": 28,
+            "role": "participant"
         },
         {
-            "titre": "Étape Beta",
-            "lieu": "Zone secondaire de AquaWorld",
-            "options": {
-                "activité": [
-                    "Aventure secondaire 1 sur AquaWorld",
-                    "Mini-jeu ou défi 2 sur AquaWorld",
-                    "Rencontre guidée 3 sur AquaWorld"
-                ],
-                "hébergement": [
-                    "Chambre capsule",
-                    "Hôtel conceptuel AquaWorld"
-                ],
-                "restauration": [
-                    "Snack spatial",
-                    "Cantine locale"
-                ],
-                "transport": [
-                    "Module de téléportation",
-                    "Ascenseur orbital"
-                ]
-            }
+            "nom": "Marie Curie",
+            "age": 25,
+            "role": "accompagnatrice"
         }
     ],
-    "activites": [
+    "prix_total": 10600,
+    "etapes": [
         {
-            "nom": "Exploration guidée de AquaWorld",
-            "description": "Découvrez les secrets cachés de AquaWorld avec un guide expert.",
-            "prix": 200
+            "titre": "Découverte de Cité Sous-Marine",
+            "date_arrivee": "2025-07-01",
+            "date_depart": "2025-07-05",
+            "duree": 5,
+            "position": {
+                "gps": "-33.8688, 151.2093",
+                "nom_lieu": "Cité Sous-Marine"
+            },
+            "options": [
+                {
+                    "type": "activité principale",
+                    "nom": "Expérience immersive AquaWorld - Aventure Sous-Marine",
+                    "valeurs_possibles": [
+                        "Standard",
+                        "Premium",
+                        "VIP"
+                    ],
+                    "choix_utilisateur": "Premium",
+                    "personnes": 2,
+                    "prix_par_personne": 250
+                },
+                {
+                    "type": "hébergement",
+                    "nom": "Hôtel AquaWorld - Aventure Sous-Marine",
+                    "valeurs_possibles": [
+                        "Standard",
+                        "Luxe"
+                    ],
+                    "choix_utilisateur": "Luxe",
+                    "personnes": 2,
+                    "prix_par_personne": 180
+                },
+                {
+                    "type": "transport",
+                    "nom": "Portail interdimensionnel",
+                    "valeurs_possibles": [
+                        "Vaisseaux Spatial",
+                        "Portail interdimensionnel"
+                    ],
+                    "choix_utilisateur": "Portail interdimensionnel",
+                    "personnes": 2,
+                    "prix_par_personne": 50,
+                    "autres_champs": {
+                        "vitesse_moyenne": "500 000 km/h"
+                    }
+                },
+                {
+                    "type": "service",
+                    "nom": "Garde d’enfants",
+                    "valeurs_possibles": [
+                        "Garde classique",
+                        "Animation spécialisée"
+                    ],
+                    "choix_utilisateur": "Garde classique",
+                    "personnes": 1,
+                    "prix_par_personne": 100
+                },
+                {
+                    "type": "service",
+                    "nom": "Gestion du linge",
+                    "valeurs_possibles": [
+                        "Lavage simple",
+                        "Pressing premium"
+                    ],
+                    "choix_utilisateur": "Lavage simple",
+                    "personnes": 2,
+                    "prix_par_personne": 20
+                }
+            ],
+            "personnes_supplementaires": [
+                {
+                    "nom": "Invité spécial",
+                    "age": 35,
+                    "role": "conférencier galactique",
+                    "participation": [
+                        "Expérience immersive"
+                    ]
+                }
+            ]
         },
         {
-            "nom": "Aventure nocturne sur AquaWorld",
-            "description": "Balade sous les étoiles et phénomènes naturels uniques de AquaWorld.",
-            "prix": 180
-        },
-        {
-            "nom": "Survie extrême à AquaWorld",
-            "description": "Atelier immersif de survie dans les conditions hostiles de AquaWorld.",
-            "prix": 220
-        },
-        {
-            "nom": "Expédition scientifique sur AquaWorld",
-            "description": "Participez à une mission pour collecter des données extraterrestres.",
-            "prix": 250
-        },
-        {
-            "nom": "Construction d'abri sur AquaWorld",
-            "description": "Apprenez à bâtir votre propre refuge intergalactique.",
-            "prix": 160
-        },
-        {
-            "nom": "Découverte de la faune de AquaWorld",
-            "description": "Observez des créatures uniques dans leur habitat natif.",
-            "prix": 190
-        },
-        {
-            "nom": "Tyrolienne géante de AquaWorld",
-            "description": "Glissez à toute vitesse au-dessus des paysages spectaculaires de AquaWorld.",
-            "prix": 150
-        },
-        {
-            "nom": "Spéléologie de AquaWorld",
-            "description": "Explorez les profondeurs mystérieuses de grottes aux cristaux vivants.",
-            "prix": 210
-        },
-        {
-            "nom": "Parcours d’obstacles de AquaWorld",
-            "description": "Testez vos limites avec des épreuves physiques interstellaires.",
-            "prix": 170
-        },
-        {
-            "nom": "Croisière aérienne autour de AquaWorld",
-            "description": "Profitez d’une vue panoramique grâce à un vaisseau flottant.",
-            "prix": 230
+            "titre": "Exploration de Cité Sous-Marine - Zone 2",
+            "date_arrivee": "2025-07-06",
+            "date_depart": "2025-07-10",
+            "duree": 5,
+            "position": {
+                "gps": "-33.8688, 151.2093",
+                "nom_lieu": "Cité Sous-Marine secondaire"
+            },
+            "options": [
+                {
+                    "type": "activité secondaire",
+                    "nom": "Découverte de AquaWorld - Aventure Sous-Marine",
+                    "valeurs_possibles": [
+                        "Autonome",
+                        "Guidée"
+                    ],
+                    "choix_utilisateur": "Guidée",
+                    "personnes": 2,
+                    "prix_par_personne": 150
+                },
+                {
+                    "type": "restauration",
+                    "nom": "Repas thématique",
+                    "valeurs_possibles": [
+                        "Menu local",
+                        "Menu cosmique"
+                    ],
+                    "choix_utilisateur": "Menu cosmique",
+                    "personnes": 2,
+                    "prix_par_personne": 60
+                }
+            ],
+            "personnes_supplementaires": []
         }
     ]
 }
