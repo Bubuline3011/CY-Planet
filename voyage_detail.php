@@ -1,11 +1,12 @@
 <?php
 session_start();
+
 if (!isset($_SESSION['email'])) {
     header('Location: connexion.php');
     exit();
 }
 
-// Vérifie si un ID est présent et est un entier positif
+// Vérifie si un ID est fourni dans l'URL
 if (!isset($_GET['id']) || !is_numeric($_GET['id']) || (int)$_GET['id'] <= 0) {
     echo "<p>Erreur : Aucun identifiant de voyage valide spécifié.</p>";
     exit;
@@ -13,31 +14,35 @@ if (!isset($_GET['id']) || !is_numeric($_GET['id']) || (int)$_GET['id'] <= 0) {
 
 $id = (int)$_GET['id'];
 
-// Charger la table d'index des fichiers voyages
+// Chemin vers l'index JSON
 $indexPath = 'data/index_voyages.json';
 if (!file_exists($indexPath)) {
-    echo "<p>Erreur : index_voyages.json introuvable.</p>";
+    echo "<p>Erreur : Le fichier index_voyages.json est introuvable.</p>";
     exit;
 }
 
+// Lire l'index des voyages
 $index = json_decode(file_get_contents($indexPath), true);
 
-// Vérifie si l'id est valide dans l'index
+// Vérifie si l'ID demandé existe
 if (!array_key_exists($id, $index)) {
-    echo "<p>Erreur : Voyage inconnu (ID : $id).</p>";
+    echo "<p>Erreur : Aucune destination ne correspond à l’ID $id.</p>";
+    // echo "<pre>"; print_r($index); echo "</pre>"; // Debug si besoin
     exit;
 }
 
+// Charger le fichier JSON correspondant à l'ID
 $filename = 'data/' . $index[$id];
 if (!file_exists($filename)) {
-    echo "<p>Erreur : fichier $filename introuvable.</p>";
+    echo "<p>Erreur : Le fichier voyage <strong>$filename</strong> est introuvable.</p>";
     exit;
 }
 
+// Charger les données du voyage
 $voyage = json_decode(file_get_contents($filename), true);
-$voyage['id'] = $id; // on ajoute l'ID dans le tableau, au cas où il manque
+$voyage['id'] = $id;
 
-// Enregistrement de la consultation dans le profil utilisateur
+// Enregistrer la consultation
 if (isset($_SESSION['email'])) {
     $email = $_SESSION['email'];
     $consultation = [
@@ -64,7 +69,7 @@ if (isset($_SESSION['email'])) {
                         break;
                     }
                 }
-                unset($c); // bonne pratique pour casser la référence
+                unset($c);
 
                 if (!$deja_consulte) {
                     $user['voyages_consultes'][] = $consultation;
@@ -98,7 +103,6 @@ if (isset($_SESSION['email'])) {
         <p><strong>Prix de base :</strong> <?= htmlspecialchars($voyage['prix_total']) ?> €</p>
     </div>
 
-    <!-- Formulaire pour sélectionner les options et personnes supplémentaires -->
     <form method="POST" action="panier.php">
         <input type="hidden" name="voyage_id" value="<?= $id ?>">
 
@@ -108,12 +112,11 @@ if (isset($_SESSION['email'])) {
                     <h3><?= htmlspecialchars($etape['titre']) ?></h3>
                     <p><strong>Lieu :</strong> <?= htmlspecialchars($etape['position']['nom_lieu']) ?></p>
 
-                    <!-- Affichage des options disponibles -->
                     <?php if (isset($etape['options'])): ?>
                         <?php foreach ($etape['options'] as $option_index => $option): ?>
-                            <label for="option_<?= $etape_index ?>_<?= $option_index ?>">
+                            <label>
                                 <?= ucfirst(htmlspecialchars($option['type'])) ?> :
-                                <?= htmlspecialchars($option['nom']) ?> (<?= $option['prix_par_personne'] ?> € par personne)
+                                <?= htmlspecialchars($option['nom']) ?> (<?= $option['prix_par_personne'] ?> € / personne)
                             </label><br>
                             <input type="checkbox" 
                                    name="options[<?= $etape_index ?>][<?= $option_index ?>]" 
@@ -123,7 +126,6 @@ if (isset($_SESSION['email'])) {
                         <?php endforeach; ?>
                     <?php endif; ?>
 
-                    <!-- Liste déroulante pour le nombre de personnes supplémentaires -->
                     <label for="supp_<?= $etape_index ?>"><strong>Personnes supplémentaires pour cette étape :</strong></label><br>
                     <select name="personnes_supplementaires[<?= $etape_index ?>]" id="supp_<?= $etape_index ?>">
                         <?php for ($i = 0; $i <= 5; $i++): ?>
@@ -133,6 +135,8 @@ if (isset($_SESSION['email'])) {
                     <br><br>
                 </div>
             <?php endforeach; ?>
+        <?php else: ?>
+            <p>Aucune étape définie pour ce voyage.</p>
         <?php endif; ?>
 
         <button type="submit" class="acheter-btn">Passer au paiement</button>
@@ -140,4 +144,3 @@ if (isset($_SESSION['email'])) {
 </main>
 </body>
 </html>
-
