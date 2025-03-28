@@ -1,4 +1,11 @@
 {
+    "id": 6,
+    
+    "image": "CinéRéalité.jpg",
+    "date_depart": "2026-04-01",
+    "date_retour": "2026-04-10",
+    "duree": 10,
+    "prix_total": 3400,
     "titre": "Dreamara",
     "description": "Planète onirique inspirée des rêves et de la fantaisie.",
     "etapes": [
