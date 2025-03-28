@@ -1,11 +1,11 @@
 {
-    "id": 2,
-    "titre": "AquaWorld - Aventure Sous-Marine",
-    "image": "aquaworld.jpg",
+    "id": 8,
+    "titre": "CinéRéalité - Voyage dans le Cinéma",
+    "image": "cinerealite.jpg",
     "date_depart": "2025-07-01",
     "date_retour": "2025-07-10",
     "duree": 10,
-    "specificites": "Plongée dans les océans d'une planète bleue, avec vie sous-marine fascinante.",
+    "specificites": "Immersion dans des films interactifs, cascades, et effets spéciaux en temps réel.",
     "personnes": [
         {
             "nom": "Jean Dupont",
@@ -18,21 +18,21 @@
             "role": "accompagnatrice"
         }
     ],
-    "prix_total": 10600,
+    "prix_total": 11400,
     "etapes": [
         {
-            "titre": "Découverte de Cité Sous-Marine",
+            "titre": "Découverte de Ville des Genres",
             "date_arrivee": "2025-07-01",
             "date_depart": "2025-07-05",
             "duree": 5,
             "position": {
-                "gps": "-33.8688, 151.2093",
-                "nom_lieu": "Cité Sous-Marine"
+                "gps": "48.8566, 2.3522",
+                "nom_lieu": "Ville des Genres"
             },
             "options": [
                 {
                     "type": "activité principale",
-                    "nom": "Expérience immersive AquaWorld - Aventure Sous-Marine",
+                    "nom": "Expérience immersive CinéRéalité - Voyage dans le Cinéma",
                     "valeurs_possibles": [
                         "Standard",
                         "Premium",
@@ -44,7 +44,7 @@
                 },
                 {
                     "type": "hébergement",
-                    "nom": "Hôtel AquaWorld - Aventure Sous-Marine",
+                    "nom": "Hôtel CinéRéalité - Voyage dans le Cinéma",
                     "valeurs_possibles": [
                         "Standard",
                         "Luxe"
@@ -102,18 +102,18 @@
             ]
         },
         {
-            "titre": "Exploration de Cité Sous-Marine - Zone 2",
+            "titre": "Exploration de Ville des Genres - Zone 2",
             "date_arrivee": "2025-07-06",
             "date_depart": "2025-07-10",
             "duree": 5,
             "position": {
-                "gps": "-33.8688, 151.2093",
-                "nom_lieu": "Cité Sous-Marine secondaire"
+                "gps": "48.8566, 2.3522",
+                "nom_lieu": "Ville des Genres secondaire"
             },
             "options": [
                 {
                     "type": "activité secondaire",
-                    "nom": "Découverte de AquaWorld - Aventure Sous-Marine",
+                    "nom": "Découverte de CinéRéalité - Voyage dans le Cinéma",
                     "valeurs_possibles": [
                         "Autonome",
                         "Guidée"
