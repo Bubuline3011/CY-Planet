@@ -1,111 +1,127 @@
 {
     "id": 6,
-    
-    "image": "CinéRéalité.jpg",
-    "date_depart": "2026-04-01",
-    "date_retour": "2026-04-10",
+    "titre": "Dreamara - Le Monde des Rêves",
+    "image": "Dreamara.jpg",
+    "date_depart": "2026-05-01",
+    "date_retour": "2026-05-10",
     "duree": 10,
-    "prix_total": 3400,
-    "titre": "Dreamara",
-    "description": "Planète onirique inspirée des rêves et de la fantaisie.",
+    "description": "Un voyage poétique à travers des paysages oniriques et colorés.",
+    "prix_total": 3500,
     "etapes": [
         {
-            "titre": "Étape Alpha",
-            "lieu": "Zone spéciale de Dreamara",
-            "options": {
-                "activité": [
-                    "Activité unique 1 sur Dreamara",
-                    "Activité unique 2 sur Dreamara",
-                    "Expérience immersive 3 sur Dreamara"
-                ],
-                "hébergement": [
-                    "Cabine spéciale Dreamara",
-                    "Dôme flottant",
-                    "Refuge de luxe"
-                ],
-                "restauration": [
-                    "Buffet galactique",
-                    "Spécialités de Dreamara"
-                ],
-                "transport": [
-                    "Navette autonome",
-                    "Tapis volant interstellaire"
-                ]
-            }
+            "titre": "Forêt des Nuages",
+            "date_arrivee": "2026-05-01",
+            "date_depart": "2026-05-05",
+            "duree": 5,
+            "position": {
+                "gps": "60.0000, -30.0000",
+                "nom_lieu": "Clairière des Brumes"
+            },
+            "options": [
+                {
+                    "type": "activité",
+                    "nom": "Balade poétique en lévitation",
+                    "prix_par_personne": 190
+                },
+                {
+                    "type": "hébergement",
+                    "nom": "Cabane suspendue",
+                    "prix_par_personne": 210
+                },
+                {
+                    "type": "restauration",
+                    "nom": "Brunch chromatique",
+                    "prix_par_personne": 95
+                },
+                {
+                    "type": "transport",
+                    "nom": "Montgolfière astrale",
+                    "prix_par_personne": 70
+                }
+            ]
         },
         {
-            "titre": "Étape Beta",
-            "lieu": "Zone secondaire de Dreamara",
-            "options": {
-                "activité": [
-                    "Aventure secondaire 1 sur Dreamara",
-                    "Mini-jeu ou défi 2 sur Dreamara",
-                    "Rencontre guidée 3 sur Dreamara"
-                ],
-                "hébergement": [
-                    "Chambre capsule",
-                    "Hôtel conceptuel Dreamara"
-                ],
-                "restauration": [
-                    "Snack spatial",
-                    "Cantine locale"
-                ],
-                "transport": [
-                    "Module de téléportation",
-                    "Ascenseur orbital"
-                ]
-            }
+            "titre": "Lac des Songes",
+            "date_arrivee": "2026-05-06",
+            "date_depart": "2026-05-10",
+            "duree": 5,
+            "position": {
+                "gps": "60.5000, -30.5000",
+                "nom_lieu": "Île Arc-en-Ciel"
+            },
+            "options": [
+                {
+                    "type": "activité",
+                    "nom": "Navigation sur eaux luminescentes",
+                    "prix_par_personne": 180
+                },
+                {
+                    "type": "hébergement",
+                    "nom": "Dôme de rêve",
+                    "prix_par_personne": 250
+                },
+                {
+                    "type": "restauration",
+                    "nom": "Repas musical onirique",
+                    "prix_par_personne": 100
+                },
+                {
+                    "type": "transport",
+                    "nom": "Barque volante",
+                    "prix_par_personne": 60
+                }
+            ]
         }
     ],
     "activites": [
         {
             "nom": "Exploration guidée de Dreamara",
-            "description": "Découvrez les secrets cachés de Dreamara avec un guide expert.",
+            "description": "Explorez les mondes irréels de Dreamara accompagnés d’un guide des rêves.",
             "prix": 200
         },
         {
             "nom": "Aventure nocturne sur Dreamara",
-            "description": "Balade sous les étoiles et phénomènes naturels uniques de Dreamara.",
+            "description": "Marchez à travers des illusions étoilées sous un ciel vivant.",
             "prix": 180
         },
         {
             "nom": "Survie extrême à Dreamara",
-            "description": "Atelier immersif de survie dans les conditions hostiles de Dreamara.",
+            "description": "Apprenez à naviguer dans les dimensions changeantes de Dreamara.",
             "prix": 220
         },
         {
             "nom": "Expédition scientifique sur Dreamara",
-            "description": "Participez à une mission pour collecter des données extraterrestres.",
+            "description": "Analysez les particules de rêve et les structures irréelles.",
             "prix": 250
         },
         {
             "nom": "Construction d'abri sur Dreamara",
-            "description": "Apprenez à bâtir votre propre refuge intergalactique.",
+            "description": "Créez votre cocon personnel dans un monde mouvant.",
             "prix": 160
         },
         {
             "nom": "Découverte de la faune de Dreamara",
-            "description": "Observez des créatures uniques dans leur habitat natif.",
+            "description": "Rencontrez des créatures issues de l’imaginaire pur.",
             "prix": 190
         },
         {
             "nom": "Tyrolienne géante de Dreamara",
-            "description": "Glissez à toute vitesse au-dessus des paysages spectaculaires de Dreamara.",
+            "description": "Glissez au-dessus de paysages flottants et colorés.",
             "prix": 150
         },
         {
             "nom": "Spéléologie de Dreamara",
-            "description": "Explorez les profondeurs mystérieuses de grottes aux cristaux vivants.",
+            "description": "Explorez des cavernes qui réagissent à vos pensées.",
             "prix": 210
         },
         {
             "nom": "Parcours d’obstacles de Dreamara",
-            "description": "Testez vos limites avec des épreuves physiques interstellaires.",
+            "description": "Affrontez des épreuves poétiques et mouvantes.",
             "prix": 170
         },
         {
             "nom": "Croisière aérienne autour de Dreamara",
-            "description": "Profitez d’une vue panoramique grâce à un vaisseau flottant.",
+            "description": "Admirez le monde des rêves depuis un nuage motorisé.",
             "prix": 230
         }
     ]
