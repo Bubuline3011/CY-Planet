@@ -1,128 +1,56 @@
 {
     "id": 2,
-    "titre": "AquaWorld - Expérience Sous-Marine",
-    "image": "AquaWorld.jpg",
-    "date_depart": "2026-02-01",
-    "date_retour": "2026-02-10",
+    "titre": "Aquaworld - Planète 2",
+    "image": "aquaworld.jpg",
+    "date_depart": "2025-07-01",
+    "date_retour": "2025-07-10",
     "duree": 10,
-    "description": "Planète océanique avec vie sous-marine, bulles flottantes, et aventures aquatiques uniques.",
-    "prix_total": 3100,
+    "description": "Description immersive de la planète aquaworld.",
+    "prix_total": 3200,
     "etapes": [
         {
-            "titre": "Dôme Océanique",
-            "date_arrivee": "2026-02-01",
-            "date_depart": "2026-02-05",
-            "duree": 5,
+            "titre": "Étape Alpha - Aquaworld",
+            "date_arrivee": "2025-07-01",
+            "date_depart": "2025-07-05",
+            "duree": 4,
             "position": {
-                "gps": "-20.0000, 70.0000",
-                "nom_lieu": "Zone spéciale de AquaWorld"
+                "gps": "0.0000, 0.0000",
+                "nom_lieu": "Zone principale de Aquaworld"
             },
             "options": [
                 {
                     "type": "activité",
-                    "nom": "Activité unique 1 sur AquaWorld",
-                    "prix_par_personne": 190
+                    "nom": "Aventure principale sur Aquaworld",
+                    "prix_par_personne": 200
                 },
                 {
                     "type": "hébergement",
-                    "nom": "Dôme flottant",
-                    "prix_par_personne": 220
+                    "nom": "Hébergement galactique",
+                    "prix_par_personne": 180
+                }
+            ]
+        },
+        {
+            "titre": "Étape Beta - Aquaworld",
+            "date_arrivee": "2025-07-06",
+            "date_depart": "2025-07-10",
+            "duree": 4,
+            "position": {
+                "gps": "0.0000, 0.0000",
+                "nom_lieu": "Zone secondaire de Aquaworld"
+            },
+            "options": [
+                {
+                    "type": "activité",
+                    "nom": "Aventure secondaire sur Aquaworld",
+                    "prix_par_personne": 150
                 },
                 {
                     "type": "restauration",
-                    "nom": "Spécialités de AquaWorld",
-                    "prix_par_personne": 90
-                },
-                {
-                    "type": "transport",
-                    "nom": "Tapis volant interstellaire",
+                    "nom": "Buffet cosmique",
                     "prix_par_personne": 60
                 }
             ]
-        },
-        {
-            "titre": "Récif de Lumière",
-            "date_arrivee": "2026-02-06",
-            "date_depart": "2026-02-10",
-            "duree": 5,
-            "position": {
-                "gps": "-19.5000, 69.5000",
-                "nom_lieu": "Zone secondaire de AquaWorld"
-            },
-            "options": [
-                {
-                    "type": "activité",
-                    "nom": "Mini-jeu ou défi 2 sur AquaWorld",
-                    "prix_par_personne": 170
-                },
-                {
-                    "type": "hébergement",
-                    "nom": "Hôtel conceptuel AquaWorld",
-                    "prix_par_personne": 240
-                },
-                {
-                    "type": "restauration",
-                    "nom": "Cantine locale",
-                    "prix_par_personne": 80
-                },
-                {
-                    "type": "transport",
-                    "nom": "Ascenseur orbital",
-                    "prix_par_personne": 55
-                }
-            ]
-        }
-    ],
-    "activites": [
-        {
-            "nom": "Exploration guidée de AquaWorld",
-            "description": "Découvrez les secrets cachés de AquaWorld avec un guide expert.",
-            "prix": 200
-        },
-        {
-            "nom": "Aventure nocturne sur AquaWorld",
-            "description": "Balade sous les étoiles et phénomènes naturels uniques de AquaWorld.",
-            "prix": 180
-        },
-        {
-            "nom": "Survie extrême à AquaWorld",
-            "description": "Atelier immersif de survie dans les conditions hostiles de AquaWorld.",
-            "prix": 220
-        },
-        {
-            "nom": "Expédition scientifique sur AquaWorld",
-            "description": "Participez à une mission pour collecter des données extraterrestres.",
-            "prix": 250
-        },
-        {
-            "nom": "Construction d'abri sur AquaWorld",
-            "description": "Apprenez à bâtir votre propre refuge intergalactique.",
-            "prix": 160
-        },
-        {
-            "nom": "Découverte de la faune de AquaWorld",
-            "description": "Observez des créatures uniques dans leur habitat natif.",
-            "prix": 190
-        },
-        {
-            "nom": "Tyrolienne géante de AquaWorld",
-            "description": "Glissez à toute vitesse au-dessus des paysages spectaculaires de AquaWorld.",
-            "prix": 150
-        },
-        {
-            "nom": "Spéléologie de AquaWorld",
-            "description": "Explorez les profondeurs mystérieuses de grottes aux cristaux vivants.",
-            "prix": 210
-        },
-        {
-            "nom": "Parcours d’obstacles de AquaWorld",
-            "description": "Testez vos limites avec des épreuves physiques interstellaires.",
-            "prix": 170
-        },
-        {
-            "nom": "Croisière aérienne autour de AquaWorld",
-            "description": "Profitez d’une vue panoramique grâce à un vaisseau flottant.",
-            "prix": 230
         }
     ]
 }
