@@ -1,6 +1,13 @@
 {
-    "titre": "Footbolis",
-    "description": "Planète dédiée au football galactique avec des stades en apesanteur.",
+    "id": 1,
+    "titre": "Footbolis - L'Expérience Football Intergalactique",
+    "image": "footbolis.jpg",
+    "date_depart": "2025-07-01",
+    "date_retour": "2025-07-10",
+    "duree": 10,
+    "description": "Voyage dédié aux passionnés de football avec des matchs en apesanteur et des rencontres avec des légendes du sport.",
+    "prix_total": 10200,
+    
     "etapes": [
         {
             "titre": "Stade Gravitationnel",
