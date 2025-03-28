@@ -8,12 +8,12 @@
         "age": 19,
         "telephone": "0646807561",
         "date_inscription": "2024-01-15",
-        "derniere_connexion": "2025-03-27",
+        "derniere_connexion": "2025-03-28",
         "voyages_consultes": [
             {
                 "id": 1,
                 "nom": "Footbolis",
-                "date_consultation": "2025-03-28 01:07:06"
+                "date_consultation": "2025-03-28 15:06:46"
             },
             {
                 "id": 2,
@@ -44,6 +44,12 @@
                 "nom": "Musicaria - La Planète Musicale",
                 "date_achat": "2025-03-27",
                 "prix_total": 9060
+            },
+            {
+                "id": "1",
+                "nom": "Footbolis - L'Expérience Football Intergalactique",
+                "date_achat": "2025-03-28",
+                "prix_total": 12900
             }
         ]
     },

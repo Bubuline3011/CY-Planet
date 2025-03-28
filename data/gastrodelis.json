@@ -1,0 +1,82 @@
+{
+    "titre": "Gastrodelis",
+    "description": "Planète culinaire interstellaire pleine de spécialités exotiques.",
+    "etapes": [
+        {
+            "titre": "Région des Épices Étoilées",
+            "lieu": "Crater Gourmet",
+            "options": {
+                "activité": [
+                    "Cours de cuisine spatiale",
+                    "Atelier épices planétaires",
+                    "Visite de marché flottant",
+                    "Rencontre avec un chef étoilé"
+                ],
+                "hébergement": [
+                    "Suite gastronomique",
+                    "Hôtel des chefs"
+                ],
+                "restauration": [
+                    "Dégustation 7 plats",
+                    "Bar à soupes stellaires"
+                ],
+                "transport": [
+                    "Navette cuisine volante",
+                    "Chariot-épices à propulsion"
+                ]
+            }
+        }
+    ],
+    "activites": [
+        {
+            "nom": "Exploration guidée de Gastrodelis",
+            "description": "Découvrez les secrets cachés de Gastrodelis avec un guide expert.",
+            "prix": 200
+        },
+        {
+            "nom": "Aventure nocturne sur Gastrodelis",
+            "description": "Balade sous les étoiles et phénomènes naturels uniques de Gastrodelis.",
+            "prix": 180
+        },
+        {
+            "nom": "Survie extrême à Gastrodelis",
+            "description": "Atelier immersif de survie dans les conditions hostiles de Gastrodelis.",
+            "prix": 220
+        },
+        {
+            "nom": "Expédition scientifique sur Gastrodelis",
+            "description": "Participez à une mission pour collecter des données extraterrestres.",
+            "prix": 250
+        },
+        {
+            "nom": "Construction d'abri sur Gastrodelis",
+            "description": "Apprenez à bâtir votre propre refuge intergalactique.",
+            "prix": 160
+        },
+        {
+            "nom": "Découverte de la faune de Gastrodelis",
+            "description": "Observez des créatures uniques dans leur habitat natif.",
+            "prix": 190
+        },
+        {
+            "nom": "Tyrolienne géante de Gastrodelis",
+            "description": "Glissez à toute vitesse au-dessus des paysages spectaculaires de Gastrodelis.",
+            "prix": 150
+        },
+        {
+            "nom": "Spéléologie de Gastrodelis",
+            "description": "Explorez les profondeurs mystérieuses de grottes aux cristaux vivants.",
+            "prix": 210
+        },
+        {
+            "nom": "Parcours d’obstacles de Gastrodelis",
+            "description": "Testez vos limites avec des épreuves physiques interstellaires.",
+            "prix": 170
+        },
+        {
+            "nom": "Croisière aérienne autour de Gastrodelis",
+            "description": "Profitez d’une vue panoramique grâce à un vaisseau flottant.",
+            "prix": 230
+        }
+    ]
+}
