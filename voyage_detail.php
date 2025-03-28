@@ -1,6 +1,9 @@
 <?php
 session_start();
-
+if (!isset($_SESSION['email'])) {
+    header('Location: connexion.php');
+    exit();
+}
 // Vérifie si un ID est présent et est un entier positif
 if (!isset($_GET['id']) || !is_numeric($_GET['id']) || (int)$_GET['id'] <= 0) {
     echo "<p>Erreur : Aucun identifiant de voyage valide spécifié.</p>";
