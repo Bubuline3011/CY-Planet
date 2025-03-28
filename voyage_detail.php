@@ -1,35 +1,3 @@
-<?php
-session_start();
-
-if (!isset($_GET['id']) || !is_numeric($_GET['id']) || $_GET['id'] <= 0) {
-    echo "<p>Erreur : aucun identifiant de voyage fourni dans l'URL.</p>";
-    exit;
-}
-
-$id = (int)$_GET['id'];
-
-$indexPath = 'data/index_voyages.json';
-if (!file_exists($indexPath)) {
-    echo "<p>Erreur : fichier index_voyages.json introuvable.</p>";
-    exit;
-}
-
-$index = json_decode(file_get_contents($indexPath), true);
-if (!isset($index[$id])) {
-    echo "<p>Erreur : ID de voyage non trouvé dans l’index.</p>";
-    exit;
-}
-
-$filename = 'data/' . $index[$id];
-if (!file_exists($filename)) {
-    echo "<p>Erreur : le fichier JSON du voyage est manquant.</p>";
-    exit;
-}
-
-$voyage = json_decode(file_get_contents($filename), true);
-$voyage['id'] = $id;
-?>
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -82,6 +50,27 @@ $voyage['id'] = $id;
             <?php endforeach; ?>
         <?php else: ?>
             <p>Aucune étape définie pour ce voyage.</p>
+        <?php endif; ?>
+
+        <!-- Nouvelle section pour afficher toutes les activités disponibles -->
+        <?php if (!empty($voyage['activites'])): ?>
+            <div class="activites">
+                <h3>Activités disponibles</h3>
+                <p>Choisissez parmi nos activités optionnelles :</p>
+                
+                <?php foreach ($voyage['activites'] as $activite_index => $activite): ?>
+                    <div class="activite">
+                        <label>
+                            <input type="checkbox" 
+                                   name="activites[<?= $activite_index ?>]" 
+                                   value="<?= htmlspecialchars($activite['nom']) ?>|<?= htmlspecialchars($activite['prix']) ?>">
+                            <?= htmlspecialchars($activite['nom']) ?> - 
+                            <?= htmlspecialchars($activite['prix']) ?> €
+                        </label>
+                        <p><?= htmlspecialchars($activite['description']) ?></p>
+                    </div>
+                <?php endforeach; ?>
+            </div>
         <?php endif; ?>
 
         <button type="submit" class="acheter-btn">Passer au paiement</button>
