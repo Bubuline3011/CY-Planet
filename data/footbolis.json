@@ -1,107 +1,140 @@
 {
-    "titre": "Footbolis",
-    "description": "Planète dédiée au football galactique avec des stades en apesanteur.",
-    "etapes": [
+    "id": 1,
+    "titre": "Footbolis - L'Expérience Football Intergalactique",
+    "image": "footbolis.jpg",
+    "date_depart": "2025-07-01",
+    "date_retour": "2025-07-10",
+    "duree": 10,
+    "specificites": "Voyage dédié aux passionnés de football avec des matchs en apesanteur et des rencontres avec des légendes du sport.",
+    "personnes": [
         {
-            "titre": "Stade Gravitationnel",
-            "lieu": "Zone Flottante A",
-            "options": {
-                "activité": [
-                    "Match intergalactique",
-                    "Parcours de dribbles en apesanteur",
-                    "Tournoi de tirs au but anti-gravité",
-                    "Match avec légendes du foot spatial"
-                ],
-                "hébergement": [
-                    "Chambre ballon deluxe",
-                    "Dortoir astro-foot",
-                    "Cabine tactique"
-                ],
-                "restauration": [
-                    "Buffet énergétique du coach",
-                    "Café des supporters"
-                ],
-                "transport": [
-                    "Navette-stade",
-                    "Chaussures à propulsion",
-                    "Tapis volant sportif"
-                ]
-            }
+            "nom": "Jean Dupont",
+            "age": 28,
+            "role": "participant"
         },
         {
-            "titre": "Musée du Football Galactique",
-            "lieu": "Secteur Mémoire Sportive",
-            "options": {
-                "activité": [
-                    "Visite interactive des trophées",
-                    "Immersion VR dans les plus beaux buts",
-                    "Atelier stratégie avec entraîneur virtuel"
-                ],
-                "hébergement": [
-                    "Capsule rétro",
-                    "Chambre trophée holographique"
-                ],
-                "restauration": [
-                    "Snack étoilé",
-                    "Restaurant des fans historiques"
-                ],
-                "transport": [
-                    "Hoverbus",
-                    "Téléportation VR"
-                ]
-            }
+            "nom": "Marie Curie",
+            "age": 25,
+            "role": "accompagnatrice"
         }
     ],
-    "activites": [
+    "prix_total": 10200,
+    "etapes": [
         {
-            "nom": "Exploration guidée de Footbolis",
-            "description": "Découvrez les secrets cachés de Footbolis avec un guide expert.",
-            "prix": 200
+            "titre": "Découverte de Stade Spatial de Footbolis",
+            "date_arrivee": "2025-07-01",
+            "date_depart": "2025-07-05",
+            "duree": 5,
+            "position": {
+                "gps": "34.0522, -118.2437",
+                "nom_lieu": "Stade Spatial de Footbolis"
+            },
+            "options": [
+                {
+                    "type": "activité principale",
+                    "nom": "Expérience immersive Footbolis - L'Expérience Football Intergalactique",
+                    "valeurs_possibles": [
+                        "Standard",
+                        "Premium",
+                        "VIP"
+                    ],
+                    "choix_utilisateur": "Premium",
+                    "personnes": 2,
+                    "prix_par_personne": 250
+                },
+                {
+                    "type": "hébergement",
+                    "nom": "Hôtel Footbolis - L'Expérience Football Intergalactique",
+                    "valeurs_possibles": [
+                        "Standard",
+                        "Luxe"
+                    ],
+                    "choix_utilisateur": "Luxe",
+                    "personnes": 2,
+                    "prix_par_personne": 180
+                },
+                {
+                    "type": "transport",
+                    "nom": "Portail interdimensionnel",
+                    "valeurs_possibles": [
+                        "Vaisseaux Spatial",
+                        "Portail interdimensionnel"
+                    ],
+                    "choix_utilisateur": "Portail interdimensionnel",
+                    "personnes": 2,
+                    "prix_par_personne": 50,
+                    "autres_champs": {
+                        "vitesse_moyenne": "500 000 km/h"
+                    }
+                },
+                {
+                    "type": "service",
+                    "nom": "Garde d’enfants",
+                    "valeurs_possibles": [
+                        "Garde classique",
+                        "Animation spécialisée"
+                    ],
+                    "choix_utilisateur": "Garde classique",
+                    "personnes": 1,
+                    "prix_par_personne": 100
+                },
+                {
+                    "type": "service",
+                    "nom": "Gestion du linge",
+                    "valeurs_possibles": [
+                        "Lavage simple",
+                        "Pressing premium"
+                    ],
+                    "choix_utilisateur": "Lavage simple",
+                    "personnes": 2,
+                    "prix_par_personne": 20
+                }
+            ],
+            "personnes_supplementaires": [
+                {
+                    "nom": "Invité spécial",
+                    "age": 35,
+                    "role": "conférencier galactique",
+                    "participation": [
+                        "Expérience immersive"
+                    ]
+                }
+            ]
         },
         {
-            "nom": "Aventure nocturne sur Footbolis",
-            "description": "Balade sous les étoiles et phénomènes naturels uniques de Footbolis.",
-            "prix": 180
-        },
-        {
-            "nom": "Survie extrême à Footbolis",
-            "description": "Atelier immersif de survie dans les conditions hostiles de Footbolis.",
-            "prix": 220
-        },
-        {
-            "nom": "Expédition scientifique sur Footbolis",
-            "description": "Participez à une mission pour collecter des données extraterrestres.",
-            "prix": 250
-        },
-        {
-            "nom": "Construction d'abri sur Footbolis",
-            "description": "Apprenez à bâtir votre propre refuge intergalactique.",
-            "prix": 160
-        },
-        {
-            "nom": "Découverte de la faune de Footbolis",
-            "description": "Observez des créatures uniques dans leur habitat natif.",
-            "prix": 190
-        },
-        {
-            "nom": "Tyrolienne géante de Footbolis",
-            "description": "Glissez à toute vitesse au-dessus des paysages spectaculaires de Footbolis.",
-            "prix": 150
-        },
-        {
-            "nom": "Spéléologie de Footbolis",
-            "description": "Explorez les profondeurs mystérieuses de grottes aux cristaux vivants.",
-            "prix": 210
-        },
-        {
-            "nom": "Parcours d’obstacles de Footbolis",
-            "description": "Testez vos limites avec des épreuves physiques interstellaires.",
-            "prix": 170
-        },
-        {
-            "nom": "Croisière aérienne autour de Footbolis",
-            "description": "Profitez d’une vue panoramique grâce à un vaisseau flottant.",
-            "prix": 230
+            "titre": "Exploration de Stade Spatial de Footbolis - Zone 2",
+            "date_arrivee": "2025-07-06",
+            "date_depart": "2025-07-10",
+            "duree": 5,
+            "position": {
+                "gps": "34.0522, -118.2437",
+                "nom_lieu": "Stade Spatial de Footbolis secondaire"
+            },
+            "options": [
+                {
+                    "type": "activité secondaire",
+                    "nom": "Découverte de Footbolis - L'Expérience Football Intergalactique",
+                    "valeurs_possibles": [
+                        "Autonome",
+                        "Guidée"
+                    ],
+                    "choix_utilisateur": "Guidée",
+                    "personnes": 2,
+                    "prix_par_personne": 150
+                },
+                {
+                    "type": "restauration",
+                    "nom": "Repas thématique",
+                    "valeurs_possibles": [
+                        "Menu local",
+                        "Menu cosmique"
+                    ],
+                    "choix_utilisateur": "Menu cosmique",
+                    "personnes": 2,
+                    "prix_par_personne": 60
+                }
+            ],
+            "personnes_supplementaires": []
         }
     ]
 }
