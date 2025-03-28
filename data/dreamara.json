@@ -1,105 +1,140 @@
 {
-    "titre": "Dreamara",
-    "description": "Planète onirique inspirée des rêves et de la fantaisie.",
-    "etapes": [
+    "id": 5,
+    "titre": "Dreamara - Le Monde des Rêves",
+    "image": "dreamara.jpg",
+    "date_depart": "2025-07-01",
+    "date_retour": "2025-07-10",
+    "duree": 10,
+    "specificites": "Un voyage poétique à travers des paysages oniriques et colorés.",
+    "personnes": [
         {
-            "titre": "Étape Alpha",
-            "lieu": "Zone spéciale de Dreamara",
-            "options": {
-                "activité": [
-                    "Activité unique 1 sur Dreamara",
-                    "Activité unique 2 sur Dreamara",
-                    "Expérience immersive 3 sur Dreamara"
-                ],
-                "hébergement": [
-                    "Cabine spéciale Dreamara",
-                    "Dôme flottant",
-                    "Refuge de luxe"
-                ],
-                "restauration": [
-                    "Buffet galactique",
-                    "Spécialités de Dreamara"
-                ],
-                "transport": [
-                    "Navette autonome",
-                    "Tapis volant interstellaire"
-                ]
-            }
+            "nom": "Jean Dupont",
+            "age": 28,
+            "role": "participant"
         },
         {
-            "titre": "Étape Beta",
-            "lieu": "Zone secondaire de Dreamara",
-            "options": {
-                "activité": [
-                    "Aventure secondaire 1 sur Dreamara",
-                    "Mini-jeu ou défi 2 sur Dreamara",
-                    "Rencontre guidée 3 sur Dreamara"
-                ],
-                "hébergement": [
-                    "Chambre capsule",
-                    "Hôtel conceptuel Dreamara"
-                ],
-                "restauration": [
-                    "Snack spatial",
-                    "Cantine locale"
-                ],
-                "transport": [
-                    "Module de téléportation",
-                    "Ascenseur orbital"
-                ]
-            }
+            "nom": "Marie Curie",
+            "age": 25,
+            "role": "accompagnatrice"
         }
     ],
-    "activites": [
+    "prix_total": 12000,
+    "etapes": [
         {
-            "nom": "Exploration guidée de Dreamara",
-            "description": "Découvrez les secrets cachés de Dreamara avec un guide expert.",
-            "prix": 200
+            "titre": "Découverte de Île Arc-en-Ciel",
+            "date_arrivee": "2025-07-01",
+            "date_depart": "2025-07-05",
+            "duree": 5,
+            "position": {
+                "gps": "37.7749, -122.4194",
+                "nom_lieu": "Île Arc-en-Ciel"
+            },
+            "options": [
+                {
+                    "type": "activité principale",
+                    "nom": "Expérience immersive Dreamara - Le Monde des Rêves",
+                    "valeurs_possibles": [
+                        "Standard",
+                        "Premium",
+                        "VIP"
+                    ],
+                    "choix_utilisateur": "Premium",
+                    "personnes": 2,
+                    "prix_par_personne": 250
+                },
+                {
+                    "type": "hébergement",
+                    "nom": "Hôtel Dreamara - Le Monde des Rêves",
+                    "valeurs_possibles": [
+                        "Standard",
+                        "Luxe"
+                    ],
+                    "choix_utilisateur": "Luxe",
+                    "personnes": 2,
+                    "prix_par_personne": 180
+                },
+                {
+                    "type": "transport",
+                    "nom": "Portail interdimensionnel",
+                    "valeurs_possibles": [
+                        "Vaisseaux Spatial",
+                        "Portail interdimensionnel"
+                    ],
+                    "choix_utilisateur": "Portail interdimensionnel",
+                    "personnes": 2,
+                    "prix_par_personne": 50,
+                    "autres_champs": {
+                        "vitesse_moyenne": "500 000 km/h"
+                    }
+                },
+                {
+                    "type": "service",
+                    "nom": "Garde d’enfants",
+                    "valeurs_possibles": [
+                        "Garde classique",
+                        "Animation spécialisée"
+                    ],
+                    "choix_utilisateur": "Garde classique",
+                    "personnes": 1,
+                    "prix_par_personne": 100
+                },
+                {
+                    "type": "service",
+                    "nom": "Gestion du linge",
+                    "valeurs_possibles": [
+                        "Lavage simple",
+                        "Pressing premium"
+                    ],
+                    "choix_utilisateur": "Lavage simple",
+                    "personnes": 2,
+                    "prix_par_personne": 20
+                }
+            ],
+            "personnes_supplementaires": [
+                {
+                    "nom": "Invité spécial",
+                    "age": 35,
+                    "role": "conférencier galactique",
+                    "participation": [
+                        "Expérience immersive"
+                    ]
+                }
+            ]
         },
         {
-            "nom": "Aventure nocturne sur Dreamara",
-            "description": "Balade sous les étoiles et phénomènes naturels uniques de Dreamara.",
-            "prix": 180
-        },
-        {
-            "nom": "Survie extrême à Dreamara",
-            "description": "Atelier immersif de survie dans les conditions hostiles de Dreamara.",
-            "prix": 220
-        },
-        {
-            "nom": "Expédition scientifique sur Dreamara",
-            "description": "Participez à une mission pour collecter des données extraterrestres.",
-            "prix": 250
-        },
-        {
-            "nom": "Construction d'abri sur Dreamara",
-            "description": "Apprenez à bâtir votre propre refuge intergalactique.",
-            "prix": 160
-        },
-        {
-            "nom": "Découverte de la faune de Dreamara",
-            "description": "Observez des créatures uniques dans leur habitat natif.",
-            "prix": 190
-        },
-        {
-            "nom": "Tyrolienne géante de Dreamara",
-            "description": "Glissez à toute vitesse au-dessus des paysages spectaculaires de Dreamara.",
-            "prix": 150
-        },
-        {
-            "nom": "Spéléologie de Dreamara",
-            "description": "Explorez les profondeurs mystérieuses de grottes aux cristaux vivants.",
-            "prix": 210
-        },
-        {
-            "nom": "Parcours d’obstacles de Dreamara",
-            "description": "Testez vos limites avec des épreuves physiques interstellaires.",
-            "prix": 170
-        },
-        {
-            "nom": "Croisière aérienne autour de Dreamara",
-            "description": "Profitez d’une vue panoramique grâce à un vaisseau flottant.",
-            "prix": 230
+            "titre": "Exploration de Île Arc-en-Ciel - Zone 2",
+            "date_arrivee": "2025-07-06",
+            "date_depart": "2025-07-10",
+            "duree": 5,
+            "position": {
+                "gps": "37.7749, -122.4194",
+                "nom_lieu": "Île Arc-en-Ciel secondaire"
+            },
+            "options": [
+                {
+                    "type": "activité secondaire",
+                    "nom": "Découverte de Dreamara - Le Monde des Rêves",
+                    "valeurs_possibles": [
+                        "Autonome",
+                        "Guidée"
+                    ],
+                    "choix_utilisateur": "Guidée",
+                    "personnes": 2,
+                    "prix_par_personne": 150
+                },
+                {
+                    "type": "restauration",
+                    "nom": "Repas thématique",
+                    "valeurs_possibles": [
+                        "Menu local",
+                        "Menu cosmique"
+                    ],
+                    "choix_utilisateur": "Menu cosmique",
+                    "personnes": 2,
+                    "prix_par_personne": 60
+                }
+            ],
+            "personnes_supplementaires": []
         }
     ]
 }
