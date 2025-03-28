@@ -1,8 +1,6 @@
 <?php
 session_start();
-// L'utilisateur peut consulter sans être connecté
 
-// Vérifie que l'ID est présent dans l'URL
 if (!isset($_GET['id']) || !is_numeric($_GET['id']) || $_GET['id'] <= 0) {
     echo "<p>Erreur : aucun identifiant de voyage fourni dans l'URL.</p>";
     exit;
@@ -10,7 +8,6 @@ if (!isset($_GET['id']) || !is_numeric($_GET['id']) || $_GET['id'] <= 0) {
 
 $id = (int)$_GET['id'];
 
-// Charger l'index des voyages
 $indexPath = 'data/index_voyages.json';
 if (!file_exists($indexPath)) {
     echo "<p>Erreur : fichier index_voyages.json introuvable.</p>";
@@ -18,14 +15,11 @@ if (!file_exists($indexPath)) {
 }
 
 $index = json_decode(file_get_contents($indexPath), true);
-
-// Vérifie que l'ID existe dans l'index
 if (!isset($index[$id])) {
     echo "<p>Erreur : ID de voyage non trouvé dans l’index.</p>";
     exit;
 }
 
-// Charger le fichier du voyage
 $filename = 'data/' . $index[$id];
 if (!file_exists($filename)) {
     echo "<p>Erreur : le fichier JSON du voyage est manquant.</p>";
@@ -51,9 +45,9 @@ $voyage['id'] = $id;
     <h2><?= htmlspecialchars($voyage['titre']) ?></h2>
 
     <div class="intro">
-        <p><strong>Dates :</strong> du <?= $voyage['date_depart'] ?> au <?= $voyage['date_retour'] ?> (<?= $voyage['duree'] ?> jours)</p>
-        <p><strong>description :</strong> <?= $voyage['description '] ?></p>
-        <p><strong>Prix de base :</strong> <?= $voyage['prix_total'] ?> €</p>
+        <p><strong>Dates :</strong> du <?= htmlspecialchars($voyage['date_depart']) ?> au <?= htmlspecialchars($voyage['date_retour']) ?> (<?= htmlspecialchars($voyage['duree']) ?> jours)</p>
+        <p><strong>Description :</strong> <?= htmlspecialchars($voyage['description'] ?? 'Non spécifiée') ?></p>
+        <p><strong>Prix de base :</strong> <?= htmlspecialchars($voyage['prix_total']) ?> €</p>
     </div>
 
     <form method="POST" action="panier.php">
@@ -62,18 +56,18 @@ $voyage['id'] = $id;
         <?php if (!empty($voyage['etapes'])): ?>
             <?php foreach ($voyage['etapes'] as $etape_index => $etape): ?>
                 <div class="presentation">
-                    <h3><?= $etape['titre'] ?></h3>
-                    <p><strong>Lieu :</strong> <?= $etape['position']['nom_lieu'] ?></p>
+                    <h3><?= htmlspecialchars($etape['titre']) ?></h3>
+                    <p><strong>Lieu :</strong> <?= htmlspecialchars($etape['position']['nom_lieu']) ?></p>
 
                     <?php if (!empty($etape['options'])): ?>
                         <?php foreach ($etape['options'] as $option_index => $option): ?>
                             <label>
-                                <?= ucfirst($option['type']) ?> :
-                                <?= $option['nom'] ?> (<?= $option['prix_par_personne'] ?> € / personne)
+                                <?= ucfirst(htmlspecialchars($option['type'])) ?> :
+                                <?= htmlspecialchars($option['nom']) ?> (<?= htmlspecialchars($option['prix_par_personne']) ?> € / personne)
                             </label><br>
                             <input type="checkbox" 
                                    name="options[<?= $etape_index ?>][<?= $option_index ?>]" 
-                                   value="<?= $option['nom'] ?>|<?= $option['prix_par_personne'] ?>">
+                                   value="<?= htmlspecialchars($option['nom']) ?>|<?= htmlspecialchars($option['prix_par_personne']) ?>">
                             <label>Inclure</label><br><br>
                         <?php endforeach; ?>
                     <?php endif; ?>
