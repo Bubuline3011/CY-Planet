@@ -1,53 +1,76 @@
 {
-    "titre": "AquaWorld",
-    "description": "Planète océanique avec vie sous-marine et bulles flottantes.",
+    "id": 3,
+    "titre": "AquaWorld - Expérience Sous-Marine",
+    "image": "AquaWorld.jpg",
+    "date_depart": "2026-02-01",
+    "date_retour": "2026-02-10",
+    "duree": 10,
+    "specificites": "Planète océanique avec vie sous-marine, bulles flottantes, et aventures aquatiques uniques.",
+    "prix_total": 3100,
     "etapes": [
         {
-            "titre": "Étape Alpha",
-            "lieu": "Zone spéciale de AquaWorld",
-            "options": {
-                "activité": [
-                    "Activité unique 1 sur AquaWorld",
-                    "Activité unique 2 sur AquaWorld",
-                    "Expérience immersive 3 sur AquaWorld"
-                ],
-                "hébergement": [
-                    "Cabine spéciale AquaWorld",
-                    "Dôme flottant",
-                    "Refuge de luxe"
-                ],
-                "restauration": [
-                    "Buffet galactique",
-                    "Spécialités de AquaWorld"
-                ],
-                "transport": [
-                    "Navette autonome",
-                    "Tapis volant interstellaire"
-                ]
-            }
+            "titre": "Dôme Océanique",
+            "date_arrivee": "2026-02-01",
+            "date_depart": "2026-02-05",
+            "duree": 5,
+            "position": {
+                "gps": "-20.0000, 70.0000",
+                "nom_lieu": "Zone spéciale de AquaWorld"
+            },
+            "options": [
+                {
+                    "type": "activité",
+                    "nom": "Activité unique 1 sur AquaWorld",
+                    "prix_par_personne": 190
+                },
+                {
+                    "type": "hébergement",
+                    "nom": "Dôme flottant",
+                    "prix_par_personne": 220
+                },
+                {
+                    "type": "restauration",
+                    "nom": "Spécialités de AquaWorld",
+                    "prix_par_personne": 90
+                },
+                {
+                    "type": "transport",
+                    "nom": "Tapis volant interstellaire",
+                    "prix_par_personne": 60
+                }
+            ]
         },
         {
-            "titre": "Étape Beta",
-            "lieu": "Zone secondaire de AquaWorld",
-            "options": {
-                "activité": [
-                    "Aventure secondaire 1 sur AquaWorld",
-                    "Mini-jeu ou défi 2 sur AquaWorld",
-                    "Rencontre guidée 3 sur AquaWorld"
-                ],
-                "hébergement": [
-                    "Chambre capsule",
-                    "Hôtel conceptuel AquaWorld"
-                ],
-                "restauration": [
-                    "Snack spatial",
-                    "Cantine locale"
-                ],
-                "transport": [
-                    "Module de téléportation",
-                    "Ascenseur orbital"
-                ]
-            }
+            "titre": "Récif de Lumière",
+            "date_arrivee": "2026-02-06",
+            "date_depart": "2026-02-10",
+            "duree": 5,
+            "position": {
+                "gps": "-19.5000, 69.5000",
+                "nom_lieu": "Zone secondaire de AquaWorld"
+            },
+            "options": [
+                {
+                    "type": "activité",
+                    "nom": "Mini-jeu ou défi 2 sur AquaWorld",
+                    "prix_par_personne": 170
+                },
+                {
+                    "type": "hébergement",
+                    "nom": "Hôtel conceptuel AquaWorld",
+                    "prix_par_personne": 240
+                },
+                {
+                    "type": "restauration",
+                    "nom": "Cantine locale",
+                    "prix_par_personne": 80
+                },
+                {
+                    "type": "transport",
+                    "nom": "Ascenseur orbital",
+                    "prix_par_personne": 55
+                }
+            ]
         }
     ],
     "activites": [
