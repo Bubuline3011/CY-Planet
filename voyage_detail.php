@@ -1,11 +1,8 @@
 <?php
 session_start();
+// L'utilisateur peut consulter sans être connecté
 
-if (!isset($_SESSION['email'])) {
-    header('Location: connexion.php');
-    exit();
-}
-
+// Vérifie que l'ID est présent dans l'URL
 if (!isset($_GET['id']) || !is_numeric($_GET['id']) || $_GET['id'] <= 0) {
     echo "<p>Erreur : aucun identifiant de voyage fourni dans l'URL.</p>";
     exit;
@@ -13,6 +10,7 @@ if (!isset($_GET['id']) || !is_numeric($_GET['id']) || $_GET['id'] <= 0) {
 
 $id = (int)$_GET['id'];
 
+// Charger l'index des voyages
 $indexPath = 'data/index_voyages.json';
 if (!file_exists($indexPath)) {
     echo "<p>Erreur : fichier index_voyages.json introuvable.</p>";
@@ -20,11 +18,14 @@ if (!file_exists($indexPath)) {
 }
 
 $index = json_decode(file_get_contents($indexPath), true);
+
+// Vérifie que l'ID existe dans l'index
 if (!isset($index[$id])) {
     echo "<p>Erreur : ID de voyage non trouvé dans l’index.</p>";
     exit;
 }
 
+// Charger le fichier du voyage
 $filename = 'data/' . $index[$id];
 if (!file_exists($filename)) {
     echo "<p>Erreur : le fichier JSON du voyage est manquant.</p>";
@@ -51,7 +52,7 @@ $voyage['id'] = $id;
 
     <div class="intro">
         <p><strong>Dates :</strong> du <?= $voyage['date_depart'] ?> au <?= $voyage['date_retour'] ?> (<?= $voyage['duree'] ?> jours)</p>
-        <p><strong>Spécificités :</strong> <?= $voyage['specificites'] ?></p>
+        <p><strong>description :</strong> <?= $voyage['description '] ?></p>
         <p><strong>Prix de base :</strong> <?= $voyage['prix_total'] ?> €</p>
     </div>
 
