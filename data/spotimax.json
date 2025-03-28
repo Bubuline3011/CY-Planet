@@ -1,24 +1,24 @@
 {
-    "titre": "Musicaria",
-    "description": "Planète musicale où tout vibre au rythme des sons.",
+    "titre": "Sportimax",
+    "description": "Monde du sport extrême avec défis en gravité variable.",
     "etapes": [
         {
             "titre": "Étape Alpha",
-            "lieu": "Zone spéciale de Musicaria",
+            "lieu": "Zone spéciale de Sportimax",
             "options": {
                 "activité": [
-                    "Activité unique 1 sur Musicaria",
-                    "Activité unique 2 sur Musicaria",
-                    "Expérience immersive 3 sur Musicaria"
+                    "Activité unique 1 sur Sportimax",
+                    "Activité unique 2 sur Sportimax",
+                    "Expérience immersive 3 sur Sportimax"
                 ],
                 "hébergement": [
-                    "Cabine spéciale Musicaria",
+                    "Cabine spéciale Sportimax",
                     "Dôme flottant",
                     "Refuge de luxe"
                 ],
                 "restauration": [
                     "Buffet galactique",
-                    "Spécialités de Musicaria"
+                    "Spécialités de Sportimax"
                 ],
                 "transport": [
                     "Navette autonome",
@@ -28,16 +28,16 @@
         },
         {
             "titre": "Étape Beta",
-            "lieu": "Zone secondaire de Musicaria",
+            "lieu": "Zone secondaire de Sportimax",
             "options": {
                 "activité": [
-                    "Aventure secondaire 1 sur Musicaria",
-                    "Mini-jeu ou défi 2 sur Musicaria",
-                    "Rencontre guidée 3 sur Musicaria"
+                    "Aventure secondaire 1 sur Sportimax",
+                    "Mini-jeu ou défi 2 sur Sportimax",
+                    "Rencontre guidée 3 sur Sportimax"
                 ],
                 "hébergement": [
                     "Chambre capsule",
-                    "Hôtel conceptuel Musicaria"
+                    "Hôtel conceptuel Sportimax"
                 ],
                 "restauration": [
                     "Snack spatial",
@@ -52,52 +52,52 @@
     ],
     "activites": [
         {
-            "nom": "Exploration guidée de Musicaria",
-            "description": "Découvrez les secrets cachés de Musicaria avec un guide expert.",
+            "nom": "Exploration guidée de Sportimax",
+            "description": "Découvrez les secrets cachés de Sportimax avec un guide expert.",
             "prix": 200
         },
         {
-            "nom": "Aventure nocturne sur Musicaria",
-            "description": "Balade sous les étoiles et phénomènes naturels uniques de Musicaria.",
+            "nom": "Aventure nocturne sur Sportimax",
+            "description": "Balade sous les étoiles et phénomènes naturels uniques de Sportimax.",
             "prix": 180
         },
         {
-            "nom": "Survie extrême à Musicaria",
-            "description": "Atelier immersif de survie dans les conditions hostiles de Musicaria.",
+            "nom": "Survie extrême à Sportimax",
+            "description": "Atelier immersif de survie dans les conditions hostiles de Sportimax.",
             "prix": 220
         },
         {
-            "nom": "Expédition scientifique sur Musicaria",
+            "nom": "Expédition scientifique sur Sportimax",
             "description": "Participez à une mission pour collecter des données extraterrestres.",
             "prix": 250
         },
         {
-            "nom": "Construction d'abri sur Musicaria",
+            "nom": "Construction d'abri sur Sportimax",
             "description": "Apprenez à bâtir votre propre refuge intergalactique.",
             "prix": 160
         },
         {
-            "nom": "Découverte de la faune de Musicaria",
+            "nom": "Découverte de la faune de Sportimax",
             "description": "Observez des créatures uniques dans leur habitat natif.",
             "prix": 190
         },
         {
-            "nom": "Tyrolienne géante de Musicaria",
-            "description": "Glissez à toute vitesse au-dessus des paysages spectaculaires de Musicaria.",
+            "nom": "Tyrolienne géante de Sportimax",
+            "description": "Glissez à toute vitesse au-dessus des paysages spectaculaires de Sportimax.",
             "prix": 150
         },
         {
-            "nom": "Spéléologie de Musicaria",
+            "nom": "Spéléologie de Sportimax",
             "description": "Explorez les profondeurs mystérieuses de grottes aux cristaux vivants.",
             "prix": 210
         },
         {
-            "nom": "Parcours d’obstacles de Musicaria",
+            "nom": "Parcours d’obstacles de Sportimax",
             "description": "Testez vos limites avec des épreuves physiques interstellaires.",
             "prix": 170
         },
         {
-            "nom": "Croisière aérienne autour de Musicaria",
+            "nom": "Croisière aérienne autour de Sportimax",
             "description": "Profitez d’une vue panoramique grâce à un vaisseau flottant.",
             "prix": 230
         }
