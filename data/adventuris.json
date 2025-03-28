@@ -29,6 +29,33 @@
                     "prix_par_personne": 250
                 }
             ]
+        },
+        {
+            "titre": "Cavernes de Cristaux Vivants",
+            "date_arrivee": "2026-01-11",
+            "date_depart": "2026-01-15",
+            "duree": 5,
+            "position": {
+                "gps": "-4.5000, 89.5000",
+                "nom_lieu": "Grotte Chantante"
+            },
+            "options": [
+                {
+                    "type": "expédition",
+                    "nom": "Spéléologie dans des cavernes de cristaux",
+                    "prix_par_personne": 180
+                },
+                {
+                    "type": "hébergement",
+                    "nom": "Refuge de Cristal",
+                    "prix_par_personne": 240
+                },
+                {
+                    "type": "activité",
+                    "nom": "Exploration nocturne guidée",
+                    "prix_par_personne": 170
+                }
+            ]
         }
     ],
     "activites": [
