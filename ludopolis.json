@@ -1,0 +1,105 @@
+{
+    "titre": "Ludopolis",
+    "description": "Planète des jeux grandeur nature et compétitions ludiques.",
+    "etapes": [
+        {
+            "titre": "Étape Alpha",
+            "lieu": "Zone spéciale de Ludopolis",
+            "options": {
+                "activité": [
+                    "Activité unique 1 sur Ludopolis",
+                    "Activité unique 2 sur Ludopolis",
+                    "Expérience immersive 3 sur Ludopolis"
+                ],
+                "hébergement": [
+                    "Cabine spéciale Ludopolis",
+                    "Dôme flottant",
+                    "Refuge de luxe"
+                ],
+                "restauration": [
+                    "Buffet galactique",
+                    "Spécialités de Ludopolis"
+                ],
+                "transport": [
+                    "Navette autonome",
+                    "Tapis volant interstellaire"
+                ]
+            }
+        },
+        {
+            "titre": "Étape Beta",
+            "lieu": "Zone secondaire de Ludopolis",
+            "options": {
+                "activité": [
+                    "Aventure secondaire 1 sur Ludopolis",
+                    "Mini-jeu ou défi 2 sur Ludopolis",
+                    "Rencontre guidée 3 sur Ludopolis"
+                ],
+                "hébergement": [
+                    "Chambre capsule",
+                    "Hôtel conceptuel Ludopolis"
+                ],
+                "restauration": [
+                    "Snack spatial",
+                    "Cantine locale"
+                ],
+                "transport": [
+                    "Module de téléportation",
+                    "Ascenseur orbital"
+                ]
+            }
+        }
+    ],
+    "activites": [
+        {
+            "nom": "Exploration guidée de Ludopolis",
+            "description": "Découvrez les secrets cachés de Ludopolis avec un guide expert.",
+            "prix": 200
+        },
+        {
+            "nom": "Aventure nocturne sur Ludopolis",
+            "description": "Balade sous les étoiles et phénomènes naturels uniques de Ludopolis.",
+            "prix": 180
+        },
+        {
+            "nom": "Survie extrême à Ludopolis",
+            "description": "Atelier immersif de survie dans les conditions hostiles de Ludopolis.",
+            "prix": 220
+        },
+        {
+            "nom": "Expédition scientifique sur Ludopolis",
+            "description": "Participez à une mission pour collecter des données extraterrestres.",
+            "prix": 250
+        },
+        {
+            "nom": "Construction d'abri sur Ludopolis",
+            "description": "Apprenez à bâtir votre propre refuge intergalactique.",
+            "prix": 160
+        },
+        {
+            "nom": "Découverte de la faune de Ludopolis",
+            "description": "Observez des créatures uniques dans leur habitat natif.",
+            "prix": 190
+        },
+        {
+            "nom": "Tyrolienne géante de Ludopolis",
+            "description": "Glissez à toute vitesse au-dessus des paysages spectaculaires de Ludopolis.",
+            "prix": 150
+        },
+        {
+            "nom": "Spéléologie de Ludopolis",
+            "description": "Explorez les profondeurs mystérieuses de grottes aux cristaux vivants.",
+            "prix": 210
+        },
+        {
+            "nom": "Parcours d’obstacles de Ludopolis",
+            "description": "Testez vos limites avec des épreuves physiques interstellaires.",
+            "prix": 170
+        },
+        {
+            "nom": "Croisière aérienne autour de Ludopolis",
+            "description": "Profitez d’une vue panoramique grâce à un vaisseau flottant.",
+            "prix": 230
+        }
+    ]
+}

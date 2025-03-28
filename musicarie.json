@@ -1,0 +1,105 @@
+{
+    "titre": "Musicaria",
+    "description": "Planète musicale où tout vibre au rythme des sons.",
+    "etapes": [
+        {
+            "titre": "Étape Alpha",
+            "lieu": "Zone spéciale de Musicaria",
+            "options": {
+                "activité": [
+                    "Activité unique 1 sur Musicaria",
+                    "Activité unique 2 sur Musicaria",
+                    "Expérience immersive 3 sur Musicaria"
+                ],
+                "hébergement": [
+                    "Cabine spéciale Musicaria",
+                    "Dôme flottant",
+                    "Refuge de luxe"
+                ],
+                "restauration": [
+                    "Buffet galactique",
+                    "Spécialités de Musicaria"
+                ],
+                "transport": [
+                    "Navette autonome",
+                    "Tapis volant interstellaire"
+                ]
+            }
+        },
+        {
+            "titre": "Étape Beta",
+            "lieu": "Zone secondaire de Musicaria",
+            "options": {
+                "activité": [
+                    "Aventure secondaire 1 sur Musicaria",
+                    "Mini-jeu ou défi 2 sur Musicaria",
+                    "Rencontre guidée 3 sur Musicaria"
+                ],
+                "hébergement": [
+                    "Chambre capsule",
+                    "Hôtel conceptuel Musicaria"
+                ],
+                "restauration": [
+                    "Snack spatial",
+                    "Cantine locale"
+                ],
+                "transport": [
+                    "Module de téléportation",
+                    "Ascenseur orbital"
+                ]
+            }
+        }
+    ],
+    "activites": [
+        {
+            "nom": "Exploration guidée de Musicaria",
+            "description": "Découvrez les secrets cachés de Musicaria avec un guide expert.",
+            "prix": 200
+        },
+        {
+            "nom": "Aventure nocturne sur Musicaria",
+            "description": "Balade sous les étoiles et phénomènes naturels uniques de Musicaria.",
+            "prix": 180
+        },
+        {
+            "nom": "Survie extrême à Musicaria",
+            "description": "Atelier immersif de survie dans les conditions hostiles de Musicaria.",
+            "prix": 220
+        },
+        {
+            "nom": "Expédition scientifique sur Musicaria",
+            "description": "Participez à une mission pour collecter des données extraterrestres.",
+            "prix": 250
+        },
+        {
+            "nom": "Construction d'abri sur Musicaria",
+            "description": "Apprenez à bâtir votre propre refuge intergalactique.",
+            "prix": 160
+        },
+        {
+            "nom": "Découverte de la faune de Musicaria",
+            "description": "Observez des créatures uniques dans leur habitat natif.",
+            "prix": 190
+        },
+        {
+            "nom": "Tyrolienne géante de Musicaria",
+            "description": "Glissez à toute vitesse au-dessus des paysages spectaculaires de Musicaria.",
+            "prix": 150
+        },
+        {
+            "nom": "Spéléologie de Musicaria",
+            "description": "Explorez les profondeurs mystérieuses de grottes aux cristaux vivants.",
+            "prix": 210
+        },
+        {
+            "nom": "Parcours d’obstacles de Musicaria",
+            "description": "Testez vos limites avec des épreuves physiques interstellaires.",
+            "prix": 170
+        },
+        {
+            "nom": "Croisière aérienne autour de Musicaria",
+            "description": "Profitez d’une vue panoramique grâce à un vaisseau flottant.",
+            "prix": 230
+        }
+    ]
+}
