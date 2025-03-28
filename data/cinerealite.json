@@ -1,128 +1,56 @@
 {
     "id": 8,
-    "titre": "CinéRéalité - Immersion Cinématographique",
-    "image": "CinéRéalité.jpg",
-    "date_depart": "2026-04-01",
-    "date_retour": "2026-04-10",
+    "titre": "Cinerealite - Planète 8",
+    "image": "cinerealite.jpg",
+    "date_depart": "2025-07-01",
+    "date_retour": "2025-07-10",
     "duree": 10,
-    "description": "Planète cinéma où les visiteurs vivent des films interactifs.",
-    "prix_total": 3400,
+    "description": "Description immersive de la planète cinerealite.",
+    "prix_total": 3800,
     "etapes": [
         {
-            "titre": "Studios Alpha",
-            "date_arrivee": "2026-04-01",
-            "date_depart": "2026-04-05",
-            "duree": 5,
+            "titre": "Étape Alpha - Cinerealite",
+            "date_arrivee": "2025-07-01",
+            "date_depart": "2025-07-05",
+            "duree": 4,
             "position": {
-                "gps": "45.0000, -73.0000",
-                "nom_lieu": "Zone spéciale de CinéRéalité"
+                "gps": "0.0000, 0.0000",
+                "nom_lieu": "Zone principale de Cinerealite"
             },
             "options": [
                 {
                     "type": "activité",
-                    "nom": "Expérience immersive 3 sur CinéRéalité",
-                    "prix_par_personne": 210
+                    "nom": "Aventure principale sur Cinerealite",
+                    "prix_par_personne": 200
                 },
                 {
                     "type": "hébergement",
-                    "nom": "Dôme flottant",
-                    "prix_par_personne": 230
-                },
-                {
-                    "type": "restauration",
-                    "nom": "Spécialités de CinéRéalité",
-                    "prix_par_personne": 100
-                },
-                {
-                    "type": "transport",
-                    "nom": "Tapis volant interstellaire",
-                    "prix_par_personne": 65
+                    "nom": "Hébergement galactique",
+                    "prix_par_personne": 180
                 }
             ]
         },
         {
-            "titre": "Backstage Galaxy",
-            "date_arrivee": "2026-04-06",
-            "date_depart": "2026-04-10",
-            "duree": 5,
+            "titre": "Étape Beta - Cinerealite",
+            "date_arrivee": "2025-07-06",
+            "date_depart": "2025-07-10",
+            "duree": 4,
             "position": {
-                "gps": "45.5000, -73.5000",
-                "nom_lieu": "Zone secondaire de CinéRéalité"
+                "gps": "0.0000, 0.0000",
+                "nom_lieu": "Zone secondaire de Cinerealite"
             },
             "options": [
                 {
                     "type": "activité",
-                    "nom": "Mini-jeu ou défi 2 sur CinéRéalité",
-                    "prix_par_personne": 180
-                },
-                {
-                    "type": "hébergement",
-                    "nom": "Hôtel conceptuel CinéRéalité",
-                    "prix_par_personne": 250
+                    "nom": "Aventure secondaire sur Cinerealite",
+                    "prix_par_personne": 150
                 },
                 {
                     "type": "restauration",
-                    "nom": "Cantine locale",
-                    "prix_par_personne": 85
-                },
-                {
-                    "type": "transport",
-                    "nom": "Ascenseur orbital",
+                    "nom": "Buffet cosmique",
                     "prix_par_personne": 60
                 }
             ]
-        }
-    ],
-    "activites": [
-        {
-            "nom": "Exploration guidée de CinéRéalité",
-            "description": "Découvrez les secrets cachés de CinéRéalité avec un guide expert.",
-            "prix": 200
-        },
-        {
-            "nom": "Aventure nocturne sur CinéRéalité",
-            "description": "Balade sous les étoiles et phénomènes naturels uniques de CinéRéalité.",
-            "prix": 180
-        },
-        {
-            "nom": "Survie extrême à CinéRéalité",
-            "description": "Atelier immersif de survie dans les conditions hostiles de CinéRéalité.",
-            "prix": 220
-        },
-        {
-            "nom": "Expédition scientifique sur CinéRéalité",
-            "description": "Participez à une mission pour collecter des données extraterrestres.",
-            "prix": 250
-        },
-        {
-            "nom": "Construction d'abri sur CinéRéalité",
-            "description": "Apprenez à bâtir votre propre refuge intergalactique.",
-            "prix": 160
-        },
-        {
-            "nom": "Découverte de la faune de CinéRéalité",
-            "description": "Observez des créatures uniques dans leur habitat natif.",
-            "prix": 190
-        },
-        {
-            "nom": "Tyrolienne géante de CinéRéalité",
-            "description": "Glissez à toute vitesse au-dessus des paysages spectaculaires de CinéRéalité.",
-            "prix": 150
-        },
-        {
-            "nom": "Spéléologie de CinéRéalité",
-            "description": "Explorez les profondeurs mystérieuses de grottes aux cristaux vivants.",
-            "prix": 210
-        },
-        {
-            "nom": "Parcours d’obstacles de CinéRéalité",
-            "description": "Testez vos limites avec des épreuves physiques interstellaires.",
-            "prix": 170
-        },
-        {
-            "nom": "Croisière aérienne autour de CinéRéalité",
-            "description": "Profitez d’une vue panoramique grâce à un vaisseau flottant.",
-            "prix": 230
         }
     ]
 }
