@@ -1,0 +1,105 @@
+{
+    "titre": "Médiévalia",
+    "description": "Planète médiévale futuriste avec châteaux flottants.",
+    "etapes": [
+        {
+            "titre": "Étape Alpha",
+            "lieu": "Zone spéciale de Médiévalia",
+            "options": {
+                "activité": [
+                    "Activité unique 1 sur Médiévalia",
+                    "Activité unique 2 sur Médiévalia",
+                    "Expérience immersive 3 sur Médiévalia"
+                ],
+                "hébergement": [
+                    "Cabine spéciale Médiévalia",
+                    "Dôme flottant",
+                    "Refuge de luxe"
+                ],
+                "restauration": [
+                    "Buffet galactique",
+                    "Spécialités de Médiévalia"
+                ],
+                "transport": [
+                    "Navette autonome",
+                    "Tapis volant interstellaire"
+                ]
+            }
+        },
+        {
+            "titre": "Étape Beta",
+            "lieu": "Zone secondaire de Médiévalia",
+            "options": {
+                "activité": [
+                    "Aventure secondaire 1 sur Médiévalia",
+                    "Mini-jeu ou défi 2 sur Médiévalia",
+                    "Rencontre guidée 3 sur Médiévalia"
+                ],
+                "hébergement": [
+                    "Chambre capsule",
+                    "Hôtel conceptuel Médiévalia"
+                ],
+                "restauration": [
+                    "Snack spatial",
+                    "Cantine locale"
+                ],
+                "transport": [
+                    "Module de téléportation",
+                    "Ascenseur orbital"
+                ]
+            }
+        }
+    ],
+    "activites": [
+        {
+            "nom": "Exploration guidée de Médiévalia",
+            "description": "Découvrez les secrets cachés de Médiévalia avec un guide expert.",
+            "prix": 200
+        },
+        {
+            "nom": "Aventure nocturne sur Médiévalia",
+            "description": "Balade sous les étoiles et phénomènes naturels uniques de Médiévalia.",
+            "prix": 180
+        },
+        {
+            "nom": "Survie extrême à Médiévalia",
+            "description": "Atelier immersif de survie dans les conditions hostiles de Médiévalia.",
+            "prix": 220
+        },
+        {
+            "nom": "Expédition scientifique sur Médiévalia",
+            "description": "Participez à une mission pour collecter des données extraterrestres.",
+            "prix": 250
+        },
+        {
+            "nom": "Construction d'abri sur Médiévalia",
+            "description": "Apprenez à bâtir votre propre refuge intergalactique.",
+            "prix": 160
+        },
+        {
+            "nom": "Découverte de la faune de Médiévalia",
+            "description": "Observez des créatures uniques dans leur habitat natif.",
+            "prix": 190
+        },
+        {
+            "nom": "Tyrolienne géante de Médiévalia",
+            "description": "Glissez à toute vitesse au-dessus des paysages spectaculaires de Médiévalia.",
+            "prix": 150
+        },
+        {
+            "nom": "Spéléologie de Médiévalia",
+            "description": "Explorez les profondeurs mystérieuses de grottes aux cristaux vivants.",
+            "prix": 210
+        },
+        {
+            "nom": "Parcours d’obstacles de Médiévalia",
+            "description": "Testez vos limites avec des épreuves physiques interstellaires.",
+            "prix": 170
+        },
+        {
+            "nom": "Croisière aérienne autour de Médiévalia",
+            "description": "Profitez d’une vue panoramique grâce à un vaisseau flottant.",
+            "prix": 230
+        }
+    ]
+}

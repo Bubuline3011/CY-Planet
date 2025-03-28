@@ -1,0 +1,105 @@
+{
+    "titre": "Dreamara",
+    "description": "Planète onirique inspirée des rêves et de la fantaisie.",
+    "etapes": [
+        {
+            "titre": "Étape Alpha",
+            "lieu": "Zone spéciale de Dreamara",
+            "options": {
+                "activité": [
+                    "Activité unique 1 sur Dreamara",
+                    "Activité unique 2 sur Dreamara",
+                    "Expérience immersive 3 sur Dreamara"
+                ],
+                "hébergement": [
+                    "Cabine spéciale Dreamara",
+                    "Dôme flottant",
+                    "Refuge de luxe"
+                ],
+                "restauration": [
+                    "Buffet galactique",
+                    "Spécialités de Dreamara"
+                ],
+                "transport": [
+                    "Navette autonome",
+                    "Tapis volant interstellaire"
+                ]
+            }
+        },
+        {
+            "titre": "Étape Beta",
+            "lieu": "Zone secondaire de Dreamara",
+            "options": {
+                "activité": [
+                    "Aventure secondaire 1 sur Dreamara",
+                    "Mini-jeu ou défi 2 sur Dreamara",
+                    "Rencontre guidée 3 sur Dreamara"
+                ],
+                "hébergement": [
+                    "Chambre capsule",
+                    "Hôtel conceptuel Dreamara"
+                ],
+                "restauration": [
+                    "Snack spatial",
+                    "Cantine locale"
+                ],
+                "transport": [
+                    "Module de téléportation",
+                    "Ascenseur orbital"
+                ]
+            }
+        }
+    ],
+    "activites": [
+        {
+            "nom": "Exploration guidée de Dreamara",
+            "description": "Découvrez les secrets cachés de Dreamara avec un guide expert.",
+            "prix": 200
+        },
+        {
+            "nom": "Aventure nocturne sur Dreamara",
+            "description": "Balade sous les étoiles et phénomènes naturels uniques de Dreamara.",
+            "prix": 180
+        },
+        {
+            "nom": "Survie extrême à Dreamara",
+            "description": "Atelier immersif de survie dans les conditions hostiles de Dreamara.",
+            "prix": 220
+        },
+        {
+            "nom": "Expédition scientifique sur Dreamara",
+            "description": "Participez à une mission pour collecter des données extraterrestres.",
+            "prix": 250
+        },
+        {
+            "nom": "Construction d'abri sur Dreamara",
+            "description": "Apprenez à bâtir votre propre refuge intergalactique.",
+            "prix": 160
+        },
+        {
+            "nom": "Découverte de la faune de Dreamara",
+            "description": "Observez des créatures uniques dans leur habitat natif.",
+            "prix": 190
+        },
+        {
+            "nom": "Tyrolienne géante de Dreamara",
+            "description": "Glissez à toute vitesse au-dessus des paysages spectaculaires de Dreamara.",
+            "prix": 150
+        },
+        {
+            "nom": "Spéléologie de Dreamara",
+            "description": "Explorez les profondeurs mystérieuses de grottes aux cristaux vivants.",
+            "prix": 210
+        },
+        {
+            "nom": "Parcours d’obstacles de Dreamara",
+            "description": "Testez vos limites avec des épreuves physiques interstellaires.",
+            "prix": 170
+        },
+        {
+            "nom": "Croisière aérienne autour de Dreamara",
+            "description": "Profitez d’une vue panoramique grâce à un vaisseau flottant.",
+            "prix": 230
+        }
+    ]
+}
