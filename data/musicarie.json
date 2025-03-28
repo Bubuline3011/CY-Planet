@@ -1,128 +1,108 @@
 {
     "id": 3,
-    "titre": "Musicaria - Harmonie Cosmique",
-    "image": "musicaria.jpg",
+    "titre": "Musicarie - Planète 3",
+    "image": "musicarie.jpg",
     "date_depart": "2025-07-01",
     "date_retour": "2025-07-10",
     "duree": 10,
-    "description": "Planète de musique vivante où chaque son crée un paysage nouveau.",
-    "prix_total": 10800,
+    "description": "Description immersive de la planète musicarie.",
+    "prix_total": 3300,
     "etapes": [
         {
-            "titre": "Découverte de Concert Hall Cosmique",
+            "titre": "Étape Alpha - Musicarie",
             "date_arrivee": "2025-07-01",
             "date_depart": "2025-07-05",
-            "duree": 5,
+            "duree": 4,
             "position": {
-                "gps": "40.7128, -74.0060",
-                "nom_lieu": "Concert Hall Cosmique"
+                "gps": "0.0000, 0.0000",
+                "nom_lieu": "Zone principale de Musicarie"
             },
             "options": [
                 {
-                    "type": "activité principale",
-                    "nom": "Expérience immersive Musicaria - Harmonie Cosmique",
-                    "valeurs_possibles": [
-                        "Standard",
-                        "Premium",
-                        "VIP"
-                    ],
-                    "choix_utilisateur": "Premium",
-                    "personnes": 2,
-                    "prix_par_personne": 250
+                    "type": "activité",
+                    "nom": "Aventure principale sur Musicarie",
+                    "prix_par_personne": 200
                 },
                 {
                     "type": "hébergement",
-                    "nom": "Hôtel Musicaria - Harmonie Cosmique",
-                    "valeurs_possibles": [
-                        "Standard",
-                        "Luxe"
-                    ],
-                    "choix_utilisateur": "Luxe",
-                    "personnes": 2,
+                    "nom": "Hébergement galactique",
                     "prix_par_personne": 180
-                },
-                {
-                    "type": "transport",
-                    "nom": "Portail interdimensionnel",
-                    "valeurs_possibles": [
-                        "Vaisseaux Spatial",
-                        "Portail interdimensionnel"
-                    ],
-                    "choix_utilisateur": "Portail interdimensionnel",
-                    "personnes": 2,
-                    "prix_par_personne": 50,
-                    "autres_champs": {
-                        "vitesse_moyenne": "500 000 km/h"
-                    }
-                },
-                {
-                    "type": "service",
-                    "nom": "Garde d’enfants",
-                    "valeurs_possibles": [
-                        "Garde classique",
-                        "Animation spécialisée"
-                    ],
-                    "choix_utilisateur": "Garde classique",
-                    "personnes": 1,
-                    "prix_par_personne": 100
-                },
-                {
-                    "type": "service",
-                    "nom": "Gestion du linge",
-                    "valeurs_possibles": [
-                        "Lavage simple",
-                        "Pressing premium"
-                    ],
-                    "choix_utilisateur": "Lavage simple",
-                    "personnes": 2,
-                    "prix_par_personne": 20
-                }
-            ],
-            "personnes_supplementaires": [
-                {
-                    "nom": "Invité spécial",
-                    "age": 35,
-                    "role": "conférencier galactique",
-                    "participation": [
-                        "Expérience immersive"
-                    ]
                 }
             ]
         },
         {
-            "titre": "Exploration de Concert Hall Cosmique - Zone 2",
+            "titre": "Étape Beta - Musicarie",
             "date_arrivee": "2025-07-06",
             "date_depart": "2025-07-10",
-            "duree": 5,
+            "duree": 4,
             "position": {
-                "gps": "40.7128, -74.0060",
-                "nom_lieu": "Concert Hall Cosmique secondaire"
+                "gps": "0.0000, 0.0000",
+                "nom_lieu": "Zone secondaire de Musicarie"
             },
             "options": [
                 {
-                    "type": "activité secondaire",
-                    "nom": "Découverte de Musicaria - Harmonie Cosmique",
-                    "valeurs_possibles": [
-                        "Autonome",
-                        "Guidée"
-                    ],
-                    "choix_utilisateur": "Guidée",
-                    "personnes": 2,
+                    "type": "activité",
+                    "nom": "Aventure secondaire sur Musicarie",
                     "prix_par_personne": 150
                 },
                 {
                     "type": "restauration",
-                    "nom": "Repas thématique",
-                    "valeurs_possibles": [
-                        "Menu local",
-                        "Menu cosmique"
-                    ],
-                    "choix_utilisateur": "Menu cosmique",
-                    "personnes": 2,
+                    "nom": "Buffet cosmique",
                     "prix_par_personne": 60
                 }
-            ],
-           
+            ]
+        }
+    ],
+    "activites": [
+        {
+            "nom": "Exploration guidée de Musicarie",
+            "description": "Partez avec un guide expert pour découvrir les merveilles de musicarie.",
+            "prix": 200
+        },
+        {
+            "nom": "Aventure nocturne sur Musicarie",
+            "description": "Balade nocturne sous les cieux de musicarie.",
+            "prix": 180
+        },
+        {
+            "nom": "Survie extrême à Musicarie",
+            "description": "Testez vos limites avec des conditions extrêmes.",
+            "prix": 220
+        },
+        {
+            "nom": "Expédition scientifique sur Musicarie",
+            "description": "Collectez des données et découvrez des secrets naturels.",
+            "prix": 250
+        },
+        {
+            "nom": "Construction d'abri sur Musicarie",
+            "description": "Atelier pour bâtir son propre refuge alien.",
+            "prix": 160
+        },
+        {
+            "nom": "Découverte de la faune de Musicarie",
+            "description": "Observez des créatures extraordinaires.",
+            "prix": 190
+        },
+        {
+            "nom": "Tyrolienne géante de Musicarie",
+            "description": "Survolez les paysages à grande vitesse.",
+            "prix": 150
+        },
+        {
+            "nom": "Spéléologie sur Musicarie",
+            "description": "Explorez des grottes et formations rares.",
+            "prix": 210
+        },
+        {
+            "nom": "Parcours d’obstacles de Musicarie",
+            "description": "Défiez un parcours physique futuriste.",
+            "prix": 170
+        },
+        {
+            "nom": "Croisière aérienne autour de Musicarie",
+            "description": "Profitez d’une vue panoramique inoubliable.",
+            "prix": 230
         }
     ]
 }
