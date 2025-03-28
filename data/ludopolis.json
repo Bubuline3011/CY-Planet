@@ -1,128 +1,108 @@
 {
     "id": 7,
-    "titre": "Ludopolis - Jeux Galactiques",
+    "titre": "Ludopolis - Planète 7",
     "image": "ludopolis.jpg",
     "date_depart": "2025-07-01",
     "date_retour": "2025-07-10",
     "duree": 10,
-    "description": "Une planète transformée en terrain de jeu géant : jeux de rôle, escape rooms, compétitions.",
-    "prix_total": 11200,
+    "description": "Description immersive de la planète ludopolis.",
+    "prix_total": 3700,
     "etapes": [
         {
-            "titre": "Découverte de Quartier des Énigmes",
+            "titre": "Étape Alpha - Ludopolis",
             "date_arrivee": "2025-07-01",
             "date_depart": "2025-07-05",
-            "duree": 5,
+            "duree": 4,
             "position": {
-                "gps": "35.6895, 139.6917",
-                "nom_lieu": "Quartier des Énigmes"
+                "gps": "0.0000, 0.0000",
+                "nom_lieu": "Zone principale de Ludopolis"
             },
             "options": [
                 {
-                    "type": "activité principale",
-                    "nom": "Expérience immersive Ludopolis - Jeux Galactiques",
-                    "valeurs_possibles": [
-                        "Standard",
-                        "Premium",
-                        "VIP"
-                    ],
-                    "choix_utilisateur": "Premium",
-                    "personnes": 2,
-                    "prix_par_personne": 250
+                    "type": "activité",
+                    "nom": "Aventure principale sur Ludopolis",
+                    "prix_par_personne": 200
                 },
                 {
                     "type": "hébergement",
-                    "nom": "Hôtel Ludopolis - Jeux Galactiques",
-                    "valeurs_possibles": [
-                        "Standard",
-                        "Luxe"
-                    ],
-                    "choix_utilisateur": "Luxe",
-                    "personnes": 2,
+                    "nom": "Hébergement galactique",
                     "prix_par_personne": 180
-                },
-                {
-                    "type": "transport",
-                    "nom": "Portail interdimensionnel",
-                    "valeurs_possibles": [
-                        "Vaisseaux Spatial",
-                        "Portail interdimensionnel"
-                    ],
-                    "choix_utilisateur": "Portail interdimensionnel",
-                    "personnes": 2,
-                    "prix_par_personne": 50,
-                    "autres_champs": {
-                        "vitesse_moyenne": "500 000 km/h"
-                    }
-                },
-                {
-                    "type": "service",
-                    "nom": "Garde d’enfants",
-                    "valeurs_possibles": [
-                        "Garde classique",
-                        "Animation spécialisée"
-                    ],
-                    "choix_utilisateur": "Garde classique",
-                    "personnes": 1,
-                    "prix_par_personne": 100
-                },
-                {
-                    "type": "service",
-                    "nom": "Gestion du linge",
-                    "valeurs_possibles": [
-                        "Lavage simple",
-                        "Pressing premium"
-                    ],
-                    "choix_utilisateur": "Lavage simple",
-                    "personnes": 2,
-                    "prix_par_personne": 20
-                }
-            ],
-            "personnes_supplementaires": [
-                {
-                    "nom": "Invité spécial",
-                    "age": 35,
-                    "role": "conférencier galactique",
-                    "participation": [
-                        "Expérience immersive"
-                    ]
                 }
             ]
         },
         {
-            "titre": "Exploration de Quartier des Énigmes - Zone 2",
+            "titre": "Étape Beta - Ludopolis",
             "date_arrivee": "2025-07-06",
             "date_depart": "2025-07-10",
-            "duree": 5,
+            "duree": 4,
             "position": {
-                "gps": "35.6895, 139.6917",
-                "nom_lieu": "Quartier des Énigmes secondaire"
+                "gps": "0.0000, 0.0000",
+                "nom_lieu": "Zone secondaire de Ludopolis"
             },
             "options": [
                 {
-                    "type": "activité secondaire",
-                    "nom": "Découverte de Ludopolis - Jeux Galactiques",
-                    "valeurs_possibles": [
-                        "Autonome",
-                        "Guidée"
-                    ],
-                    "choix_utilisateur": "Guidée",
-                    "personnes": 2,
+                    "type": "activité",
+                    "nom": "Aventure secondaire sur Ludopolis",
                     "prix_par_personne": 150
                 },
                 {
                     "type": "restauration",
-                    "nom": "Repas thématique",
-                    "valeurs_possibles": [
-                        "Menu local",
-                        "Menu cosmique"
-                    ],
-                    "choix_utilisateur": "Menu cosmique",
-                    "personnes": 2,
+                    "nom": "Buffet cosmique",
                     "prix_par_personne": 60
                 }
-            ],
-           
+            ]
+        }
+    ],
+    "activites": [
+        {
+            "nom": "Exploration guidée de Ludopolis",
+            "description": "Partez avec un guide expert pour découvrir les merveilles de ludopolis.",
+            "prix": 200
+        },
+        {
+            "nom": "Aventure nocturne sur Ludopolis",
+            "description": "Balade nocturne sous les cieux de ludopolis.",
+            "prix": 180
+        },
+        {
+            "nom": "Survie extrême à Ludopolis",
+            "description": "Testez vos limites avec des conditions extrêmes.",
+            "prix": 220
+        },
+        {
+            "nom": "Expédition scientifique sur Ludopolis",
+            "description": "Collectez des données et découvrez des secrets naturels.",
+            "prix": 250
+        },
+        {
+            "nom": "Construction d'abri sur Ludopolis",
+            "description": "Atelier pour bâtir son propre refuge alien.",
+            "prix": 160
+        },
+        {
+            "nom": "Découverte de la faune de Ludopolis",
+            "description": "Observez des créatures extraordinaires.",
+            "prix": 190
+        },
+        {
+            "nom": "Tyrolienne géante de Ludopolis",
+            "description": "Survolez les paysages à grande vitesse.",
+            "prix": 150
+        },
+        {
+            "nom": "Spéléologie sur Ludopolis",
+            "description": "Explorez des grottes et formations rares.",
+            "prix": 210
+        },
+        {
+            "nom": "Parcours d’obstacles de Ludopolis",
+            "description": "Défiez un parcours physique futuriste.",
+            "prix": 170
+        },
+        {
+            "nom": "Croisière aérienne autour de Ludopolis",
+            "description": "Profitez d’une vue panoramique inoubliable.",
+            "prix": 230
         }
     ]
 }
