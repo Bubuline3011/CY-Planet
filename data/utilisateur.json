@@ -13,17 +13,12 @@
             {
                 "id": 1,
                 "nom": "Footbolis",
-                "date_consultation": "2025-03-28 15:06:46"
+                "date_consultation": "2025-03-28 22:47:22"
             },
             {
-                "id": 2,
-                "nom": "AquaWorld - L'Odyssée Océanique",
-                "date_consultation": "2025-03-27 23:37"
-            },
-            {
-                "id": 3,
-                "nom": "Musicaria - La Planète Musicale",
-                "date_consultation": "2025-03-27 23:56:32"
+                "id": 6,
+                "nom": null,
+                "date_consultation": "2025-03-28 18:40:05"
             }
         ],
         "voyages_achetes": [
@@ -34,22 +29,10 @@
                 "prix_total": 10340
             },
             {
-                "id": "1",
+                "id": null,
                 "nom": "Footbolis - L'Expérience Football Intergalactique",
-                "date_achat": "2025-03-27",
-                "prix_total": 2420
-            },
-            {
-                "id": "3",
-                "nom": "Musicaria - La Planète Musicale",
-                "date_achat": "2025-03-27",
-                "prix_total": 9060
-            },
-            {
-                "id": "1",
-                "nom": "Footbolis - L'Expérience Football Intergalactique",
-                "date_achat": "2025-03-28",
-                "prix_total": 12900
+                "date_achat": "2025-03-29",
+                "prix_total": 14875
             }
         ]
     },

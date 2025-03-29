@@ -1,105 +1,319 @@
 {
-    "titre": "Musicaria",
-    "description": "Planète musicale où tout vibre au rythme des sons.",
-    "etapes": [
+  "id": 9,
+  "titre": "Sportimax - La Planète de l’Extrême et du Dépassement",
+  "image": "img/sportimax.jpg",
+  "note": 5,
+  "date_depart": "2026-02-01",
+  "date_retour": "2026-02-10",
+  "duree": 10,
+  "nb_etapes": 3,
+  "specificites": "Sportimax est dédiée à tous les passionnés de sensations fortes : sports extrêmes, défis intergalactiques et entraînements de haute intensité vous y attendent.",
+  "modifie_par_utilisateur": false,
+  "statut": "en cours",
+  "prix_total": 13700,
+  "etapes": [
+    {
+      "id": 1,
+      "titre": "Base d’Entraînement Stellaire",
+      "date_arrivee": "2025-06-01",
+      "date_depart": "2025-06-04",
+      "duree": 4,
+      "position": {
+        "gps": "34.0522, -118.2437",
+        "nom_lieu": "Camp UltraFit Zeta"
+      },
+      "options": [
         {
-            "titre": "Étape Alpha",
-            "lieu": "Zone spéciale de Musicaria",
-            "options": {
-                "activité": [
-                    "Activité unique 1 sur Musicaria",
-                    "Activité unique 2 sur Musicaria",
-                    "Expérience immersive 3 sur Musicaria"
-                ],
-                "hébergement": [
-                    "Cabine spéciale Musicaria",
-                    "Dôme flottant",
-                    "Refuge de luxe"
-                ],
-                "restauration": [
-                    "Buffet galactique",
-                    "Spécialités de Musicaria"
-                ],
-                "transport": [
-                    "Navette autonome",
-                    "Tapis volant interstellaire"
-                ]
-            }
+          "id": 1,
+          "type": "activité sportive",
+          "nom": "Séance de préparation physique",
+          "valeurs_possibles": [
+            "Non",
+            "Séance collective",
+            "Coaching individuel"
+          ],
+          "choix_utilisateur": "Non",
+          "personnes": 2,
+          "prix_par_valeur": {
+            "Non": 0,
+            "Séance collective": 70,
+            "Coaching individuel": 150
+          }
         },
         {
-            "titre": "Étape Beta",
-            "lieu": "Zone secondaire de Musicaria",
-            "options": {
-                "activité": [
-                    "Aventure secondaire 1 sur Musicaria",
-                    "Mini-jeu ou défi 2 sur Musicaria",
-                    "Rencontre guidée 3 sur Musicaria"
-                ],
-                "hébergement": [
-                    "Chambre capsule",
-                    "Hôtel conceptuel Musicaria"
-                ],
-                "restauration": [
-                    "Snack spatial",
-                    "Cantine locale"
-                ],
-                "transport": [
-                    "Module de téléportation",
-                    "Ascenseur orbital"
-                ]
-            }
+          "id": 2,
+          "type": "hébergement",
+          "nom": "Dortoir sportif",
+          "valeurs_possibles": [
+            "Non",
+            "Lit standard",
+            "Chambre privée"
+          ],
+          "choix_utilisateur": "Non",
+          "personnes": 2,
+          "prix_par_valeur": {
+            "Non": 0,
+            "Lit standard": 120,
+            "Chambre privée": 260
+          }
+        },
+        {
+          "id": 3,
+          "type": "transport",
+          "nom": "Transport navette endurance",
+          "valeurs_possibles": [
+            "Non",
+            "Navette collective",
+            "Pod individuel"
+          ],
+          "choix_utilisateur": "Non",
+          "personnes": 2,
+          "prix_par_valeur": {
+            "Non": 0,
+            "Navette collective": 45,
+            "Pod individuel": 90
+          },
+          "autres_champs": {
+            "vitesse_moyenne": "500 000 km/h"
+          }
+        },
+        {
+          "id": 4,
+          "type": "service",
+          "nom": "Garde d’enfants",
+          "valeurs_possibles": [
+            "Non",
+            "Garde classique",
+            "Animation sportive"
+          ],
+          "choix_utilisateur": "Non",
+          "personnes": 1,
+          "prix_par_valeur": {
+            "Non": 0,
+            "Garde classique": 100,
+            "Animation sportive": 250
+          }
+        },
+        {
+          "id": 5,
+          "type": "service",
+          "nom": "Gestion du linge",
+          "valeurs_possibles": [
+            "Non",
+            "Lavage simple",
+            "Pressing premium"
+          ],
+          "choix_utilisateur": "Non",
+          "personnes": 1,
+          "prix_par_valeur": {
+            "Non": 0,
+            "Lavage simple": 30,
+            "Pressing premium": 45
+          }
         }
-    ],
-    "activites": [
+      ]
+    },
+    {
+      "id": 2,
+      "titre": "Zone des Défis Galactiques",
+      "date_arrivee": "2025-06-05",
+      "date_depart": "2025-06-07",
+      "duree": 3,
+      "position": {
+        "gps": "48.8566, 2.3522",
+        "nom_lieu": "Arène Zéro Gravité"
+      },
+      "options": [
         {
-            "nom": "Exploration guidée de Musicaria",
-            "description": "Découvrez les secrets cachés de Musicaria avec un guide expert.",
-            "prix": 200
+          "id": 6,
+          "type": "activité culturelle",
+          "nom": "Défis extrêmes",
+          "valeurs_possibles": [
+            "Non",
+            "Accès libre",
+            "Compétition complète"
+          ],
+          "choix_utilisateur": "Non",
+          "personnes": 2,
+          "prix_par_valeur": {
+            "Non": 0,
+            "Accès libre": 100,
+            "Compétition complète": 230
+          }
         },
         {
-            "nom": "Aventure nocturne sur Musicaria",
-            "description": "Balade sous les étoiles et phénomènes naturels uniques de Musicaria.",
-            "prix": 180
+          "id": 7,
+          "type": "hébergement",
+          "nom": "Chambre theme Multi-Sport",
+          "valeurs_possibles": [
+          	"Non",
+            "Chambre Standard",
+            "Chambre VIP"
+          ],
+          "choix_utilisateur": "Non",
+          "personnes": 2,
+          "prix_par_valeur": {
+          	"Non": 0,
+            "Chambre Standard": 570,
+            "Chambre VIP": 950
+          }
         },
         {
-            "nom": "Survie extrême à Musicaria",
-            "description": "Atelier immersif de survie dans les conditions hostiles de Musicaria.",
-            "prix": 220
+          "id": 8,
+          "type": "transport",
+          "nom": "pour vous y rendre",
+          "valeurs_possibles": [
+          	"Non",
+            "Fusée-BMX",
+            "Dojo volant"
+          ],
+          "choix_utilisateur": "Non",
+          "personnes": 2,
+          "prix_par_valeur": {
+          	"Non": 0,
+            "Fusée-BMX": 170,
+            "Dojo volant": 210
+          },
+          "autres_champs": {
+            "vitesse_moyenne": "500 000 km/h"
+          }
         },
         {
-            "nom": "Expédition scientifique sur Musicaria",
-            "description": "Participez à une mission pour collecter des données extraterrestres.",
-            "prix": 250
+          "id": 9,
+          "type": "service",
+          "nom": "Garde d’enfants",
+          "valeurs_possibles": [
+            "Non",
+            "Garde classique",
+            "Animation sportive"
+          ],
+          "choix_utilisateur": "Non",
+          "personnes": 1,
+          "prix_par_valeur": {
+            "Non": 0,
+            "Garde classique": 100,
+            "Animation sportive": 250
+          }
         },
         {
-            "nom": "Construction d'abri sur Musicaria",
-            "description": "Apprenez à bâtir votre propre refuge intergalactique.",
-            "prix": 160
-        },
-        {
-            "nom": "Découverte de la faune de Musicaria",
-            "description": "Observez des créatures uniques dans leur habitat natif.",
-            "prix": 190
-        },
-        {
-            "nom": "Tyrolienne géante de Musicaria",
-            "description": "Glissez à toute vitesse au-dessus des paysages spectaculaires de Musicaria.",
-            "prix": 150
-        },
-        {
-            "nom": "Spéléologie de Musicaria",
-            "description": "Explorez les profondeurs mystérieuses de grottes aux cristaux vivants.",
-            "prix": 210
-        },
-        {
-            "nom": "Parcours d’obstacles de Musicaria",
-            "description": "Testez vos limites avec des épreuves physiques interstellaires.",
-            "prix": 170
-        },
-        {
-            "nom": "Croisière aérienne autour de Musicaria",
-            "description": "Profitez d’une vue panoramique grâce à un vaisseau flottant.",
-            "prix": 230
+          "id": 10,
+          "type": "service",
+          "nom": "Gestion du linge",
+          "valeurs_possibles": [
+            "Non",
+            "Lavage simple",
+            "Pressing premium"
+          ],
+          "choix_utilisateur": "Non",
+          "personnes": 1,
+          "prix_par_valeur": {
+            "Non": 0,
+            "Lavage simple": 30,
+            "Pressing premium": 45
+          }
         }
-    ]
+      ]
+    },
+    {
+      "id": 3,
+      "titre": "Zone de Récupération",
+      "date_arrivee": "2025-06-08",
+      "date_depart": "2025-06-10",
+      "duree": 3,
+      "position": {
+        "gps": "51.5074, -0.1278",
+        "nom_lieu": "Spa Galactique ZenForce"
+      },
+      "options": [
+        {
+          "id": 11,
+          "type": "activité sportive",
+          "nom": "Massage relaxant",
+          "valeurs_possibles": [
+            "Non",
+            "Massage express",
+            "Massage complet"
+          ],
+          "choix_utilisateur": "Non",
+          "personnes": 2,
+          "prix_par_valeur": {
+            "Non": 0,
+            "Massage express": 40,
+            "Massage complet": 90
+          }
+        },
+        {
+          "id": 12,
+          "type": "restauration",
+          "nom": "Smoothie de récupération",
+          "valeurs_possibles": [
+            "Non",
+            "Classique",
+            "Ultra-énergie"
+          ],
+          "choix_utilisateur": "Non",
+          "personnes": 2,
+          "prix_par_valeur": {
+            "Non": 0,
+            "Classique": 15,
+            "Ultra-énergie": 35
+          }
+        },
+        {
+          "id": 13,
+          "type": "transport",
+          "nom": "Portail interdimensionnel",
+          "valeurs_possibles": [
+            "Non",
+            "Vélo elliptique en orbite",
+            "Skate spatial"
+          ],
+          "choix_utilisateur": "Non",
+          "personnes": 2,
+          "prix_par_valeur": {
+            "Non": 0,
+            "Vélo elliptique en orbite": 50,
+            "Skate spatial": 65
+          },
+          "autres_champs": {
+            "vitesse_moyenne": "500 000 km/h"
+          }
+        },
+        {
+          "id": 14,
+          "type": "service",
+          "nom": "Garde d’enfants",
+          "valeurs_possibles": [
+            "Non",
+            "Garde classique",
+            "Animation sportive"
+          ],
+          "choix_utilisateur": "Non",
+          "personnes": 1,
+          "prix_par_valeur": {
+            "Non": 0,
+            "Garde classique": 100,
+            "Animation sportive": 250
+          }
+        },
+        {
+          "id": 15,
+          "type": "service",
+          "nom": "Gestion du linge",
+          "valeurs_possibles": [
+            "Non",
+            "Lavage simple",
+            "Pressing premium"
+          ],
+          "choix_utilisateur": "Non",
+          "personnes": 1,
+          "prix_par_valeur": {
+            "Non": 0,
+            "Lavage simple": 30,
+            "Pressing premium": 45
+          }
+        }
+      ]
+    }
+  ]
 }

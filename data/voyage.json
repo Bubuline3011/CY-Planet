@@ -6,7 +6,8 @@
     "image": "img/Footbol.jpg",
     "date": "2025-03-25",
     "description": "Planète dédiée au football avec stades gravitationnels, matchs intergalactiques et musée du foot galactique.",
-    "id": 1
+    "id": 1,
+    "mots_cles": ["football", "sport", "galactique", "match", "joueurs", "stade", "fans", "musée", "gravité", "compétition"]
   },
   {
     "titre": "Gastrodelis",
@@ -15,7 +16,9 @@
     "image": "img/Gastrodelis.jpg",
     "date": "2025-03-20",
     "description": "Un monde culinaire interplanétaire avec cours de cuisine spatiale et concours de chefs stellaires.",
-    "id": 2
+    "id": 10,
+    "mots_cles": ["cuisine", "gastronomie", "spatiale", "chef", "recette", "cours", "interplanétaire", "dégustation", "concours"]
+
   },
   {
     "titre": "AquaWorld",
@@ -24,7 +27,9 @@
     "image": "img/AquaWorld.jpg",
     "date": "2025-03-22",
     "description": "Planète océanique aux bulles sous-marines : plongée avec créatures géantes et hôtels-bulles flottants.",
-    "id": 3
+    "id": 2,
+    "mots_cles": ["océan", "eau", "plongée", "sous-marin", "créatures", "hôtel", "bulle", "aquatique", "marin"]
+
   },
   {
     "titre": "Musicaria",
@@ -33,7 +38,8 @@
     "image": "img/Musicaria.jpg",
     "date": "2025-03-18",
     "description": "Un monde vibrant au rythme de la musique : concerts en apesanteur et dancefloors suspendus.",
-    "id": 4
+    "id": 3,
+    "mots_cles": ["musique", "concert", "danse", "rythme", "apeusanteur", "scène", "fête", "sons", "ambiance", "sortie"]
   },
   {
     "titre": "Sportimax",
@@ -42,7 +48,8 @@
     "image": "img/Sportimax.jpg",
     "date": "2025-03-19",
     "description": "Planète du sport extrême : marathons aériens et parkour en gravité variable dans des arènes suspendues.",
-    "id": 5
+    "id": 9,
+    "mots_cles": ["sport", "extrême", "marathon", "parkour", "adrénaline", "gravité", "aérien", "défi", "arène", "compétition"]
   },
   {
     "titre": "Ludopolis",
@@ -51,7 +58,8 @@
     "image": "img/Ludopolis.jpg",
     "date": "2025-03-16",
     "description": "Monde du jeu géant : escape rooms futuristes, échecs vivants et compétitions intergalactiques.",
-    "id": 6
+    "id": 7,
+    "mots_cles": ["jeu", "escape room", "échecs", "compétition", "futuriste", "ludique", "stratégie", "galactique", "divertissement"]
   },
   {
     "titre": "CinéRéalité",
@@ -60,7 +68,8 @@
     "image": "img/CinéRéalité.jpg",
     "date": "2025-03-15",
     "description": "Chaque ville est un film vivant : immersion interactive, cascades réelles et école de cinéma spatiale.",
-    "id": 7
+    "id": 8,
+    "mots_cles": ["cinéma", "film", "action", "cascade", "acteur", "immersion", "réalité", "scène", "spatiale", "sortie", "art"]
   },
   {
     "titre": "Médiévalia",
@@ -69,7 +78,8 @@
     "image": "img/Médiévalia.jpg",
     "date": "2025-03-17",
     "description": "Planète médiévale futuriste avec châteaux flottants, chevaliers cybernétiques et tournois en lévitation.",
-    "id": 8
+    "id": 5,
+    "mots_cles": ["médiéval", "chevalier", "château", "tournoi", "futuriste", "cybernétique", "lévitation", "armure", "histoire", "art"]
   },
   {
     "titre": "Adventuris",
@@ -78,7 +88,9 @@
     "image": "img/Adventuris.jpg",
     "date": "2025-03-23",
     "description": "Voyage d’exploration intergalactique : jungles lumineuses, spéléologie dans des cavernes cristallines.",
-    "id": 9
+    "id": 4,
+    "mots_cles": ["aventure", "exploration", "jungle", "spéléologie", "caverne", "cristal", "galactique", "nature", "découverte"]
+
   },
   {
     "titre": "Dreamara",
@@ -87,7 +99,8 @@
     "image": "img/Dreamara.jpg",
     "date": "2025-03-21",
     "description": "Monde onirique fait de nuages moelleux, tapis volants et forêts de bonbons arc-en-ciel.",
-    "id": 10
+    "id": 6,
+    "mots_cles": ["rêve", "nuage", "magie", "tapis volant", "bonbon", "fantastique", "coloré", "onirique", "imaginaire"]
   }
 ]
 

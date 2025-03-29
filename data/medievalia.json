@@ -1,49 +1,319 @@
 {
-    "id": 5,
-    "titre": "Médiévalia - L'Empire des Chevaliers Cybernétiques",
-    "image": "Médiévalia.jpg",
-    "date_depart": "2025-12-10",
-    "date_retour": "2025-12-20",
-    "duree": 10,
-    "specificites": "Un monde où le médiéval et la technologie fusionnent dans un univers unique.",
-    "prix_total": 20500,
-    "etapes": [
+  "id": 5,
+  "titre": "Medievalia - Le Voyage dans le Temps Interstellaire",
+  "image": "img/medievalia.jpg",
+  "note": 5,
+  "date_depart": "2025-10-01",
+  "date_retour": "2025-10-10",
+  "duree": 10,
+  "nb_etapes": 3,
+  "specificites": "Revivez l’époque médiévale sur une planète lointaine où chevaliers, joutes cosmiques et banquets royaux vous attendent dans un décor d’un autre temps.",
+  "modifie_par_utilisateur": false,
+  "statut": "en cours",
+  "prix_total": 13200,
+  "etapes": [
+    {
+      "id": 1,
+      "titre": "Tournoi Stellaire des Chevaliers",
+      "date_arrivee": "2025-06-01",
+      "date_depart": "2025-06-04",
+      "duree": 4,
+      "position": {
+        "gps": "34.0522, -118.2437",
+        "nom_lieu": "Arène Royale de Ferinox"
+      },
+      "options": [
         {
-            "titre": "Tournoi de Joutes en Lévitant",
-            "date_arrivee": "2025-12-10",
-            "date_depart": "2025-12-15",
-            "duree": 5,
-            "position": {
-                "gps": "30.0000, -20.0000",
-                "nom_lieu": "Forteresse Céleste"
-            },
-            "options": [
-                {"type": "expérience", "nom": "Combat d'épées laser", "prix_par_personne": 250},
-                {"type": "hébergement", "nom": "Château Cybernétique", "prix_par_personne": 300}
-            ]
+          "id": 1,
+          "type": "activité sportive",
+          "nom": "Joute intergalactique",
+          "valeurs_possibles": [
+            "Non",
+            "Gradins",
+            "Tribune royale"
+          ],
+          "choix_utilisateur": "Non",
+          "personnes": 2,
+          "prix_par_valeur": {
+            "Non": 0,
+            "Gradins": 100,
+            "Tribune royale": 260
+          }
+        },
+        {
+          "id": 2,
+          "type": "hébergement",
+          "nom": "Chambre d’auberge médiévale",
+          "valeurs_possibles": [
+            "Non",
+            "Chambre simple",
+            "Suite royale"
+          ],
+          "choix_utilisateur": "Non",
+          "personnes": 2,
+          "prix_par_valeur": {
+            "Non": 0,
+            "Chambre simple": 180,
+            "Suite royale": 480
+          }
+        },
+        {
+          "id": 3,
+          "type": "transport",
+          "nom": "Chariot spatial à chevaux holographiques",
+          "valeurs_possibles": [
+            "Non",
+            "Chariot simple",
+            "Cortège royal"
+          ],
+          "choix_utilisateur": "Non",
+          "personnes": 2,
+          "prix_par_valeur": {
+            "Non": 0,
+            "Chariot simple": 55,
+            "Cortège royal": 120
+          },
+          "autres_champs": {
+            "vitesse_moyenne": "500 000 km/h"
+          }
+        },
+        {
+          "id": 4,
+          "type": "service",
+          "nom": "Garde d’enfants",
+          "valeurs_possibles": [
+            "Non",
+            "Garde classique",
+            "Animation sportive"
+          ],
+          "choix_utilisateur": "Non",
+          "personnes": 1,
+          "prix_par_valeur": {
+            "Non": 0,
+            "Garde classique": 100,
+            "Animation sportive": 250
+          }
+        },
+        {
+          "id": 5,
+          "type": "service",
+          "nom": "Gestion du linge",
+          "valeurs_possibles": [
+            "Non",
+            "Lavage simple",
+            "Pressing premium"
+          ],
+          "choix_utilisateur": "Non",
+          "personnes": 1,
+          "prix_par_valeur": {
+            "Non": 0,
+            "Lavage simple": 30,
+            "Pressing premium": 45
+          }
         }
-    ],
- "activites": [
-    {
-        "nom": "Combat d'épées laser",
-        "description": "Affrontez d’autres participants dans des duels futuristes.",
-        "prix": 250
+      ]
     },
     {
-        "nom": "Exploration de forteresses magnétiques",
-        "description": "Découvrez les mystères cachés des châteaux flottants.",
-        "prix": 200
+      "id": 2,
+      "titre": "Village Historique de Timebourg",
+      "date_arrivee": "2025-06-05",
+      "date_depart": "2025-06-07",
+      "duree": 3,
+      "position": {
+        "gps": "48.8566, 2.3522",
+        "nom_lieu": "Place du Marché Étoilé"
+      },
+      "options": [
+        {
+          "id": 6,
+          "type": "activité culturelle",
+          "nom": "Atelier de forge médiévale",
+          "valeurs_possibles": [
+            "Non",
+            "Visite libre",
+            "Atelier interactif"
+          ],
+          "choix_utilisateur": "Non",
+          "personnes": 2,
+          "prix_par_valeur": {
+            "Non": 0,
+            "Visite libre": 70,
+            "Atelier interactif": 150
+          }
+        },
+        {
+          "id": 7,
+          "type": "hébergement",
+          "nom": "Chambre theme Royal",
+          "valeurs_possibles": [
+          	"Non"
+            "Chambre Standard",
+            "Chambre VIP"
+          ],
+          "choix_utilisateur": "Non",
+          "personnes": 2,
+          "prix_par_valeur": {
+          	"Non": 0,
+            "Chambre Standard": 570,
+            "Chambre VIP": 950
+          }
+        },
+        {
+          "id": 8,
+          "type": "transport",
+          "nom": "pour vous y rendre",
+          "valeurs_possibles": [
+          	"Non"
+            "Destrier astral",
+            "Portail runique orbital"
+          ],
+          "choix_utilisateur": "Non",
+          "personnes": 2,
+          "prix_par_valeur": {
+          	"Non": 0,
+            "Destrier astral": 170,
+            "Portail runique orbital": 210
+          },
+          "autres_champs": {
+            "vitesse_moyenne": "500 000 km/h"
+          }
+        },
+        {
+          "id": 9,
+          "type": "service",
+          "nom": "Garde d’enfants",
+          "valeurs_possibles": [
+            "Non",
+            "Garde classique",
+            "Animation sportive"
+          ],
+          "choix_utilisateur": "Non",
+          "personnes": 1,
+          "prix_par_valeur": {
+            "Non": 0,
+            "Garde classique": 100,
+            "Animation sportive": 250
+          }
+        },
+        {
+          "id": 10,
+          "type": "service",
+          "nom": "Gestion du linge",
+          "valeurs_possibles": [
+            "Non",
+            "Lavage simple",
+            "Pressing premium"
+          ],
+          "choix_utilisateur": "Non",
+          "personnes": 1,
+          "prix_par_valeur": {
+            "Non": 0,
+            "Lavage simple": 30,
+            "Pressing premium": 45
+          }
+        }
+      ]
     },
     {
-        "nom": "Tournoi de joutes en lévitation",
-        "description": "Affrontez d'autres chevaliers dans un tournoi en apesanteur.",
-        "prix": 300
-    },
-    {
-        "nom": "Chasse aux trésors intergalactique",
-        "description": "Partez à la recherche d’artefacts anciens.",
-        "prix": 220
+      "id": 3,
+      "titre": "Banquet Royal des Étoiles",
+      "date_arrivee": "2025-06-08",
+      "date_depart": "2025-06-10",
+      "duree": 3,
+      "position": {
+        "gps": "51.5074, -0.1278",
+        "nom_lieu": "Château Galactique de Luxor"
+      },
+      "options": [
+        {
+          "id": 11,
+          "type": "activité sportive",
+          "nom": "Banquet médiéval",
+          "valeurs_possibles": [
+            "Non",
+            "Repas simple",
+            "Repas royal"
+          ],
+          "choix_utilisateur": "Non",
+          "personnes": 2,
+          "prix_par_valeur": {
+            "Non": 0,
+            "Repas simple": 50,
+            "Repas royal": 100
+          }
+        },
+        {
+          "id": 12,
+          "type": "restauration",
+          "nom": "Animation musicale médiévale",
+          "valeurs_possibles": [
+            "Non",
+            "Musique d’ambiance",
+            "Mini-concert"
+          ],
+          "choix_utilisateur": "Non",
+          "personnes": 2,
+          "prix_par_valeur": {
+            "Non": 0,
+            "Musique d’ambiance": 25,
+            "Mini-concert": 60
+          }
+        },
+        {
+          "id": 13,
+          "type": "transport",
+          "nom": "Portail interdimensionnel",
+          "valeurs_possibles": [
+            "Non",
+            "Pégase quantique",
+            "Portail interdimensionnel"
+          ],
+          "choix_utilisateur": "Non",
+          "personnes": 2,
+          "prix_par_valeur": {
+            "Non": 0,
+            "Pégase quantique": 50,
+            "Charette gravitationnelle": 65
+          },
+          "autres_champs": {
+            "vitesse_moyenne": "500 000 km/h"
+          }
+        },
+        {
+          "id": 14,
+          "type": "service",
+          "nom": "Garde d’enfants",
+          "valeurs_possibles": [
+            "Non",
+            "Garde classique",
+            "Animation sportive"
+          ],
+          "choix_utilisateur": "Non",
+          "personnes": 1,
+          "prix_par_valeur": {
+            "Non": 0,
+            "Garde classique": 100,
+            "Animation sportive": 250
+          }
+        },
+        {
+          "id": 15,
+          "type": "service",
+          "nom": "Gestion du linge",
+          "valeurs_possibles": [
+            "Non",
+            "Lavage simple",
+            "Pressing premium"
+          ],
+          "choix_utilisateur": "Non",
+          "personnes": 1,
+          "prix_par_valeur": {
+            "Non": 0,
+            "Lavage simple": 30,
+            "Pressing premium": 45
+          }
+        }
+      ]
     }
-]
-   
+  ]
 }
