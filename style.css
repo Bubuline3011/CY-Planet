@@ -1038,7 +1038,7 @@ body.detail .page-contenu h1 {
 
 .detail form {
     width: 90%;
-    max-width: 800px;
+    max-width: 90%;
     margin: 30px auto;
     padding: 30px;
     background: linear-gradient(135deg, #ffffff, #f4f4f9);
