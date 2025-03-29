@@ -27,22 +27,48 @@ $options_selectionnees = $_POST['options'] ?? [];
 $prix_total = $voyage['prix_total'];
 $recap = [];
 
-foreach ($options_selectionnees as $etape => $options) {
-    foreach ($options as $valeur) {
-        list($nom, $prix) = explode('|', $valeur);
-        $recap[] = [
-            'nom' => $nom,
-            'prix' => (float)$prix
-        ];
-        $prix_total += (float)$prix;
+foreach ($options_selectionnees as $etapeIndex => $options) {
+    foreach ($options as $optionIndex => $option) {
+        $type = $option['type'] ?? 'inconnu';
+        $nom = $option['nom'] ?? 'Option inconnue';
+        $choix = $option['choix_utilisateur'] ?? 'Non';
+        $nb = isset($option['personnes']) ? (int)$option['personnes'] : 1;
+
+        // Rechercher l'option dans le JSON pour retrouver le vrai prix
+        $prix_unitaire = 0;
+        foreach ($voyage['etapes'][$etapeIndex]['options'] as $opt) {
+            if ($opt['type'] === $type && $opt['nom'] === $nom) {
+                $prix_unitaire = $opt['prix_par_valeur'][$choix] ?? 0;
+                break;
+            }
+        }
+
+        $sous_total = $prix_unitaire * $nb;
+
+        // Ajouter au récapitulatif seulement si c’est payant
+        if (strtolower(trim($choix)) !== 'non' && $sous_total > 0) {
+            $recap[] = [
+                'nom' => $nom,
+                'choix' => $choix,
+                'personnes' => $nb,
+                'prix_unitaire' => $prix_unitaire,
+                'prix_total' => $sous_total
+            ];
+            $prix_total += $sous_total;
+        }
     }
 }
 
+
+
 // Stocker les données dans la session pour les récupérer après paiement
 $_SESSION['commande'] = [
-    'voyage_id' => $voyage_id,
+    'id' => $voyage_id,
     'titre' => $voyage['titre'],
-    'prix_total' => $prix_total
+    'date_depart' => $voyage['date_depart'],
+    'date_retour' => $voyage['date_retour'],
+    'prix_total' => $prix_total,
+    'etapes' => $voyage['etapes']
 ];
 ?>
 
@@ -53,6 +79,7 @@ $_SESSION['commande'] = [
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panier</title>
     <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body class="acceuil">
     <?php
@@ -68,7 +95,7 @@ $_SESSION['commande'] = [
     <main class="presentation">
         <h2>Récapitulatif de votre commande</h2>
         <p>Merci pour votre commande ! Voici les détails de votre voyage sélectionné :</p>
-
+	
         <div class="intro">
             <p><strong>Voyage :</strong> <?= htmlspecialchars($voyage['titre']) ?></p>
             <p><strong>Dates :</strong> du <?= htmlspecialchars($voyage['date_depart']) ?> au <?= htmlspecialchars($voyage['date_retour']) ?> (<?= htmlspecialchars($voyage['duree']) ?> jours)</p>
@@ -82,14 +109,16 @@ $_SESSION['commande'] = [
                     <li>Aucune option supplémentaire sélectionnée.</li>
                 <?php else: ?>
                     <?php foreach ($recap as $opt): ?>
-                        <li><?= htmlspecialchars($opt['nom']) ?> : <?= $opt['prix'] ?> €</li>
+                        <li><?= htmlspecialchars($opt['nom']) ?> : <?= htmlspecialchars($opt['prix_total']) ?> €</li>
                     <?php endforeach; ?>
                 <?php endif; ?>
             </ul>
 
             <h3>Prix total à payer : <?= $prix_total ?> €</h3>
         </section>
-
+	<a href="voyage_detail.php?id=<?= urlencode($voyage_id) ?>">
+    		<button class="bouton-paiement" type="bouton-paiement">Modifier mon voyage</button>
+	</a>
     
     <form action="https://www.plateforme-smc.fr/cybank/index.php" method="POST">
         <input type="hidden" name="transaction" value="<?php echo $transaction; ?>">

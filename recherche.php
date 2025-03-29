@@ -19,7 +19,7 @@
     <div class="recherche-boite">
         <h1>Trouvez votre séjour idéal :</h1>
     
-        <form action="acceuil.html" method="POST">
+        <form action="acceuil.php" method="POST">
             
             <label for="destination">Destination :</label>
             <select id="destination" name="destination" required> 

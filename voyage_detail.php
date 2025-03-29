@@ -1,131 +1,88 @@
 <?php
-session_start();
-if (!isset($_SESSION['email'])) {
-    header('Location: connexion.php');
-    exit();
+// Récupérer l'ID depuis l'URL
+if (!isset($_GET['id'])) {
+    die("Erreur : aucun identifiant de voyage fourni.");
 }
-// Vérifie si un ID est présent et est un entier positif
-if (!isset($_GET['id']) || !is_numeric($_GET['id']) || (int)$_GET['id'] <= 0) {
-    echo "<p>Erreur : Aucun identifiant de voyage valide spécifié.</p>";
-    exit;
-}
+$voyage_id = $_GET['id'];
 
-$id = (int)$_GET['id'];
-
-// Charger la table d'index des fichiers voyages
-$indexPath = 'data/index_voyages.json';
-if (!file_exists($indexPath)) {
-    echo "<p>Erreur : index_voyages.json introuvable.</p>";
-    exit;
+// Charger l'index des fichiers
+$index_path = 'data/index_voyages.json';
+if (!file_exists($index_path)) {
+    die("Erreur : index des voyages manquant.");
 }
 
-$index = json_decode(file_get_contents($indexPath), true);
-
-// Vérifie si l'id est valide dans l'index
-if (!array_key_exists($id, $index)) {
-    echo "<p>Erreur : Voyage inconnu (ID : $id).</p>";
-    exit;
+$index = json_decode(file_get_contents($index_path), true);
+if (!isset($index[$voyage_id])) {
+    die("Erreur : voyage non trouvé.");
 }
 
-$filename = 'data/' . $index[$id];
-if (!file_exists($filename)) {
-    echo "<p>Erreur : fichier $filename introuvable.</p>";
-    exit;
+$voyage_file = 'data/' . $index[$voyage_id];
+$voyageData = json_decode(file_get_contents($voyage_file), true);
+
+if (!$voyageData) {
+    die("Erreur de chargement du voyage.");
 }
-
-$voyage = json_decode(file_get_contents($filename), true);
-$voyage['id'] = $id; // assure que l'id est présent
-
-if (isset($_SESSION['email'])) {
-    $email = $_SESSION['email'];
-    $consultation = [
-        "id" => $voyage['id'],
-        "nom" => $voyage['titre'],
-        "date_consultation" => date('Y-m-d H:i:s')
-    ];
-
-    $utilisateur_path = "data/utilisateur.json";
-    if (file_exists($utilisateur_path)) {
-        $utilisateurs = json_decode(file_get_contents($utilisateur_path), true);
-
-        foreach ($utilisateurs as &$user) {
-            if ($user['email'] === $email) {
-                if (!isset($user['voyages_consultes'])) {
-                    $user['voyages_consultes'] = [];
-                }
-
-                // Ne pas enregistrer deux fois le même voyage (optionnel)
-                $deja_consulte = false;
-                foreach ($user['voyages_consultes'] as &$c) {
-                    if ($c['id'] === $voyage['id']) {
-                    // Met à jour la date de consultation si déjà consulté
-                        $c['date_consultation'] = $consultation['date_consultation'];
-                        $deja_consulte = true;
-                        break;
-                    }
-                }
-		unset($c);
-                if (!$deja_consulte) {
-                    $user['voyages_consultes'][] = $consultation;
-                }
-
-                break;
-            }
-        }
-
-        file_put_contents($utilisateur_path, json_encode($utilisateurs, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
-    }
-}
-
 ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title><?= htmlspecialchars($voyage['titre']) ?></title>
+    <title><?php echo htmlspecialchars($voyageData['titre']); ?></title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="acceuil">
-	<?php include 'header.php'; ?>
-    <main class="destinations">
-        <h2><?= htmlspecialchars($voyage['titre']) ?></h2>
+<body class="detail">
+<?php include 'header.php'; ?>
+<div class="page-contenu">
+    <h1><?php echo htmlspecialchars($voyageData['titre']); ?></h1>
+    <p><strong>Dates :</strong> du <?php echo $voyageData['date_depart']; ?> au <?php echo $voyageData['date_retour']; ?> (<?php echo $voyageData['duree']; ?> jours)</p>
+    <p><strong>Description :</strong> <?php echo $voyageData['specificites']; ?></p>
+    <p><strong>Prix de base :</strong> <?php echo $voyageData['prix_total']; ?> €</p>
 
-        <div class="intro">
-            <p><strong>Dates :</strong> du <?= htmlspecialchars($voyage['date_depart']) ?> au <?= htmlspecialchars($voyage['date_retour']) ?> (<?= htmlspecialchars($voyage['duree']) ?> jours)</p>
-            <p><strong>Spécificités :</strong> <?= htmlspecialchars($voyage['specificites']) ?></p>
-            <p><strong>Prix de base :</strong> <?= htmlspecialchars($voyage['prix_total']) ?> €</p>
-        </div>
+    <form action="panier.php" method="POST">
+        <input type="hidden" name="voyage_id" value="<?php echo $voyageData['id']; ?>">
 
-        <form method="POST" action="panier.php">
-            <input type="hidden" name="voyage_id" value="<?= $id ?>">
+        <?php foreach ($voyageData['etapes'] as $etapeIndex => $etape): ?>
+            <fieldset style="margin-top: 30px;">
+                <legend><strong><?php echo htmlspecialchars($etape['titre']); ?></strong> (du <?php echo $etape['date_arrivee']; ?> au <?php echo $etape['date_depart']; ?>)</legend>
+                <p><em><?php echo $etape['position']['nom_lieu']; ?> [<?php echo $etape['position']['gps']; ?>]</em></p>
 
-            <?php if (isset($voyage['etapes'])): ?>
-                <?php foreach ($voyage['etapes'] as $etape_index => $etape): ?>
-                    <div class="presentation">
-                        <h3><?= htmlspecialchars($etape['titre']) ?></h3>
-                        <p><strong>Lieu :</strong> <?= htmlspecialchars($etape['position']['nom_lieu']) ?></p>
-
-                        <?php if (isset($etape['options'])): ?>
-                            <?php foreach ($etape['options'] as $option_index => $option): ?>
-                                <label for="option_<?= $etape_index ?>_<?= $option_index ?>">
-                                    <?= ucfirst(htmlspecialchars($option['type'])) ?> :
-                                    <?= htmlspecialchars($option['nom']) ?> (<?= $option['prix_par_personne'] ?> € par personne)
-                                </label><br>
-                                <input type="checkbox" 
-                                       name="options[<?= $etape_index ?>][<?= $option_index ?>]" 
-                                       value="<?= htmlspecialchars($option['nom']) ?>|<?= $option['prix_par_personne'] ?>">
-                                <label>Inclure</label>
-                                <br><br>
+                <?php foreach ($etape['options'] as $optionIndex => $option): ?>
+                    <div style="margin-bottom: 15px;">
+                        <label for="option_<?php echo $etapeIndex . '_' . $optionIndex; ?>">
+                            <?php echo ucfirst($option['type']); ?> : <?php echo $option['nom']; ?>
+                        </label>
+                        <select name="options[<?php echo $etapeIndex; ?>][<?php echo $optionIndex; ?>][choix_utilisateur]" id="option_<?php echo $etapeIndex . '_' . $optionIndex; ?>">
+                            <?php foreach ($option['valeurs_possibles'] as $valeur): ?>
+                                <option value="<?php echo htmlspecialchars($valeur); ?>" <?php if ($valeur == $option['choix_utilisateur']) echo 'selected'; ?>>
+                                    <?php echo htmlspecialchars($valeur); ?>
+                                </option>
                             <?php endforeach; ?>
-                        <?php endif; ?>
+                        </select>
+
+                        <?php
+                            $choix = $option['choix_utilisateur'];
+                            $prix_unitaire = isset($option['prix_par_valeur'][$choix]) ? $option['prix_par_valeur'][$choix] : 0;
+                            $nb_personnes = isset($option['personnes']) ? (int)$option['personnes'] : 1;
+                            $prix_total = $prix_unitaire * $nb_personnes;
+                        ?>
+                        <p><strong>Prix total :</strong> <?php echo $prix_total; ?> € (<?php echo $prix_unitaire; ?> €/pers)</p>
+
+                        <input type="hidden" name="options[<?php echo $etapeIndex; ?>][<?php echo $optionIndex; ?>][type]" value="<?php echo $option['type']; ?>">
+                        <input type="hidden" name="options[<?php echo $etapeIndex; ?>][<?php echo $optionIndex; ?>][nom]" value="<?php echo $option['nom']; ?>">
+
+                        <label for="nb_<?php echo $etapeIndex . '_' . $optionIndex; ?>">Nombre de personnes :</label>
+                        <input type="number" id="nb_<?php echo $etapeIndex . '_' . $optionIndex; ?>" name="options[<?php echo $etapeIndex; ?>][<?php echo $optionIndex; ?>][personnes]" value="<?php echo $nb_personnes; ?>" min="0" required>
                     </div>
                 <?php endforeach; ?>
-            <?php endif; ?>
+            </fieldset>
+        <?php endforeach; ?>
 
-            <button type="submit" class="acheter-btn">Passer au paiement</button>
-        </form>
-    </main>
+        <button type="submit">Ajouter au panier</button>
+    </form>
+</div>
 </body>
 </html>
+
+
 
 

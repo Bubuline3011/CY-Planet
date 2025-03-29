@@ -32,7 +32,7 @@ if ($motCle !== '') {
     <link rel="stylesheet" href="style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
-<body>
+<body class="apropos">
     <?php include 'header.php'; ?>
 
     <!-- Section Présentation -->
@@ -61,25 +61,24 @@ if ($motCle !== '') {
         </form>
 
         <?php if ($motCle !== ''): ?>
-            <h3>Résultats pour "<?= htmlspecialchars($motCle) ?>" :</h3>
+    <h3>Résultats pour "<?= htmlspecialchars($motCle) ?>" :</h3>
 
-            <?php if (empty($voyagesFiltres)): ?>
-                <p>Aucun voyage ne correspond à votre recherche.</p>
-            <?php else: ?>
-                <div class="destination-liste">
-                    <?php foreach ($voyagesFiltres as $voyage): ?>
-                        <a class="destination" href="voyage_detail.php?id=<?= $voyage['id'] ?>">
-                            <img src="<?= htmlspecialchars($voyage['image']) ?>" alt="<?= htmlspecialchars($voyage['titre']) ?>">
-                            <h3><?= htmlspecialchars($voyage['titre']) ?></h3>
-                            <p><strong>Prix :</strong> <?= htmlspecialchars($voyage['prix']) ?> €</p>
-                            <p><strong>Note :</strong> <?= htmlspecialchars($voyage['note']) ?>/5 ⭐</p>
-                            <p><?= htmlspecialchars($voyage['description']) ?></p>
-                        </a>
-                    <?php endforeach; ?>
-                </div>
-            <?php endif; ?>
-        <?php endif; ?>
-
+    <?php if (empty($voyagesFiltres)): ?>
+        <p>Aucun voyage ne correspond à votre recherche.</p>
+    <?php else: ?>
+        <div class="destination-recherche">
+            <?php foreach ($voyagesFiltres as $voyage): ?>
+                <a class="destination" href="voyage_detail.php?id=<?= $voyage['id'] ?>">
+                    <img src="<?= htmlspecialchars($voyage['image']) ?>" alt="<?= htmlspecialchars($voyage['titre']) ?>">
+                    <h3><?= htmlspecialchars($voyage['titre']) ?></h3>
+                    <p><strong>Prix :</strong> <?= htmlspecialchars($voyage['prix']) ?> €</p>
+                    <p><strong>Note :</strong> <?= htmlspecialchars($voyage['note']) ?>/5 ⭐</p>
+                    <p><?= htmlspecialchars($voyage['description']) ?></p>
+                </a>
+            <?php endforeach; ?>
+        </div>
+    <?php endif; ?>
+<?php endif; ?>
         <div class="logo-encadrer">
             <a href="acceuil.php">
                 <img src="img/logo.png" alt="Logo Cosmo Trip">
