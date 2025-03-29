@@ -65,7 +65,6 @@ if (!$voyageData) {
                             $nb_personnes = isset($option['personnes']) ? (int)$option['personnes'] : 1;
                             $prix_total = $prix_unitaire * $nb_personnes;
                         ?>
-                        <p><strong>Prix total :</strong> <?php echo $prix_total; ?> € (<?php echo $prix_unitaire; ?> €/pers)</p>
 
                         <input type="hidden" name="options[<?php echo $etapeIndex; ?>][<?php echo $optionIndex; ?>][type]" value="<?php echo $option['type']; ?>">
                         <input type="hidden" name="options[<?php echo $etapeIndex; ?>][<?php echo $optionIndex; ?>][nom]" value="<?php echo $option['nom']; ?>">
