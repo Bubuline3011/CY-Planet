@@ -161,7 +161,7 @@
         {
           "id": 8,
           "type": "transport",
-          "nom": "pour vous y rendre",
+          "nom": "Pour vous y rendre",
           "valeurs_possibles": [
           	"Non",
             "Nuage de rêve programmé",
@@ -262,7 +262,7 @@
         {
           "id": 13,
           "type": "transport",
-          "nom": "Portail interdimensionnel",
+          "nom": "Pour vous y rendre",
           "valeurs_possibles": [
             "Non",
             "Mongolfière Spatiale",

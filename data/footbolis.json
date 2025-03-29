@@ -54,7 +54,7 @@
         {
           "id": 3,
           "type": "transport",
-          "nom": "Portail interdimensionnel",
+          "nom": "Pour vous y rendre",
           "valeurs_possibles": ["Non", "Vaisseaux Spatial", "Portail interdimensionnel"],
           "choix_utilisateur": "Non",
           "personnes": 2,
@@ -135,7 +135,7 @@
         {
           "id": 8,
           "type": "transport",
-          "nom": "pour vous y rendre",
+          "nom": "Pour vous y rendre",
           "valeurs_possibles": ["Non", "Voiture Volante Spatial", "Train magnétique interstellaire"],
           "choix_utilisateur": "Non",
           "personnes": 2,
@@ -216,7 +216,7 @@
         {
           "id": 13,
           "type": "transport",
-          "nom": "Portail interdimensionnel",
+          "nom": "Pour vous y rendre",
           "valeurs_possibles": ["Non","Mongolfière Spatiale", "Portail interdimensionnel"],
           "choix_utilisateur": "Non",
           "personnes": 2,

@@ -60,7 +60,7 @@
         {
           "id": 3,
           "type": "transport",
-          "nom": "Chariot spatial à chevaux holographiques",
+          "nom": "Pour vous y rendre",
           "valeurs_possibles": [
             "Non",
             "Chariot simple",
@@ -161,7 +161,7 @@
         {
           "id": 8,
           "type": "transport",
-          "nom": "pour vous y rendre",
+          "nom": "Pour vous y rendre",
           "valeurs_possibles": [
           	"Non"
             "Destrier astral",
@@ -262,7 +262,7 @@
         {
           "id": 13,
           "type": "transport",
-          "nom": "Portail interdimensionnel",
+          "nom": "Pour vous y rendre",
           "valeurs_possibles": [
             "Non",
             "Pégase quantique",

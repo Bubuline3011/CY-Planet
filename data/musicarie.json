@@ -62,7 +62,7 @@
         {
           "id": 3,
           "type": "transport",
-          "nom": "Télécabine musicale",
+          "nom": "Pour vous y rendre",
           "valeurs_possibles": [
             "Non",
             "Navette",
@@ -162,7 +162,7 @@
         {
           "id": 8,
           "type": "transport",
-          "nom": "pour vous y rendre",
+          "nom": "Pour vous y rendre",
           "valeurs_possibles": [
           	"Non",
             "Voiture Volante Spatial",
@@ -263,7 +263,7 @@
         {
           "id": 13,
           "type": "transport",
-          "nom": "Portail interdimensionnel",
+          "nom": "Pour vous y rendre",
           "valeurs_possibles": [
             "Non",
             "Mongolfière Spatiale",

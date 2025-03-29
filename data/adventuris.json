@@ -60,7 +60,7 @@
         {
           "id": 3,
           "type": "transport",
-          "nom": "Transport blindé thermique",
+          "nom": "Pour vous y rendre",
           "valeurs_possibles": [
             "Non",
             "Buggy lunaire",
@@ -161,7 +161,7 @@
         {
           "id": 8,
           "type": "transport",
-          "nom": "pour vous y rendre",
+          "nom": "Pour vous y rendre",
           "valeurs_possibles": ["Non",
             "Canoë quantique",
             "Train d'exploration gravitationnelle"
@@ -261,7 +261,7 @@
         {
           "id": 13,
           "type": "transport",
-          "nom": "Portail interdimensionnel",
+          "nom": "Pour vous y rendre",
           "valeurs_possibles": [
             "Non",
             "Diligence hyperspatiale",
