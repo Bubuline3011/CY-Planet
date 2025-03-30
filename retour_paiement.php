@@ -44,8 +44,9 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         echo "<p>Montant : $montant $</p>";
         echo "<p>Le paiement a été refusé. Vérifiez vos informations bancaires et réessayez.</p>";
 
-        // Redirection après 5 secondes vers la page de paiement
-        header("refresh:5;url=panier.php");
+        // Redirection après 5 secondes vers la page de destination
+        header("refresh:5;url=destination.php");
+        exit;
     }
 } else {
     echo "Accès interdit.";
