@@ -148,6 +148,7 @@
           "type": "hébergement",
           "nom": "Chambre theme Mélodie",
           "valeurs_possibles": [
+          	"Non",
             "Chambre Standard",
             "Chambre VIP"
           ],

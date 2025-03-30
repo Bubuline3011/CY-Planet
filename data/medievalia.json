@@ -146,7 +146,7 @@
           "type": "hébergement",
           "nom": "Chambre theme Royal",
           "valeurs_possibles": [
-          	"Non"
+          	"Non",
             "Chambre Standard",
             "Chambre VIP"
           ],
@@ -163,7 +163,7 @@
           "type": "transport",
           "nom": "Pour vous y rendre",
           "valeurs_possibles": [
-          	"Non"
+          	"Non",
             "Destrier astral",
             "Portail runique orbital"
           ],

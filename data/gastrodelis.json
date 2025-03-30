@@ -163,7 +163,7 @@
           "type": "transport",
           "nom": "Pour vous y rendre",
           "valeurs_possibles": [
-          	"Non": 0,
+          	"Non",
             "Tacos supersonique",
             "Train fondue intergalactique"
           ],

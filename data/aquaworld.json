@@ -146,6 +146,7 @@
           "type": "hébergement",
           "nom": "Chambre theme Océan",
           "valeurs_possibles": [
+          	"Non",
             "Chambre Standard",
             "Chambre VIP"
           ],
