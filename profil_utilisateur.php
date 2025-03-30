@@ -79,7 +79,7 @@ if (!$user) {
             	<?php
             	if (!empty($user['voyages_achetes'])) {
                 	foreach ($user['voyages_achetes'] as $voyage) {
-                    		echo '<li><a class="voir-btn" href="voyage_detail.php?id=' . htmlspecialchars($voyage['id']) . '">' .
+                    		echo '<li><a class="voyage_achete" href="voyage_detail.php?id=' . htmlspecialchars($voyage['id']) . '">' .
                          	htmlspecialchars($voyage['nom']) . ' – ' .
                          	htmlspecialchars($voyage['date_achat']) . ' – ' .
                          	htmlspecialchars($voyage['prix_total']) . ' €</a></li>';
