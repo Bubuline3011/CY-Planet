@@ -1,4 +1,5 @@
 <?php
+
 // Vérifie si un identifiant de voyage a bien été envoyé via l'URL
 if (!isset($_GET['id'])) {
     die("Erreur : aucun identifiant de voyage fourni.");
@@ -26,6 +27,43 @@ $voyageData = json_decode(file_get_contents($voyage_file), true);
 if (!$voyageData) {
     die("Erreur de chargement du voyage.");
 }
+
+session_start(); // Lance la session (si ce n’est pas déjà fait dans header.php)
+
+if (isset($_SESSION['email'])) {
+    $utilisateur_email = $_SESSION['email'];
+    $utilisateur_path = 'data/utilisateur.json';
+    
+    $utilisateurs = json_decode(file_get_contents($utilisateur_path), true);
+    $voyage_nom = isset($voyageData['titre']) ? $voyageData['titre'] : 'Voyage inconnu';
+    $date_consultation = date("Y-m-d H:i:s");
+
+    foreach ($utilisateurs as &$utilisateur) {
+        if ($utilisateur['email'] === $utilisateur_email) {
+            $deja_consulte = false;
+            foreach ($utilisateur['voyages_consultes'] as &$vc) {
+                if ($vc['id'] == $voyage_id) {
+                    $vc['date_consultation'] = $date_consultation; // mise à jour date
+                    $deja_consulte = true;
+                    break;
+                }
+            }
+
+            if (!$deja_consulte) {
+                $utilisateur['voyages_consultes'][] = [
+                    'id' => $voyage_id,
+                    'nom' => $voyage_nom,
+                    'date_consultation' => $date_consultation
+                ];
+            }
+
+            break;
+        }
+    }
+
+    file_put_contents($utilisateur_path, json_encode($utilisateurs, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
+}
+
 ?>
 
 <!DOCTYPE html>
