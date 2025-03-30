@@ -45,7 +45,13 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         echo "<p>Le paiement a été refusé. Vérifiez vos informations bancaires et réessayez.</p>";
 
         // Redirection après 5 secondes vers la page de destination
-        header("refresh:5;url=destination.php");
+        $id_voyage = $_SESSION['commande']['voyage_id'] ?? null;
+
+	if ($id_voyage !== null) {
+    		header("refresh:5;url=voyage_detail.php?id=" . urlencode($id_voyage));
+	} else {
+    		header("refresh:5;url=voyage_detail.php");
+	}
         exit;
     }
 } else {

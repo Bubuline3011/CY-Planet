@@ -63,7 +63,7 @@ foreach ($options_selectionnees as $etapeIndex => $options) {
 
 // Stocker les données dans la session pour les récupérer après paiement
 $_SESSION['commande'] = [
-    'id' => $voyage_id,
+    'voyage_id' => $voyage_id,
     'titre' => $voyage['titre'],
     'date_depart' => $voyage['date_depart'],
     'date_retour' => $voyage['date_retour'],
