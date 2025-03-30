@@ -74,6 +74,21 @@ if (!$user) {
                 <label>Rôle :</label>
                 <input type="text" value="<?= htmlspecialchars($user['role']) ?>" readonly>
             </div>
+            <h3>Voyages payés</h3>
+        	<ul>
+            	<?php
+            	if (!empty($user['voyages_achetes'])) {
+                	foreach ($user['voyages_achetes'] as $voyage) {
+                    		echo '<li><a class="voir-btn" href="voyage_detail.php?id=' . htmlspecialchars($voyage['id']) . '">' .
+                         	htmlspecialchars($voyage['nom']) . ' – ' .
+                         	htmlspecialchars($voyage['date_achat']) . ' – ' .
+                         	htmlspecialchars($voyage['prix_total']) . ' €</a></li>';
+                	}
+            	} else {
+                	echo "<li>Aucun voyage acheté pour l’instant.</li>";
+            	}
+            	?>
+        	</ul>
         </div>
     </div>
 </body>
