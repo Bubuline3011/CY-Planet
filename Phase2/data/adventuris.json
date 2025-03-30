@@ -1,0 +1,318 @@
+{
+  "id": 4,
+  "titre": "Adventuris - La Planète de l'Aventure Extrême",
+  "image": "img/adventuris.jpg",
+  "note": 5,
+  "date_depart": "2025-09-01",
+  "date_retour": "2025-09-10",
+  "duree": 10,
+  "nb_etapes": 3,
+  "specificites": "Adventuris est la destination ultime pour les amateurs de sensations fortes : randonnées sur volcans, tyroliennes spatiales et sauts en orbite vous attendent.",
+  "modifie_par_utilisateur": false,
+  "statut": "en cours",
+  "prix_total": 14900,
+  "etapes": [
+    {
+      "id": 1,
+      "titre": "Ascension du Volcan Solaire",
+      "date_arrivee": "2025-06-01",
+      "date_depart": "2025-06-04",
+      "duree": 4,
+      "position": {
+        "gps": "34.0522, -118.2437",
+        "nom_lieu": "Base de Lave Astrale"
+      },
+      "options": [
+        {
+          "id": 1,
+          "type": "activité sportive",
+          "nom": "Randonnée volcanique",
+          "valeurs_possibles": [
+            "Non",
+            "Parcours court",
+            "Ascension complète"
+          ],
+          "choix_utilisateur": "Non",
+          "personnes": 2,
+          "prix_par_valeur": {
+            "Non": 0,
+            "Parcours court": 180,
+            "Ascension complète": 450
+          }
+        },
+        {
+          "id": 2,
+          "type": "hébergement",
+          "nom": "Campement thermique",
+          "valeurs_possibles": [
+            "Non",
+            "Tente standard",
+            "Tente blindée"
+          ],
+          "choix_utilisateur": "Non",
+          "personnes": 2,
+          "prix_par_valeur": {
+            "Non": 0,
+            "Tente standard": 220,
+            "Tente blindée": 510
+          }
+        },
+        {
+          "id": 3,
+          "type": "transport",
+          "nom": "Pour vous y rendre",
+          "valeurs_possibles": [
+            "Non",
+            "Buggy lunaire",
+            "Transport thermique"
+          ],
+          "choix_utilisateur": "Non",
+          "personnes": 2,
+          "prix_par_valeur": {
+            "Non": 0,
+            "Buggy lunaire": 75,
+            "Transport thermique": 105
+          },
+          "autres_champs": {
+            "vitesse_moyenne": "500 000 km/h"
+          }
+        },
+        {
+          "id": 4,
+          "type": "service",
+          "nom": "Garde d’enfants",
+          "valeurs_possibles": [
+            "Non",
+            "Garde classique",
+            "Animation sportive"
+          ],
+          "choix_utilisateur": "Non",
+          "personnes": 1,
+          "prix_par_valeur": {
+            "Non": 0,
+            "Garde classique": 100,
+            "Animation sportive": 250
+          }
+        },
+        {
+          "id": 5,
+          "type": "service",
+          "nom": "Gestion du linge",
+          "valeurs_possibles": [
+            "Non",
+            "Lavage simple",
+            "Pressing premium"
+          ],
+          "choix_utilisateur": "Non",
+          "personnes": 1,
+          "prix_par_valeur": {
+            "Non": 0,
+            "Lavage simple": 30,
+            "Pressing premium": 45
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "titre": "Canyon des Tyroliennes Spatiales",
+      "date_arrivee": "2025-06-05",
+      "date_depart": "2025-06-07",
+      "duree": 3,
+      "position": {
+        "gps": "48.8566, 2.3522",
+        "nom_lieu": "Plateforme de Saut Galactique"
+      },
+      "options": [
+        {
+          "id": 6,
+          "type": "activité culturelle",
+          "nom": "Tyrolienne interplanétaire",
+          "valeurs_possibles": [
+            "Non",
+            "Trajet unique",
+            "Trajet aller-retour"
+          ],
+          "choix_utilisateur": "Non",
+          "personnes": 2,
+          "prix_par_valeur": {
+            "Non": 0,
+            "Trajet unique": 130,
+            "Trajet aller-retour": 260
+          }
+        },
+        {
+          "id": 7,
+          "type": "hébergement",
+          "nom": "Chambre theme Indiana Stars ",
+          "valeurs_possibles": [
+          	"Non",
+            "Chambre Standard",
+            "Chambre VIP"
+          ],
+          "choix_utilisateur": "Non",
+          "personnes": 2,
+          "prix_par_valeur": {
+          	"Non": 0,
+            "Chambre Standard": 570,
+            "Chambre VIP": 950
+          }
+        },
+        {
+          "id": 8,
+          "type": "transport",
+          "nom": "Pour vous y rendre",
+          "valeurs_possibles": ["Non",
+            "Canoë quantique",
+            "Train d'exploration gravitationnelle"
+          ],
+          "choix_utilisateur": "Non",
+          "personnes": 2,
+          "prix_par_valeur": {
+          	"Non": 0,
+            "Canoë quantique": 170,
+            "Train d'exploration gravitationnelle": 210
+          },
+          "autres_champs": {
+            "vitesse_moyenne": "500 000 km/h"
+          }
+        },
+        {
+          "id": 9,
+          "type": "service",
+          "nom": "Garde d’enfants",
+          "valeurs_possibles": [
+            "Non",
+            "Garde classique",
+            "Animation sportive"
+          ],
+          "choix_utilisateur": "Non",
+          "personnes": 1,
+          "prix_par_valeur": {
+            "Non": 0,
+            "Garde classique": 100,
+            "Animation sportive": 250
+          }
+        },
+        {
+          "id": 10,
+          "type": "service",
+          "nom": "Gestion du linge",
+          "valeurs_possibles": [
+            "Non",
+            "Lavage simple",
+            "Pressing premium"
+          ],
+          "choix_utilisateur": "Non",
+          "personnes": 1,
+          "prix_par_valeur": {
+            "Non": 0,
+            "Lavage simple": 30,
+            "Pressing premium": 45
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "titre": "Saut en orbite",
+      "date_arrivee": "2025-06-08",
+      "date_depart": "2025-06-10",
+      "duree": 3,
+      "position": {
+        "gps": "51.5074, -0.1278",
+        "nom_lieu": "Station de Saut Cosmique"
+      },
+      "options": [
+        {
+          "id": 11,
+          "type": "activité sportive",
+          "nom": "Saut gravitationnel",
+          "valeurs_possibles": [
+            "Non",
+            "Simulation",
+            "Saut réel"
+          ],
+          "choix_utilisateur": "Non",
+          "personnes": 2,
+          "prix_par_valeur": {
+            "Non": 0,
+            "Simulation": 140,
+            "Saut réel": 300
+          }
+        },
+        {
+          "id": 12,
+          "type": "restauration",
+          "nom": "Ravitaillement énergétique",
+          "valeurs_possibles": [
+            "Non",
+            "Snack énergétique",
+            "Pack complet"
+          ],
+          "choix_utilisateur": "Non",
+          "personnes": 2,
+          "prix_par_valeur": {
+            "Non": 0,
+            "Snack énergétique": 30,
+            "Pack complet": 70
+          }
+        },
+        {
+          "id": 13,
+          "type": "transport",
+          "nom": "Pour vous y rendre",
+          "valeurs_possibles": [
+            "Non",
+            "Diligence hyperspatiale",
+            "Chariot à propulsion lunaire"
+          ],
+          "choix_utilisateur": "Non",
+          "personnes": 2,
+          "prix_par_valeur": {
+            "Non": 0,
+            "Diligence hyperspatiale": 50,
+            "Chariot à propulsion lunaire": 65
+          },
+          "autres_champs": {
+            "vitesse_moyenne": "500 000 km/h"
+          }
+        },
+        {
+          "id": 14,
+          "type": "service",
+          "nom": "Garde d’enfants",
+          "valeurs_possibles": [
+            "Non",
+            "Garde classique",
+            "Animation sportive"
+          ],
+          "choix_utilisateur": "Non",
+          "personnes": 1,
+          "prix_par_valeur": {
+            "Non": 0,
+            "Garde classique": 100,
+            "Animation sportive": 250
+          }
+        },
+        {
+          "id": 15,
+          "type": "service",
+          "nom": "Gestion du linge",
+          "valeurs_possibles": [
+            "Non",
+            "Lavage simple",
+            "Pressing premium"
+          ],
+          "choix_utilisateur": "Non",
+          "personnes": 1,
+          "prix_par_valeur": {
+            "Non": 0,
+            "Lavage simple": 30,
+            "Pressing premium": 45
+          }
+        }
+      ]
+    }
+  ]
+}

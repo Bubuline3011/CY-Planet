@@ -1,0 +1,319 @@
+{
+  "id": 6,
+  "titre": "Dreamara - La Planète des Rêves et Illusions",
+  "image": "img/dreamara.jpg",
+  "note": 5,
+  "date_depart": "2025-11-01",
+  "date_retour": "2025-11-10",
+  "duree": 10,
+  "nb_etapes": 3,
+  "specificites": "Dreamara vous plonge dans un monde onirique où tout semble irréel : forêts flottantes, illusions sensorielles et spectacles féériques rythment ce voyage mystique.",
+  "modifie_par_utilisateur": false,
+  "statut": "en cours",
+  "prix_total": 13850,
+  "etapes": [
+    {
+      "id": 1,
+      "titre": "Forêt des Songes Suspendus",
+      "date_arrivee": "2025-06-01",
+      "date_depart": "2025-06-04",
+      "duree": 4,
+      "position": {
+        "gps": "34.0522, -118.2437",
+        "nom_lieu": "Clairière des Illusions"
+      },
+      "options": [
+        {
+          "id": 1,
+          "type": "activité sportive",
+          "nom": "Balade sensorielle",
+          "valeurs_possibles": [
+            "Non",
+            "Découverte",
+            "Parcours complet"
+          ],
+          "choix_utilisateur": "Non",
+          "personnes": 2,
+          "prix_par_valeur": {
+            "Non": 0,
+            "Découverte": 90,
+            "Parcours complet": 200
+          }
+        },
+        {
+          "id": 2,
+          "type": "hébergement",
+          "nom": "Cabane suspendue dans les nuages",
+          "valeurs_possibles": [
+            "Non",
+            "Cabane standard",
+            "Cabane panoramique"
+          ],
+          "choix_utilisateur": "Non",
+          "personnes": 2,
+          "prix_par_valeur": {
+            "Non": 0,
+            "Cabane standard": 300,
+            "Cabane panoramique": 700
+          }
+        },
+        {
+          "id": 3,
+          "type": "transport",
+          "nom": "Montgolfière onirique",
+          "valeurs_possibles": [
+            "Non",
+            "Vol court",
+            "Vol complet"
+          ],
+          "choix_utilisateur": "Non",
+          "personnes": 2,
+          "prix_par_valeur": {
+            "Non": 0,
+            "Vol court": 65,
+            "Vol complet": 110
+          },
+          "autres_champs": {
+            "vitesse_moyenne": "500 000 km/h"
+          }
+        },
+        {
+          "id": 4,
+          "type": "service",
+          "nom": "Garde d’enfants",
+          "valeurs_possibles": [
+            "Non",
+            "Garde classique",
+            "Animation sportive"
+          ],
+          "choix_utilisateur": "Non",
+          "personnes": 1,
+          "prix_par_valeur": {
+            "Non": 0,
+            "Garde classique": 100,
+            "Animation sportive": 250
+          }
+        },
+        {
+          "id": 5,
+          "type": "service",
+          "nom": "Gestion du linge",
+          "valeurs_possibles": [
+            "Non",
+            "Lavage simple",
+            "Pressing premium"
+          ],
+          "choix_utilisateur": "Non",
+          "personnes": 1,
+          "prix_par_valeur": {
+            "Non": 0,
+            "Lavage simple": 30,
+            "Pressing premium": 45
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "titre": "Palais des Reflets",
+      "date_arrivee": "2025-06-05",
+      "date_depart": "2025-06-07",
+      "duree": 3,
+      "position": {
+        "gps": "48.8566, 2.3522",
+        "nom_lieu": "Hall des Miroirs Vivants"
+      },
+      "options": [
+        {
+          "id": 6,
+          "type": "activité culturelle",
+          "nom": "Visite interactive",
+          "valeurs_possibles": [
+            "Non",
+            "Entrée simple",
+            "Visite guidée magique"
+          ],
+          "choix_utilisateur": "Non",
+          "personnes": 2,
+          "prix_par_valeur": {
+            "Non": 0,
+            "Entrée simple": 80,
+            "Visite guidée magique": 160
+          }
+        },
+        {
+          "id": 7,
+          "type": "hébergement",
+          "nom": "Chambre theme Nuage et pégasse stellaire",
+          "valeurs_possibles": [
+          	"Non",
+            "Chambre Standard",
+            "Chambre VIP"
+          ],
+          "choix_utilisateur": "Non",
+          "personnes": 2,
+          "prix_par_valeur": {
+          	"Non": 0,
+            "Chambre Standard": 570,
+            "Chambre VIP": 950
+          }
+        },
+        {
+          "id": 8,
+          "type": "transport",
+          "nom": "Pour vous y rendre",
+          "valeurs_possibles": [
+          	"Non",
+            "Nuage de rêve programmé",
+            "Lit à propulsion lunaire"
+          ],
+          "choix_utilisateur": "Non",
+          "personnes": 2,
+          "prix_par_valeur": {
+          	"Non": 0,
+            "Nuage de rêve programmé": 170,
+            "Lit à propulsion lunaire": 210
+          },
+          "autres_champs": {
+            "vitesse_moyenne": "500 000 km/h"
+          }
+        },
+        {
+          "id": 9,
+          "type": "service",
+          "nom": "Garde d’enfants",
+          "valeurs_possibles": [
+            "Non",
+            "Garde classique",
+            "Animation sportive"
+          ],
+          "choix_utilisateur": "Non",
+          "personnes": 1,
+          "prix_par_valeur": {
+            "Non": 0,
+            "Garde classique": 100,
+            "Animation sportive": 250
+          }
+        },
+        {
+          "id": 10,
+          "type": "service",
+          "nom": "Gestion du linge",
+          "valeurs_possibles": [
+            "Non",
+            "Lavage simple",
+            "Pressing premium"
+          ],
+          "choix_utilisateur": "Non",
+          "personnes": 1,
+          "prix_par_valeur": {
+            "Non": 0,
+            "Lavage simple": 30,
+            "Pressing premium": 45
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "titre": "Spectacle Étoilé de Minuit",
+      "date_arrivee": "2025-06-08",
+      "date_depart": "2025-06-10",
+      "duree": 3,
+      "position": {
+        "gps": "51.5074, -0.1278",
+        "nom_lieu": "Théâtre Flottant"
+      },
+      "options": [
+        {
+          "id": 11,
+          "type": "activité sportive",
+          "nom": "Spectacle lumineux",
+          "valeurs_possibles": [
+            "Non",
+            "Place classique",
+            "Place premium"
+          ],
+          "choix_utilisateur": "Non",
+          "personnes": 2,
+          "prix_par_valeur": {
+            "Non": 0,
+            "Place classique": 55,
+            "Place premium": 120
+          }
+        },
+        {
+          "id": 12,
+          "type": "restauration",
+          "nom": "Boissons enchantées",
+          "valeurs_possibles": [
+            "Non",
+            "Potion légère",
+            "Cocktail féérique"
+          ],
+          "choix_utilisateur": "Non",
+          "personnes": 2,
+          "prix_par_valeur": {
+            "Non": 0,
+            "Potion légère": 20,
+            "Cocktail féérique": 50
+          }
+        },
+        {
+          "id": 13,
+          "type": "transport",
+          "nom": "Pour vous y rendre",
+          "valeurs_possibles": [
+            "Non",
+            "Mongolfière Spatiale",
+            "Portail interdimensionnel"
+          ],
+          "choix_utilisateur": "Non",
+          "personnes": 2,
+          "prix_par_valeur": {
+            "Non": 0,
+            "Mongolfière Spatiale": 50,
+            "Portail interdimensionnel": 65
+          },
+          "autres_champs": {
+            "vitesse_moyenne": "500 000 km/h"
+          }
+        },
+        {
+          "id": 14,
+          "type": "service",
+          "nom": "Garde d’enfants",
+          "valeurs_possibles": [
+            "Non",
+            "Garde classique",
+            "Animation sportive"
+          ],
+          "choix_utilisateur": "Non",
+          "personnes": 1,
+          "prix_par_valeur": {
+            "Non": 0,
+            "Garde classique": 100,
+            "Animation sportive": 250
+          }
+        },
+        {
+          "id": 15,
+          "type": "service",
+          "nom": "Gestion du linge",
+          "valeurs_possibles": [
+            "Non",
+            "Lavage simple",
+            "Pressing premium"
+          ],
+          "choix_utilisateur": "Non",
+          "personnes": 1,
+          "prix_par_valeur": {
+            "Non": 0,
+            "Lavage simple": 30,
+            "Pressing premium": 45
+          }
+        }
+      ]
+    }
+  ]
+}
