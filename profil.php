@@ -1,4 +1,5 @@
 <?php
+// On démarre la session
 session_start();
 
 // Vérification si l'utilisateur est connecté
@@ -6,13 +7,13 @@ if (!isset($_SESSION['email'])) {
     header("Location: connexion.php");
     exit();
 }
-
+// On charge tous les utilisateurs depuis le fichier JSON
 $email = $_SESSION['email'];
 
 // Charger tous les utilisateurs
 $utilisateurs = json_decode(file_get_contents("data/utilisateur.json"), true);
 
-// Trouver l'utilisateur correspondant
+// On cherche l'utilisateur correspondant à l'email
 $user = null;
 foreach ($utilisateurs as $u) {
     if ($u['email'] === $email) {
@@ -20,7 +21,7 @@ foreach ($utilisateurs as $u) {
         break;
     }
 }
-
+// Si aucun utilisateur n’est trouvé
 if (!$user) {
     echo "Utilisateur introuvable.";
     exit();
@@ -33,14 +34,15 @@ if (!$user) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profil Utilisateur</title>
-    <link rel="stylesheet" href="style.css">
+    <link id="theme-css" rel="stylesheet" href="style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body class="profil">
+	<!-- Inclusion du header -->
 	<?php include 'header.php'; ?>
     <div class="profil-container">
         <h2>Mon Profil</h2>
-
+	<!-- Affichage des infos personnelles (readonly) -->
         <div class="profil-info">
             <div class="profil-champ">
                 <label>Nom :</label>
@@ -77,7 +79,7 @@ if (!$user) {
                 <input type="text" value="<?= htmlspecialchars($user['derniere_connexion']) ?>" readonly>
             </div>
         </div>
-
+	<!-- Liste des voyages achetés par l'utilisateur -->
         <h3>Mes voyages payés</h3>
         <ul>
             <?php
@@ -93,16 +95,20 @@ if (!$user) {
             }
             ?>
         </ul>
+        <!-- Bouton (visuel seulement ici) pour sauvegarder les modifs -->
 	<button class="button-sauvegarder">Sauvegarder</button>
+	<!-- Accès admin si l'utilisateur est un admin -->
         <?php if ($user['role'] === 'admin') : ?>
         <div class="acces-admin">
             <a href="admin.php" class="button">Accès Admin</a>
         </div>
         <?php endif; ?>
     </div>
+    <!-- Pied de page -->
     <footer>
         <p>&copy 2025 Cosmo Trip. Tous droits réservés.</p>
     </footer>
+    <script src="js/theme.js"></script>
 </body>
 </html>
 

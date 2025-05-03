@@ -73,7 +73,7 @@ if (isset($_SESSION['email'])) {
     <title><?php echo htmlspecialchars($voyageData['titre']); ?></title>
 
     <!-- Feuille de style principale -->
-    <link rel="stylesheet" href="style.css">
+    <link id="theme-css" rel="stylesheet" href="style.css">
 </head>
 
 <body class="detail">
@@ -151,5 +151,6 @@ if (isset($_SESSION['email'])) {
             <button type="submit">Ajouter au panier</button>
         </form>
     </div>
+    <script src="js/theme.js"></script>
 </body>
 </html>

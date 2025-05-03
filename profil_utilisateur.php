@@ -1,24 +1,26 @@
 <?php
+// On démarre la session pour accéder aux infos utilisateur
 session_start();
 
-// Vérifie que l'utilisateur est un administrateur
+// Vérifie si l'utilisateur connecté est un admin
 if (!isset($_SESSION['email']) || $_SESSION['role'] !== 'admin') {
     header("Location: connexion.php");
     exit();
 }
 
-// Récupère l'email de l'utilisateur à afficher
+// Vérifie qu'un email a été fourni dans l'URL
 if (!isset($_GET['email'])) {
     echo "Aucun utilisateur spécifié.";
     exit();
 }
 
+// On récupère l'email de l'utilisateur à afficher
 $emailRecherche = $_GET['email'];
 
-// Charge les données utilisateurs
+// On charge les utilisateurs depuis le fichier JSON
 $utilisateurs = json_decode(file_get_contents("data/utilisateur.json"), true);
 
-// Cherche l'utilisateur correspondant
+// On cherche l'utilisateur correspondant à l'email
 $user = null;
 foreach ($utilisateurs as $u) {
     if ($u['email'] === $emailRecherche) {
@@ -27,6 +29,7 @@ foreach ($utilisateurs as $u) {
     }
 }
 
+// Si l'utilisateur n'a pas été trouvé
 if (!$user) {
     echo "Utilisateur non trouvé.";
     exit();
@@ -38,14 +41,16 @@ if (!$user) {
 <head>
     <meta charset="UTF-8">
     <title>Profil de l'utilisateur</title>
-    <link rel="stylesheet" href="style.css">
+    <link id="theme-css" rel="stylesheet" href="style.css">
 </head>
 <body class="profil">
     <?php include 'header.php'; ?>
     <div class="profil-container">
+    	<!-- Titre avec prénom et nom -->
         <h2>Profil de <?= htmlspecialchars($user['prenom'] . ' ' . $user['nom']) ?></h2>
 
         <div class="profil-info">
+        	<!-- Affichage des infos de l'utilisateur -->
             <div class="profil-champ">
                 <label>Nom :</label>
                 <input type="text" value="<?= htmlspecialchars($user['nom']) ?>" readonly>
@@ -74,6 +79,7 @@ if (!$user) {
                 <label>Rôle :</label>
                 <input type="text" value="<?= htmlspecialchars($user['role']) ?>" readonly>
             </div>
+            <!-- Liste des voyages achetés par l'utilisateur -->
             <h3>Voyages payés</h3>
         	<ul>
             	<?php
@@ -91,5 +97,6 @@ if (!$user) {
         	</ul>
         </div>
     </div>
+    <script src="js/theme.js"></script>
 </body>
 </html>
