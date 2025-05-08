@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 // Vérifie si un identifiant de voyage a bien été envoyé via l'URL
 if (!isset($_GET['id'])) {
     die("Erreur : aucun identifiant de voyage fourni.");
@@ -90,7 +90,7 @@ if (isset($_SESSION['email'])) {
         <p><strong>Prix de base :</strong> <?php echo $voyageData['prix_total']; ?> €</p>
 
         <!-- Formulaire pour ajouter ce voyage au panier avec options personnalisées -->
-        <form action="panier.php" method="POST">
+        <form action="ajouter_panier.php" method="POST">
             <input type="hidden" name="voyage_id" value="<?php echo $voyageData['id']; ?>">
 
             <!-- On parcourt chaque étape du voyage -->

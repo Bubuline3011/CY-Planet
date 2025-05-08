@@ -29,6 +29,9 @@ if (session_status() === PHP_SESSION_NONE) {
                 <li><a href="connexion.php">Connexion</a></li>
                 <li><a href="inscription.php">Inscription</a></li>
             <?php endif; ?>
+            <?php if (isset($_SESSION['email']) && isset($_SESSION['commande'])): ?>
+    		<li><a href="panier.php"><i class="bx bx-cart"></i> Panier</a></li>
+	    <?php endif; ?>
             <li><button id="bouton-theme" class="theme-btn">🌗Mode Sombre</button></li>
         </ul>
     </nav>

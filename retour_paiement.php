@@ -36,9 +36,38 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         echo "<p>Transaction : $transaction</p>";
         echo "<p>Montant : $montant $</p>";
         echo "<p>Merci pour votre achat ! Vous allez être redirigé vers votre espace client.</p>";
+	
+        // ===> On enregistre l'achat dans utilisateur.json
+        if (isset($_SESSION['email']) && isset($_SESSION['commande'])) {
+            $email = $_SESSION['email'];
+            $commande = $_SESSION['commande'];
 
-        // Ici, on pourrait enregistrer la transaction dans une base de données si besoin
+            $voyage_achete = [
+                "id" => $commande['voyage_id'],
+                "nom" => $commande['titre'],
+                "date_achat" => date('Y-m-d'),
+                "prix_total" => $commande['prix_total']
+            ];
 
+            $utilisateur_path = "data/utilisateur.json";
+            if (file_exists($utilisateur_path)) {
+                $utilisateurs = json_decode(file_get_contents($utilisateur_path), true);
+                foreach ($utilisateurs as &$user) {
+                    if ($user['email'] === $email) {
+                        if (!isset($user['voyages_achetes'])) {
+                            $user['voyages_achetes'] = [];
+                        }
+                        $user['voyages_achetes'][] = $voyage_achete;
+                        break;
+                    }
+                }
+                file_put_contents($utilisateur_path, json_encode($utilisateurs, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
+            }
+        }
+
+        // ✅ SUPPRESSION DU PANIER APRÈS PAIEMENT
+        unset($_SESSION['commande']);
+        
         // Redirection automatique après 5 secondes vers le profil
         header("refresh:5;url=profil.php");
     } else {
@@ -63,49 +92,4 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     echo "Accès interdit.";
 }
 
-// =====================
-// MISE À JOUR DU FICHIER utilisateur.json
-// =====================
-
-// On vérifie qu’on a bien un utilisateur et une commande en session
-if (!isset($_SESSION['email']) || !isset($_SESSION['commande'])) {
-    echo "<p>Erreur : aucune commande ou utilisateur en session.</p>";
-    exit;
-}
-
-// On récupère l’email de l’utilisateur et sa commande
-$email = $_SESSION['email'];
-$commande = $_SESSION['commande'];
-
-// On crée une structure représentant le voyage acheté
-$voyage_achete = [
-    "id" => $commande['voyage_id'],
-    "nom" => $commande['titre'],
-    "date_achat" => date('Y-m-d'),
-    "prix_total" => $commande['prix_total']
-];
-
-// Chemin vers le fichier utilisateur
-$utilisateur_path = "data/utilisateur.json";
-
-// Si le fichier existe, on le met à jour
-if (file_exists($utilisateur_path)) {
-    $utilisateurs = json_decode(file_get_contents($utilisateur_path), true);
-
-    foreach ($utilisateurs as &$user) {
-        // On trouve l'utilisateur correspondant
-        if ($user['email'] === $email) {
-            // Si le tableau des achats n’existe pas encore, on le crée
-            if (!isset($user['voyages_achetes'])) {
-                $user['voyages_achetes'] = [];
-            }
-            // On ajoute le nouveau voyage dans la liste des achats
-            $user['voyages_achetes'][] = $voyage_achete;
-            break;
-        }
-    }
-
-    // On réécrit le fichier JSON avec les nouveaux achats
-    file_put_contents($utilisateur_path, json_encode($utilisateurs, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
-}
 ?>
