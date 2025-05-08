@@ -1,7 +1,7 @@
 [
     {
         "email": "yonabulard78@gmail.com",
-        "motdepasse": "yonabulard",
+        "motdepasse": "yona19",
         "role": "admin",
         "prenom": "Yona",
         "nom": "Bulard",
@@ -16,29 +16,9 @@
                 "date_consultation": "2025-05-08 17:55:30"
             },
             {
-                "id": "6",
-                "nom": "Dreamara - La Planète des Rêves et Illusions",
-                "date_consultation": "2025-05-08 18:44:33"
-            },
-            {
-                "id": "4",
-                "nom": "Adventuris - La Planète de l'Aventure Extrême",
-                "date_consultation": "2025-05-08 18:28:38"
-            },
-            {
-                "id": "2",
-                "nom": "AquaWorld - L'Aventure Océanique Intergalactique",
-                "date_consultation": "2025-05-08 18:44:21"
-            },
-            {
-                "id": "9",
-                "nom": "Sportimax - La Planète de l’Extrême et du Dépassement",
-                "date_consultation": "2025-05-08 18:29:11"
-            },
-            {
-                "id": "10",
-                "nom": "Gastrodelis - La Planète des Saveurs Galactiques",
-                "date_consultation": "2025-05-08 18:34:55"
+                "id": "5",
+                "nom": "Medievalia - Le Voyage dans le Temps Interstellaire",
+                "date_consultation": "2025-05-08 18:55:58"
             }
         ],
         "voyages_achetes": [
@@ -47,30 +27,6 @@
                 "nom": "AquaWorld",
                 "date_achat": "2025-03-08",
                 "prix_total": 10340
-            },
-            {
-                "id": "9",
-                "nom": "Sportimax - La Planète de l’Extrême et du Dépassement",
-                "date_achat": "2025-03-30",
-                "prix_total": 13700
-            },
-            {
-                "id": "1",
-                "nom": "Footbolis - L'Expérience Football Intergalactique",
-                "date_achat": "2025-05-03",
-                "prix_total": 12800
-            },
-            {
-                "id": "1",
-                "nom": "Footbolis - L'Expérience Football Intergalactique",
-                "date_achat": "2025-05-05",
-                "prix_total": 12800
-            },
-            {
-                "id": "9",
-                "nom": "Sportimax - La Planète de l’Extrême et du Dépassement",
-                "date_achat": "2025-05-08",
-                "prix_total": 13700
             },
             {
                 "id": "9",
