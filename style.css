@@ -1247,6 +1247,13 @@ body.detail .page-contenu h1::after {
     margin-bottom: 10px;
 }
 
+body.recherche {
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
 .tri-zone {
     display: flex;
     justify-content: center;
