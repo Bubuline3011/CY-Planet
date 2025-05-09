@@ -8,17 +8,42 @@
         "age": "19",
         "telephone": "0646807561",
         "date_inscription": "2024-01-15",
-        "derniere_connexion": "2025-05-08",
+        "derniere_connexion": "2025-05-09",
         "voyages_consultes": [
             {
                 "id": "1",
                 "nom": "Footbolis",
-                "date_consultation": "2025-05-08 17:55:30"
+                "date_consultation": "2025-05-09 19:39:55"
             },
             {
                 "id": "5",
                 "nom": "Medievalia - Le Voyage dans le Temps Interstellaire",
                 "date_consultation": "2025-05-08 18:55:58"
+            },
+            {
+                "id": "2",
+                "nom": "AquaWorld - L'Aventure Océanique Intergalactique",
+                "date_consultation": "2025-05-08 19:02:01"
+            },
+            {
+                "id": "3",
+                "nom": "Musicaria - La Planète du Rythme Cosmique",
+                "date_consultation": "2025-05-09 19:55:28"
+            },
+            {
+                "id": "10",
+                "nom": "Gastrodelis - La Planète des Saveurs Galactiques",
+                "date_consultation": "2025-05-09 21:05:29"
+            },
+            {
+                "id": "4",
+                "nom": "Adventuris - La Planète de l'Aventure Extrême",
+                "date_consultation": "2025-05-09 20:21:51"
+            },
+            {
+                "id": "6",
+                "nom": "Dreamara - La Planète des Rêves et Illusions",
+                "date_consultation": "2025-05-09 21:03:01"
             }
         ],
         "voyages_achetes": [
