@@ -16,7 +16,7 @@ body {
 /*Partie inscription et connexion*/
 body.connexion, body.inscription, body.profil, body.recherche, body.admin{
     padding-top: 80px;
-    background-image: url('img/image-acceuil.jpg');
+    background-image: url('img/nouvelle_image_fond.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -38,7 +38,7 @@ input, select {
 }
 
 body.acceuil {
-    background-color: white;
+    background-color: #1e1e1e;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -54,10 +54,10 @@ body.acceuil .image-acceuil {
 
 .boite {
     width: 420px;
-    background: transparent;
-    border: 2px solid rgba(255, 255, 255, .2);
+    background: rgba(30, 30, 30, 0.7);
+    border: 2px solid rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(20px);
-    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
     color: #fff;
     border-radius: 10px;
     padding: 30px 40px;
@@ -125,19 +125,20 @@ body.acceuil .image-acceuil {
 .boite .button, .button-sauvegarder{
     width: 100%;
     height: 45px;
-    background: white;
+    background: #292929;
     border: none;
     outline: none;
     border-radius: 40px;
-    box-shadow: 0 0 10px rgba(0,0,0,.1);
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.05);
     cursor: pointer;
     font-size: 16px;
-    color: #333;
+    color: #ffffff;
     font-weight: 600;
 } 
 
 .boite .button:hover, .button-sauvegarder:hover{
     background: linear-gradient(45deg, #ff9f1c, #ff4f00);
+    color: #fff;
 }
 
 .boite .lien-inscription {
@@ -164,13 +165,13 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    background: linear-gradient(45deg, #9b5de5, #5a189a);
+    background: linear-gradient(45deg, #3a0ca3, #240046);
     color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 30px;
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.6);
     z-index: 1000;
     height: 75px;
 }
@@ -212,31 +213,27 @@ header nav ul li a {
 header nav ul li a:hover {
     background: linear-gradient(45deg, #ff9f1c, #ff4f00);
     box-shadow: 0px 0px 15px rgba(255, 159, 28, 0.8);
-    box-shadow: 0px 0px 10px rgba(106, 3, 248, 0.8);
 }
 
 .theme-btn {
-    text-decoration: none;
-    color: white; /* Violet profond */
+	text-decoration: none;
+    color: white;
     font-weight: bold;
     padding: 8px 15px;
     transition: all 0.3s ease;
     border-radius: 5px;
-    background: linear-gradient(45deg, #9b5de5, #5a189a); /* Fond clair */
-    border: 2px solid #5a189a;
+    background: linear-gradient(45deg, #3a0ca3, #240046); /* même que le header */
+    border: none;
     cursor: pointer;
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
 }
 
 .theme-btn:hover {
     background: linear-gradient(45deg, #ff9f1c, #ff4f00);
-    color: white;
-    border-color: transparent;
     box-shadow: 0px 0px 15px rgba(255, 159, 28, 0.8);
 }
 
 .principal {
-    background-image: url('img/image-acceuil.jpg'); /* Image en arrière-plan */
+    background-image: url('img/nouvelle_image_fond.jpg'); /* Image en arrière-plan */
     background-size: cover; /* L'image couvre toute la section */
     background-position: center; /* Centre l'image */
     background-repeat: no-repeat; /* Empêche la répétition de l'image */
@@ -250,7 +247,7 @@ header nav ul li a:hover {
     border-radius: 20px; /* Arrondi les coins de l'arrière-plan */
     width: 100%; /* Ajuste la largeur pour ne pas toucher les bords de l'écran */
     margin: 80px auto 0; /* Laisse un espace sous le header */
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);/* Ajoute une ombre pour détacher l'image */
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.6);/* Ajoute une ombre pour détacher l'image */
 }
 
 .principal img { /*texte a l'interieur de l'image*/
@@ -266,19 +263,21 @@ header nav ul li a:hover {
 
 /* Style pour le conteneur de contenu (texte et bouton) */
 .principal-contenue {
-    background: rgba(17, 0, 51, 0.6); /* Fond semi-transparent */
+    background: rgba(20, 20, 30, 0.75); /* Fond semi-transparent */
     padding: 20px;
     border-radius: 15px;
     backdrop-filter: blur(10px); /* Effet de flou */
     max-width: 600px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5); /* Effet de détachement */
 }
+
 /* Bouton */
 .principal .btn {
     display: inline-block;
     margin-top: 20px;
     padding: 10px 20px;
     color: white;
-    background: linear-gradient(45deg, #9b5de5, #5a189a);
+    background: linear-gradient(45deg, #240046, #3a0ca3);
     text-decoration: none;
     border-radius: 10px;
     font-weight: bold;
@@ -296,21 +295,23 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(10, 10, 10, 0.9);
     color: white;
     font-size: 15px;
+    box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.4);
 }
 
 /* Section Destinations */
 .destinations {
     padding: 60px 20px;
     text-align: center;
-    background-color: #f4f4f9; /* Fond clair pour séparer la section */
+    background-color: #1e1e1e; /* Fond sombre pour séparer la section */
     margin: 0 auto; /* Centre la section */
     width: 100%; /* Ajuste la largeur de la section */
     border-radius: 15px; /* Coins arrondis pour un look cohérent */
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.4);
     margin-top: 20px; /* Espacement sous l'image d'accueil */
+    color: #f0f0f0; /* Texte global clair */
 }
 
 .destination-liste {
@@ -325,7 +326,7 @@ footer {
 .destinations h2 {
     font-size: 2rem;
     margin-bottom: 30px;
-    color: black;
+    color: #ffffff; /* Titre clair */
 }
 /* Chaque destination */
 .destination {
@@ -334,11 +335,12 @@ footer {
     color: inherit; /* Garde la couleur par défaut */
     margin: 20px auto;
     max-width: 450px; /* Limite la largeur des cartes */
-    border: 2px solid #ddd; /* Bord léger autour de chaque destination */
+    border: 2px solid #444; /* Bordure sombre */
     border-radius: 15px; /* Arrondi des coins */
     overflow: hidden; /* Coupe tout débordement (utile pour les images) */
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); /* Ombre légère */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation au survol */
+    background-color: #2a2a2a; /* Fond de carte sombre */
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Image de la destination */
@@ -352,20 +354,20 @@ footer {
 .destination h3 {
     font-size: 1.5rem;
     margin: 10px 0;
-    color: #5a189a; /* Violet pour un effet cosmique */
+    color: #3a0ca3;
 }
 
 /* Description de la destination */
 .destination p {
     font-size: 1rem;
     padding: 0 10px 20px;
-    color: black;
+    color: #cccccc;
 }
 
 /* Effet au survol */
 .destination:hover {
     transform: scale(1.05); /* Légère augmentation de la taille */
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2); /* Ombre plus forte */
+    box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.5); /* Ombre plus forte */
 }
 
 /* Effet pour le texte lors du survol */
@@ -378,22 +380,23 @@ footer {
 .presentation {
     padding: 60px 20px;
     text-align: center;
-    background-color: #f4f4f9;
+    background-color: #1e1e1e; /* fond sombre */
     border-radius: 15px;
     max-width: 900px;
     margin: 40px auto;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
+    color: #f0f0f0;
 }
 
 .presentation h2 {
     font-size: 2rem;
     margin-bottom: 30px;
-    color: black;
+    color: #ffffff;
 }
 
 .presentation p {
     font-size: 1.2rem;
-    color:  black;
+    color: #cccccc;
     line-height: 1.6;
     margin-bottom: 15px;
 }
@@ -403,17 +406,18 @@ footer {
 .barre-recherche {
     padding: 60px 20px;
     text-align: center;
-    background-color: #f4f4f9; /* Fond clair pour séparer la section */
-    margin: 0 auto; /* Centre la section */
-    width: 100%; /* Ajuste la largeur de la section */
-    border-radius: 15px; /* Coins arrondis pour un look cohérent */
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
-    margin-top: 20px; /* Espacement sous l'image d'accueil */
+    background-color: #1e1e1e;
+    margin: 0 auto;
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.4);
+    margin-top: 20px;
+    color: #f0f0f0;
 }
 
 .barre-recherche h3 {
     font-size: 1.5rem;
-    color: #333;
+    color: #ffffff;
     margin-bottom: 10px;
 }
 
@@ -427,14 +431,15 @@ footer {
     width: 70%;
     padding: 10px;
     border-radius: 5px;
-    border: 1px solid #ddd;
+    border: 1px solid #555;
+    background-color: #2a2a2a;
     font-size: 1rem;
-    color: black;
+    color: #ffffff;
 }
 
 .barre-recherche button {
     padding: 10px 20px;
-    background-color: #5a189a;
+    background-color: #3a0ca3;
     color: white;
     border: none;
     border-radius: 5px;
@@ -460,8 +465,9 @@ footer {
 
 body.apropos {
     display: block;
-    background-color: white;
+    background-color: #121212;
     min-height: 100vh;
+    color: #f0f0f0;
 }
 
 /* Optionnel : centrer tout proprement */
@@ -481,15 +487,16 @@ body.apropos .page-contenu {
 }
 
 .destination-recherche .destination {
-    width: 400px; /* Réduit la largeur de chaque carte */
+    width: 400px;
     margin: 20px;
     border-radius: 10px;
-    background-color: white;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    background-color: #2a2a2a;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
     overflow: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: #f0f0f0;
 }
 
 .destination-recherche {
@@ -505,10 +512,10 @@ body.apropos .page-contenu {
 
 .profil-container {
     width: 550px;
-    background: transparent;
-    border: 2px solid rgba(255, 255, 255, .2);
+    background: rgba(30, 30, 30, 0.7); /* fond sombre semi-transparent */
+    border: 2px solid rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(20px);
-    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
     color: #fff;
     border-radius: 10px;
     padding: 30px 40px;
@@ -521,7 +528,6 @@ body.apropos .page-contenu {
 }
 
 /* Chaque champ d'information */
-
 .profil-champ {
     display: flex;
     justify-content: space-between;
@@ -533,37 +539,33 @@ body.apropos .page-contenu {
 }
 
 .profil-champ label {
-    flex: 1; /* Laisse le label prendre l’espace nécessaire */
+    flex: 1;
     white-space: nowrap;
-}
-
-.profil-champ input {
-    width: 100%;
-    background: transparent;
-    border: 2px solid rgba(255, 255, 255, .2);
-    outline: none;
-    border-radius: 30px;
-    font-size: 16px;
-    color: #fff;
-    padding: 15px 20px;
-    text-align: center;
-}
-
-/* Texte des informations */
-.profil-champ label {
-    color: white;
+    color: #f0f0f0;
     text-align: left;
     padding-right: 10px;
     padding-bottom: 15px;
 }
 
-/* Boutons de modification */
+.profil-champ input {
+    width: 100%;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    outline: none;
+    border-radius: 30px;
+    font-size: 16px;
+    color: #ffffff;
+    padding: 15px 20px;
+    text-align: center;
+}
+
+/* Boutons de modification (icônes) */
 .modifier-btn {
     background: transparent;
     border: none;
     cursor: pointer;
     font-size: 25px;
-    color: white;
+    color: #ffffff;
     transition: color 0.3s ease;
     padding-left: 15px;
 }
@@ -584,20 +586,21 @@ body.apropos .page-contenu {
     padding: 10px 20px;
     font-size: 16px;
     font-weight: bold;
-    color: #000000;
-    background: white;
+    color: #ffffff;
+    background: #292929;
     text-decoration: none;
     border-radius: 30px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 4px 12px rgba(255, 255, 255, 0.05);
     transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .acces-admin .button:hover, .recherche-boite .button:hover {
     background: linear-gradient(45deg, #ff9f1c, #ff4f00);
     transform: translateY(-2px);
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.5);
 }
 
+/* Bouton achat voyage */
 .voyage_achete {
     display: inline-block;
     padding: 12px 25px;
@@ -605,10 +608,10 @@ body.apropos .page-contenu {
     font-size: 1rem;
     font-weight: bold;
     color: white;
-    background: linear-gradient(45deg, #5a189a, #9b5de5);
+    background: linear-gradient(45deg, #3a0ca3, #240046); /* BLEU header */
     border: none;
     border-radius: 30px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
     cursor: pointer;
     text-align: center;
     text-decoration: none;
@@ -618,8 +621,10 @@ body.apropos .page-contenu {
 .voyage_achete:hover {
     background: linear-gradient(45deg, #ff9f1c, #ff4f00);
     transform: scale(1.05);
-    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
 }
+
+
 
 
 
@@ -629,11 +634,12 @@ body.apropos .page-contenu {
 .recherche {
     padding: 60px 20px;
     text-align: center;
-    background-color: #ffffff;
+    background-color: #1e1e1e; /* fond sombre */
     border-radius: 15px;
     max-width: 900px;
     margin: 40px auto;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.4);
+    color: #f0f0f0;
 }
 
 .recherche-boite h1 {
@@ -642,52 +648,47 @@ body.apropos .page-contenu {
     margin-bottom: 20px;
 }
 
-
-.recherche fieldset{
-    font-size: rem;
-    color: #ffffff;
+.recherche fieldset {
+    font-size: 1rem;
+    color: #f0f0f0;
     margin-bottom: 20px;
-}
-
-
-fieldset {
-    background: b;
+    background: #2a2a2a;
     border-radius: 10px;
     padding: 15px;
     margin: 15px auto;
     width: 80%;
-    border: 1px solid #ddd;
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05);
+    border: 1px solid #444;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.2);
 }
 
+/* Boîte contenant le formulaire */
 .recherche-boite {
     width: 500px;
-    background: transparent;
-    border: 2px solid rgba(255, 255, 255, .2);
+    background: rgba(30, 30, 30, 0.7);
+    border: 2px solid rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(20px);
-    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
-    color: #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    color: #ffffff;
     border-radius: 10px;
     padding: 30px 40px;
 }
 
 
-/*Partie Admin*/
 
-/* Styles pour la page d'administration */
+/* Partie Admin */
 
-
+/* Conteneur principal */
 .admin-contenue {
     margin: 80px auto;
     border-radius: 15px;
     max-width: 1000px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
     text-align: center;
     width: 1000px;
-    background: transparent;
-    border: 2px solid rgba(255, 255, 255, .2);
+    background: rgba(30, 30, 30, 0.7);
+    border: 2px solid rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(20px);
-    color: #fff;
+    color: #ffffff;
     padding: 30px 40px;
 }
 
@@ -705,7 +706,7 @@ table {
 }
 
 thead {
-    background: linear-gradient(45deg, #9b5de5, #5a189a);
+    background: linear-gradient(45deg, #240046, #3a0ca3);
     color: white;
 }
 
@@ -716,7 +717,7 @@ thead th {
 }
 
 tbody tr {
-    background: #ffffff;
+    background: #2a2a2a;
     transition: background 0.3s ease;
 }
 
@@ -724,10 +725,10 @@ tbody td {
     padding: 10px;
     text-align: center;
     font-size: 0.95rem;
-    color: #333;
+    color: #eeeeee;
 }
 
-/* Boutons */
+/* Boutons génériques */
 button {
     border: none;
     border-radius: 20px;
@@ -737,6 +738,7 @@ button {
     transition: all 0.3s ease;
 }
 
+/* Boutons personnalisés */
 .vip-btn {
     background: #ffd700;
     color: white;
@@ -756,12 +758,12 @@ button {
 }
 
 .normal-btn {
-    background: #5a189a;
+    background: #3a0ca3;
     color: white;
 }
 
 .normal-btn:hover {
-    background: #4e1482;
+    background: #240046;
 }
 
 .voir-btn {
@@ -808,9 +810,11 @@ button {
 
 
 /* Styles pour la page de paiement */
+
+/* Pages Paiement */
 body.paiement, body.traitement-paiement, body.retour-paiement {
     padding-top: 80px;
-    background-image: url('img/image-acceuil.jpg');
+    background-image: url('img/nouvelle_image_fond.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -823,17 +827,16 @@ body.paiement, body.traitement-paiement, body.retour-paiement {
 /* Conteneur principal */
 .paiement-container {
     width: 420px;
-    background: transparent;
+    background: rgba(30, 30, 30, 0.75);
     border: 2px solid rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(20px);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
     color: #fff;
     border-radius: 10px;
     padding: 30px 40px;
     text-align: center;
 }
 
-/* Titre */
 .paiement-container h2 {
     font-size: 36px;
     text-align: center;
@@ -846,14 +849,11 @@ body.paiement, body.traitement-paiement, body.retour-paiement {
     margin: 30px 0;
 }
 
-/* Champs du formulaire */
 .paiement-container input {
     width: 100%;
     height: 100%;
     background: transparent;
-    border: none;
-    outline: none;
-    border: 2px solid rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.3);
     border-radius: 40px;
     font-size: 16px;
     color: #fff;
@@ -861,10 +861,9 @@ body.paiement, body.traitement-paiement, body.retour-paiement {
 }
 
 .paiement-container input::placeholder {
-    color: #fff;
+    color: #ddd;
 }
 
-/* Icônes dans les champs */
 .paiement-container .saisie i {
     position: absolute;
     right: 15px;
@@ -874,32 +873,36 @@ body.paiement, body.traitement-paiement, body.retour-paiement {
     color: white;
 }
 
-/* Style du bouton */
 .paiement-container .button {
     width: 100%;
     height: 45px;
-    background: white;
+    background: #292929;
     border: none;
-    outline: none;
     border-radius: 40px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.05);
     cursor: pointer;
     font-size: 16px;
-    color: #333;
+    color: #fff;
     font-weight: 600;
 }
-
-.paiement-container .button:hover{
-    background: linear-gradient(45deg, #ff9f1c, #ff4f00);
-}
-
-
 
 .paiement-container .button:hover {
     background: linear-gradient(45deg, #ff9f1c, #ff4f00);
 }
 
-/* Messages de confirmation et d'erreur */
+/* Messages */
+.message-confirmation {
+    background: rgba(0, 255, 0, 0.1);
+    color: #0f0;
+    border: 2px solid #0f0;
+}
+
+.message-erreur {
+    background: rgba(255, 0, 0, 0.1);
+    color: #f00;
+    border: 2px solid #f00;
+}
+
 .message-confirmation, .message-erreur {
     padding: 15px;
     border-radius: 8px;
@@ -908,32 +911,16 @@ body.paiement, body.traitement-paiement, body.retour-paiement {
     margin-bottom: 20px;
 }
 
-.message-confirmation {
-    background: rgba(0, 255, 0, 0.2);
-    color: #0f0;
-    border: 2px solid #0f0;
-}
-
-.message-erreur {
-    background: rgba(255, 0, 0, 0.2);
-    color: #f00;
-    border: 2px solid #f00;
-}
-
-/* Style pour les boutons de retour */
-.retour-container {
-    text-align: center;
-}
-
+/* Bouton retour */
 .retour-container a {
     display: inline-block;
     padding: 10px 20px;
-    background: white;
+    background: #292929;
     border-radius: 30px;
     font-size: 16px;
     font-weight: bold;
     text-decoration: none;
-    color: #333;
+    color: white;
     transition: all 0.3s ease;
 }
 
@@ -947,7 +934,6 @@ body.paiement, body.traitement-paiement, body.retour-paiement {
     height: 45px;
     background: linear-gradient(45deg, #ff9f1c, #ff4f00);
     border: none;
-    outline: none;
     border-radius: 40px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     cursor: pointer;
@@ -961,44 +947,42 @@ body.paiement, body.traitement-paiement, body.retour-paiement {
 }
 
 .bouton-paiement:hover {
-    background: linear-gradient(45);
+    background: linear-gradient(45deg, #ffa500, #ff4500);
 }
- /*Partie destination accessible hors connexion sur le site*/
- 
+
+/* Sélecteur de filtre */
 .filtre-select {
     width: auto;
     padding: 10px 20px;
     font-size: 1rem;
     border-radius: 10px;
-    border: 2px solid #5a189a;
-    background-color: #ffffff; /* Fond blanc pour bien ressortir */
-    color: #5a189a;            /* Texte violet */
+    border: 2px solid #3a0ca3;
+    background-color: #1e1e1e;
+    color: white;
     font-weight: bold;
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
 .filtre-select:hover {
-    background-color: #f4f4f9;
+    background-color: #2a2a2a;
     border-color: #ff9f1c;
 }
 
+/* Boîte d'intro (hors connexion) */
 .intro {
     max-width: 900px;
     margin: 0 auto 40px;
     padding: 20px 30px;
-    background: linear-gradient(135deg, #fefefe, #f4f4f9);
-    border-left: 6px solid #5a189a;
+    background: rgba(30, 30, 30, 0.8);
+    border-left: 6px solid #3a0ca3;
     border-radius: 15px;
-    box-shadow: 0px 4px 20px rgba(90, 24, 154, 0.1);
+    box-shadow: 0px 4px 20px rgba(90, 24, 154, 0.2);
     text-align: center;
     font-size: 1.2rem;
     line-height: 1.8;
-    color: #333;
+    color: #f0f0f0;
     font-family: "Poppins", sans-serif;
     animation: fadeInIntro 1s ease-in-out;
 }
@@ -1012,6 +996,7 @@ body.paiement, body.traitement-paiement, body.retour-paiement {
     to { opacity: 1; transform: translateY(0); }
 }
 
+/* Bouton achat */
 .acheter-btn {
     display: inline-block;
     padding: 12px 25px;
@@ -1019,10 +1004,10 @@ body.paiement, body.traitement-paiement, body.retour-paiement {
     font-size: 1rem;
     font-weight: bold;
     color: white;
-    background: linear-gradient(45deg, #5a189a, #9b5de5);
+    background: linear-gradient(45deg, #3a0ca3, #240046); /* BLEU header */
     border: none;
     border-radius: 30px;
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.15);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
     cursor: pointer;
     transition: all 0.3s ease;
     text-align: center;
@@ -1032,12 +1017,14 @@ body.paiement, body.traitement-paiement, body.retour-paiement {
 .acheter-btn:hover {
     background: linear-gradient(45deg, #ff9f1c, #ff4f00);
     transform: scale(1.05);
-    box-shadow: 0px 6px 15px rgba(0,0,0,0.25);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.25);
 }
+
 
 
 /* Partie Panier */
 
+/* Panier - bouton de modification */
 .bouton-modifier-voyage {
     display: inline-block;
     padding: 12px 25px;
@@ -1045,50 +1032,46 @@ body.paiement, body.traitement-paiement, body.retour-paiement {
     font-size: 1rem;
     font-weight: bold;
     color: white;
-    background: linear-gradient(45deg, #5a189a, #9b5de5);
+    background: linear-gradient(45deg, #3a0ca3, #240046);
     border: none;
     border-radius: 30px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
     cursor: pointer;
     text-align: center;
     text-decoration: none; 
     transition: all 0.3s ease;
 }
 
-
 .bouton-modifier-voyage:hover {
     background: linear-gradient(45deg, #ff9f1c, #ff4f00);
     transform: scale(1.05);
-    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.4);
 }
 
-/* Style de la page voyage_detail */
-
-
+/* Page détail voyage */
 body.detail {
-    background: url('img/image-acceuil.jpg') no-repeat center center fixed;
+    background: url('img/nouvelle_image_fond.jpg') no-repeat center center fixed;
     background-size: cover;
     font-family: 'Poppins', sans-serif;
     padding-top: 80px;
     color: #f5f5f5;
 }
 
-/* -------- TITRE -------- */
+/* Titre principal */
 body.detail .page-contenu h1 {
     font-size: 4rem;
     font-weight: 700;
     text-align: center;
     margin-bottom: 40px;
     padding: 20px 40px;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.06);
     backdrop-filter: blur(12px);
     border-radius: 20px;
     display: inline-block;
     margin-left: auto;
     margin-right: auto;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-
-    background-image: linear-gradient(90deg, #4facfe, #9d4edd);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    background-image: linear-gradient(90deg, #4facfe, #3a0ca3);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow: 0 0 6px rgba(255, 255, 255, 0.15);
@@ -1099,12 +1082,12 @@ body.detail .page-contenu h1::after {
     display: block;
     width: 80px;
     height: 4px;
-    background: linear-gradient(to right, #5a189a, #9d4edd);
+    background: linear-gradient(to right, #3a0ca3, #3a0ca3);
     margin: 12px auto 0;
     border-radius: 2px;
 }
 
-/* -------- TEXTE D'INTRO -------- */
+/* Texte d’introduction */
 .page-contenu p {
     font-size: 1.35rem;
     font-weight: 400;
@@ -1113,45 +1096,45 @@ body.detail .page-contenu h1::after {
     margin: 0 auto 50px;
     color: #f3f3f3;
     line-height: 1.8;
-    background: rgba(255, 255, 255, 0.06);
+    background: rgba(255, 255, 255, 0.05);
     padding: 30px 45px;
-    border-left: 5px solid #9d4edd;
+    border-left: 5px solid #3a0ca3;
     border-radius: 12px;
     backdrop-filter: blur(6px);
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
 }
 
-/* -------- FORMULAIRE -------- */
+/* Formulaire de personnalisation */
 .detail form {
     width: 95%;
     max-width: 1200px;
     margin: 0 auto 70px;
     padding: 60px;
-    background: rgba(255, 255, 255, 0.07);
+    background: rgba(30, 30, 30, 0.7);
     border-radius: 30px;
     backdrop-filter: blur(20px);
-    box-shadow: 0 0 30px rgba(0,0,0,0.25);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
 }
 
-/* -------- ÉTAPES -------- */
+/* Fieldset */
 .detail fieldset {
     margin-bottom: 40px;
     padding: 30px;
     border: none;
     border-radius: 25px;
-    background-color: rgba(255, 255, 255, 0.06);
+    background-color: rgba(255, 255, 255, 0.04);
 }
 
-/* -------- LEGEND -------- */
+/* Légendes */
 .detail legend {
     font-size: 1.5rem;
     font-weight: 600;
     color: #ffffff;
     margin-bottom: 20px;
-    text-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+    text-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
 }
 
-/* -------- LABELS -------- */
+/* Labels */
 .detail form label {
     display: block;
     font-weight: 500;
@@ -1159,7 +1142,7 @@ body.detail .page-contenu h1::after {
     margin-bottom: 8px;
 }
 
-/* -------- INPUTS -------- */
+/* Champs */
 .detail form select,
 .detail form input[type="number"] {
     width: 100%;
@@ -1168,7 +1151,7 @@ body.detail .page-contenu h1::after {
     border-radius: 12px;
     border: none;
     background-color: rgba(255, 255, 255, 0.08);
-    color: #ffffff; /* Blanc franc */
+    color: #ffffff;
     font-weight: 500;
     margin-bottom: 25px;
     backdrop-filter: blur(6px);
@@ -1191,13 +1174,13 @@ body.detail .page-contenu h1::after {
     border: 1px solid #ff9f1c;
 }
 
-
-/* -------- OPTIONS -------- */
+/* Options du select */
 .detail form select option {
-    color: #222;
+    background-color: #f0f0f0;
+    color: #000;
 }
 
-/* -------- BOUTON -------- */
+/* Bouton de validation */
 .detail form button[type="submit"] {
     display: block;
     margin: 50px auto 0;
@@ -1205,10 +1188,10 @@ body.detail .page-contenu h1::after {
     font-size: 1.25rem;
     font-weight: 600;
     color: white;
-    background: linear-gradient(135deg, #5a189a, #9d4edd);
+    background: linear-gradient(135deg, #3a0ca3, #3a0ca3);
     border: none;
     border-radius: 40px;
-    box-shadow: 0px 8px 20px rgba(0,0,0,0.3);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.4);
     cursor: pointer;
     transition: all 0.3s ease;
     text-transform: uppercase;
@@ -1221,7 +1204,7 @@ body.detail .page-contenu h1::after {
     box-shadow: 0 0 20px rgba(255, 111, 0, 0.5);
 }
 
-/* -------- RESPONSIVE -------- */
+/* Responsive */
 @media (max-width: 768px) {
     body.detail .page-contenu h1 {
         font-size: 2.3rem;
@@ -1235,7 +1218,6 @@ body.detail .page-contenu h1::after {
         font-size: 1rem;
         padding: 20px;
     }
-    
 }
 .erreur {
   font-size: 0.9em;
@@ -1248,33 +1230,5 @@ body.detail .page-contenu h1::after {
   cursor: pointer;
   margin-left: 5px;
 }
-
-.saisie {
-  position: relative;
-}
-
-.saisie input[type="password"] {
-  padding-right: 40px; /* Laisse de la place pour le bouton 👁️ */
-}
-
-.toggle-password {
-  position: absolute;
-  top: 50%;
-  right: 40px; /* ajuste si icône Boxicons est présente à droite */
-  transform: translateY(-50%);
-  background: none;
-  border: none;
-  font-size: 1rem;
-  cursor: pointer;
-  padding: 0;
-  color: #555;
-  z-index: 2;
-}
-
-
-
-
-
-
 
 
