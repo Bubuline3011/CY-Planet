@@ -122,7 +122,7 @@ if (isset($_SESSION['email'])) {
 
             <!-- Prix estimé dynamique -->
             <p id="prix-estime" style="font-weight: bold; font-size: 1.2em; margin-top: 20px;">
-                Prix estimé : <span id="valeur-prix-estime">0</span> €
+                Prix des options : <span id="valeur-prix-estime">0</span> €
             </p>
 
             <button type="submit">Ajouter au panier</button>
