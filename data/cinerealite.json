@@ -1,0 +1,320 @@
+{
+  "id": 8,
+  "titre": "Cinéréalité - La Planète du Cinéma Vivant",
+  "image": "img/CinéRéalité.jpg",
+  "theme": "culture",
+  "note": 5,
+  "date_depart": "2026-09-15",
+  "date_retour": "2026-09-28",
+  "duree": 13,
+  "nb_etapes": 3,
+  "specificites": "Plongez au cœur de vos films préférés dans un monde où la fiction devient réalité. Cinéréalité vous offre une immersion totale dans des décors cultes et des scénarios interactifs.",
+  "modifie_par_utilisateur": false,
+  "statut": "en cours",
+  "prix_total": 16280,
+  "etapes": [
+    {
+      "id": 1,
+      "titre": "Studios d’Immersion Totale",
+      "date_arrivee": "2025-06-01",
+      "date_depart": "2025-06-04",
+      "duree": 4,
+      "position": {
+        "gps": "34.0522, -118.2437",
+        "nom_lieu": "Plateau XR Central"
+      },
+      "options": [
+        {
+          "id": 1,
+          "type": "activité sportive",
+          "nom": "Scène interactive",
+          "valeurs_possibles": [
+            "Non",
+            "Figuration",
+            "Acteur principal"
+          ],
+          "choix_utilisateur": "Non",
+          "personnes": 2,
+          "prix_par_valeur": {
+            "Non": 0,
+            "Figuration": 95,
+            "Acteur principal": 210
+          }
+        },
+        {
+          "id": 2,
+          "type": "hébergement",
+          "nom": "Chambre à thème ciné",
+          "valeurs_possibles": [
+            "Non",
+            "Ambiance futuriste",
+            "Décor classique hollywoodien"
+          ],
+          "choix_utilisateur": "Non",
+          "personnes": 2,
+          "prix_par_valeur": {
+            "Non": 0,
+            "Ambiance futuriste": 280,
+            "Décor classique hollywoodien": 590
+          }
+        },
+        {
+          "id": 3,
+          "type": "transport",
+          "nom": "Transport navette caméra",
+          "valeurs_possibles": [
+            "Non",
+            "Navette standard",
+            "Ciné-bus à effets"
+          ],
+          "choix_utilisateur": "Non",
+          "personnes": 2,
+          "prix_par_valeur": {
+            "Non": 0,
+            "Navette standard": 60,
+            "Ciné-bus à effets": 100
+          },
+          "autres_champs": {
+            "vitesse_moyenne": "500 000 km/h"
+          }
+        },
+        {
+          "id": 4,
+          "type": "service",
+          "nom": "Garde d’enfants",
+          "valeurs_possibles": [
+            "Non",
+            "Garde classique",
+            "Animation sportive"
+          ],
+          "choix_utilisateur": "Non",
+          "personnes": 1,
+          "prix_par_valeur": {
+            "Non": 0,
+            "Garde classique": 100,
+            "Animation sportive": 250
+          }
+        },
+        {
+          "id": 5,
+          "type": "service",
+          "nom": "Gestion du linge",
+          "valeurs_possibles": [
+            "Non",
+            "Lavage simple",
+            "Pressing premium"
+          ],
+          "choix_utilisateur": "Non",
+          "personnes": 1,
+          "prix_par_valeur": {
+            "Non": 0,
+            "Lavage simple": 30,
+            "Pressing premium": 45
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "titre": "Parc à Thèmes Cinématographiques",
+      "date_arrivee": "2025-06-05",
+      "date_depart": "2025-06-07",
+      "duree": 3,
+      "position": {
+        "gps": "48.8566, 2.3522",
+        "nom_lieu": "StudioPark Galaxy"
+      },
+      "options": [
+        {
+          "id": 6,
+          "type": "activité culturelle",
+          "nom": "Aventure scénarisée",
+          "valeurs_possibles": [
+            "Non",
+            "Parcours aventure",
+            "Rôle personnalisé"
+          ],
+          "choix_utilisateur": "Non",
+          "personnes": 2,
+          "prix_par_valeur": {
+            "Non": 0,
+            "Parcours aventure": 105,
+            "Rôle personnalisé": 230
+          }
+        },
+        {
+          "id": 7,
+          "type": "hébergement",
+          "nom": "Chambre theme 7eme art",
+          "valeurs_possibles": [
+          	"Non",
+            "Chambre Standard",
+            "Chambre VIP"
+          ],
+          "choix_utilisateur": "Non",
+          "personnes": 2,
+          "prix_par_valeur": {
+          	"Non": 0,
+            "Chambre Standard": 570,
+            "Chambre VIP": 950
+          }
+        },
+        {
+          "id": 8,
+          "type": "transport",
+          "nom": "Pour vous y rendre",
+          "valeurs_possibles": [
+          	"Non",
+            "Fauteuil du réalisateur volant",
+            "Popcorn booster"
+          ],
+          "choix_utilisateur": "Non",
+          "personnes": 2,
+          "prix_par_valeur": {
+          	"Non": 0,
+            "Fauteuil du réalisateur volant": 170,
+            "Popcorn booster": 210
+          },
+          "autres_champs": {
+            "vitesse_moyenne": "500 000 km/h"
+          }
+        },
+        {
+          "id": 9,
+          "type": "service",
+          "nom": "Garde d’enfants",
+          "valeurs_possibles": [
+            "Non",
+            "Garde classique",
+            "Animation sportive"
+          ],
+          "choix_utilisateur": "Non",
+          "personnes": 1,
+          "prix_par_valeur": {
+            "Non": 0,
+            "Garde classique": 100,
+            "Animation sportive": 250
+          }
+        },
+        {
+          "id": 10,
+          "type": "service",
+          "nom": "Gestion du linge",
+          "valeurs_possibles": [
+            "Non",
+            "Lavage simple",
+            "Pressing premium"
+          ],
+          "choix_utilisateur": "Non",
+          "personnes": 1,
+          "prix_par_valeur": {
+            "Non": 0,
+            "Lavage simple": 30,
+            "Pressing premium": 45
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "titre": "Festival des Étoiles",
+      "date_arrivee": "2025-06-08",
+      "date_depart": "2025-06-10",
+      "duree": 3,
+      "position": {
+        "gps": "51.5074, -0.1278",
+        "nom_lieu": "Amphithéâtre Céleste"
+      },
+      "options": [
+        {
+          "id": 11,
+          "type": "activité sportive",
+          "nom": "Projection immersive",
+          "valeurs_possibles": [
+            "Non",
+            "Place standard",
+            "Expérience 360°"
+          ],
+          "choix_utilisateur": "Non",
+          "personnes": 2,
+          "prix_par_valeur": {
+            "Non": 0,
+            "Place standard": 50,
+            "Expérience 360°": 120
+          }
+        },
+        {
+          "id": 12,
+          "type": "restauration",
+          "nom": "Popcorn intergalactique",
+          "valeurs_possibles": [
+            "Non",
+            "Portion classique",
+            "Bar à popcorn"
+          ],
+          "choix_utilisateur": "Non",
+          "personnes": 2,
+          "prix_par_valeur": {
+            "Non": 0,
+            "Portion classique": 15,
+            "Bar à popcorn": 35
+          }
+        },
+        {
+          "id": 13,
+          "type": "transport",
+          "nom": "Pour vous y rendre",
+          "valeurs_possibles": [
+            "Non",
+            "Rideau rouge spatial",
+            "Clap-mobile hyperspatiale"
+          ],
+          "choix_utilisateur": "Non",
+          "personnes": 2,
+          "prix_par_valeur": {
+            "Non": 0,
+            "Rideau rouge spatial": 50,
+            "Clap-mobile hyperspatiale": 65
+          },
+          "autres_champs": {
+            "vitesse_moyenne": "500 000 km/h"
+          }
+        },
+        {
+          "id": 14,
+          "type": "service",
+          "nom": "Garde d’enfants",
+          "valeurs_possibles": [
+            "Non",
+            "Garde classique",
+            "Animation sportive"
+          ],
+          "choix_utilisateur": "Non",
+          "personnes": 1,
+          "prix_par_valeur": {
+            "Non": 0,
+            "Garde classique": 100,
+            "Animation sportive": 250
+          }
+        },
+        {
+          "id": 15,
+          "type": "service",
+          "nom": "Gestion du linge",
+          "valeurs_possibles": [
+            "Non",
+            "Lavage simple",
+            "Pressing premium"
+          ],
+          "choix_utilisateur": "Non",
+          "personnes": 1,
+          "prix_par_valeur": {
+            "Non": 0,
+            "Lavage simple": 30,
+            "Pressing premium": 45
+          }
+        }
+      ]
+    }
+  ]
+}
