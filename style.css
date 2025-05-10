@@ -1237,15 +1237,6 @@ body.detail .page-contenu h1::after {
   z-index: 2;
 }
 
-.destination img {
-    width: 100%;
-    height: auto;
-    max-height: 250px;
-    object-fit: cover;
-    display: block;
-    border-radius: 10px;
-    margin-bottom: 10px;
-}
 
 body.recherche {
     background-size: cover;
@@ -1349,8 +1340,6 @@ body.recherche {
 .destination-recherche .destination:hover h3 {
     color: #ff9f1c;
 }
-
-
 
 
 

@@ -1256,16 +1256,6 @@ body.recherche {
 }
 
 
-.destination img {
-    width: 100%;
-    height: auto;
-    max-height: 250px;
-    object-fit: cover;
-    display: block;
-    border-radius: 10px;
-    margin-bottom: 10px;
-}
-
 .tri-zone {
     display: flex;
     justify-content: center;
