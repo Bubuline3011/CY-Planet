@@ -4,7 +4,7 @@
     "prix": 12800,
     "note": 5,
     "image": "img/Footbol.jpg",
-    "date": "2025-03-25",
+    "date": "2026-03-25",
     "description": "Planète dédiée au football avec stades gravitationnels, matchs intergalactiques et musée du foot galactique.",
     "id": 1,
     "mots_cles": ["football", "sport", "galactique", "match", "joueurs", "stade", "fans", "musée", "gravité", "compétition"]
@@ -14,7 +14,7 @@
     "prix": 15750,
     "note": 4,
     "image": "img/Gastrodelis.jpg",
-    "date": "2025-03-20",
+    "date": "2026-01-16",
     "description": "Un monde culinaire interplanétaire avec cours de cuisine spatiale et concours de chefs stellaires.",
     "id": 10,
     "mots_cles": ["cuisine", "gastronomie", "spatiale", "chef", "recette", "cours", "interplanétaire", "dégustation", "concours"]
@@ -25,7 +25,7 @@
     "prix": 10340,
     "note": 4,
     "image": "img/AquaWorld.jpg",
-    "date": "2025-03-22",
+    "date": "2026-05-04",
     "description": "Planète océanique aux bulles sous-marines : plongée avec créatures géantes et hôtels-bulles flottants.",
     "id": 2,
     "mots_cles": ["océan", "eau", "plongée", "sous-marin", "créatures", "hôtel", "bulle", "aquatique", "marin"]
@@ -36,7 +36,7 @@
     "prix": 8760,
     "note": 5,
     "image": "img/Musicaria.jpg",
-    "date": "2025-03-18",
+    "date": "2026-07-19",
     "description": "Un monde vibrant au rythme de la musique : concerts en apesanteur et dancefloors suspendus.",
     "id": 3,
     "mots_cles": ["musique", "concert", "danse", "rythme", "apeusanteur", "scène", "fête", "sons", "ambiance", "sortie"]
@@ -46,7 +46,7 @@
     "prix": 10500,
     "note": 3,
     "image": "img/Sportimax.jpg",
-    "date": "2025-03-19",
+    "date": "2026-10-12",
     "description": "Planète du sport extrême : marathons aériens et parkour en gravité variable dans des arènes suspendues.",
     "id": 9,
     "mots_cles": ["sport", "extrême", "marathon", "parkour", "adrénaline", "gravité", "aérien", "défi", "arène", "compétition"]
@@ -56,7 +56,7 @@
     "prix": 18750,
     "note": 4,
     "image": "img/Ludopolis.jpg",
-    "date": "2025-03-16",
+    "date": "2026-12-16",
     "description": "Monde du jeu géant : escape rooms futuristes, échecs vivants et compétitions intergalactiques.",
     "id": 7,
     "mots_cles": ["jeu", "escape room", "échecs", "compétition", "futuriste", "ludique", "stratégie", "galactique", "divertissement"]
@@ -66,7 +66,7 @@
     "prix": 16280,
     "note": 5,
     "image": "img/CinéRéalité.jpg",
-    "date": "2025-03-15",
+    "date": "2026-09-15",
     "description": "Chaque ville est un film vivant : immersion interactive, cascades réelles et école de cinéma spatiale.",
     "id": 8,
     "mots_cles": ["cinéma", "film", "action", "cascade", "acteur", "immersion", "réalité", "scène", "spatiale", "sortie", "art"]
@@ -76,7 +76,7 @@
     "prix": 20500,
     "note": 4,
     "image": "img/Médiévalia.jpg",
-    "date": "2025-03-17",
+    "date": "2026-02-09",
     "description": "Planète médiévale futuriste avec châteaux flottants, chevaliers cybernétiques et tournois en lévitation.",
     "id": 5,
     "mots_cles": ["médiéval", "chevalier", "château", "tournoi", "futuriste", "cybernétique", "lévitation", "armure", "histoire", "art"]
@@ -86,7 +86,7 @@
     "prix": 13800,
     "note": 5,
     "image": "img/Adventuris.jpg",
-    "date": "2025-03-23",
+    "date": "2026-08-03",
     "description": "Voyage d’exploration intergalactique : jungles lumineuses, spéléologie dans des cavernes cristallines.",
     "id": 4,
     "mots_cles": ["aventure", "exploration", "jungle", "spéléologie", "caverne", "cristal", "galactique", "nature", "découverte"]
@@ -97,7 +97,7 @@
     "prix": 22500,
     "note": 4,
     "image": "img/Dreamara.jpg",
-    "date": "2025-03-21",
+    "date": "2026-11-20",
     "description": "Monde onirique fait de nuages moelleux, tapis volants et forêts de bonbons arc-en-ciel.",
     "id": 6,
     "mots_cles": ["rêve", "nuage", "magie", "tapis volant", "bonbon", "fantastique", "coloré", "onirique", "imaginaire"]
