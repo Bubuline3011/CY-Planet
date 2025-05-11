@@ -127,10 +127,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
 
             <!-- Champ Mot de passe -->
-            <div class="saisie">
-                <input type="password" name="motdepasse" placeholder="Mot de passe" required autocomplete="new-password">
-                <i class='bx bx-lock'></i>
-            </div>
+          <div class="saisie motdepasse">
+  		<input type="password" name="motdepasse" placeholder="Mot de passe" required autocomplete="new-password">
+  <button type="button" class="toggle-password">👁️</button>
+  		<i class='bx bx-lock'></i>
+	</div>
 
             <!-- Champ Âge -->
             <div class="saisie">
@@ -159,5 +160,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <p>&copy 2025 Cosmo Trip. Tous droits réservés.</p>
     </footer>
     <script src="js/theme.js"></script>
+    <script src="js/formulaire.js"></script>
+
 </body>
 </html>

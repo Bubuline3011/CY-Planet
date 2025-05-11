@@ -69,16 +69,17 @@ $utilisateursPage = array_slice($utilisateurs, $debut, $utilisateursParPage);
             <tbody>
                 <!-- Boucle sur les utilisateurs de la page actuelle -->
                 <?php foreach ($utilisateursPage as $user): ?>
-                <tr>
+               <tr data-email="<?= htmlspecialchars($user['email']) ?>">
+
                     <!-- Affichage sécurisé des infos de l'utilisateur -->
                     <td><?= htmlspecialchars($user['nom']) ?></td>
                     <td><?= htmlspecialchars($user['prenom']) ?></td>
                     <td><?= htmlspecialchars($user['email']) ?></td>
                     <td>
                         <!-- Boutons d'action (ils ne font rien ici mais peuvent être liés à des scripts) -->
-                        <button class="vip-btn">VIP</button>
-                        <button class="ban-btn">Bannir</button>
-                        <button class="normal-btn">Normal</button>
+                        <button class="role-btn vip-btn" data-role="vip">VIP</button>
+			<button class="role-btn ban-btn" data-role="banni">Bannir</button>
+			<button class="role-btn normal-btn" data-role="normal">Normal</button>
                     </td>
                     <!-- Lien vers la page de profil de l'utilisateur -->
                     <td><a class="voir-btn" href="profil_utilisateur.php?email=<?= urlencode($user['email']) ?>">Voir</a></td>
@@ -106,5 +107,6 @@ $utilisateursPage = array_slice($utilisateurs, $debut, $utilisateursParPage);
         <p>&copy; 2025 Cosmo Trip. Tous droits réservés.</p>
     </footer>
     <script src="js/theme.js"></script>
+    <script src="js/admin.js"></script>
 </body>
 </html>

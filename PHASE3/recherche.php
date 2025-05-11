@@ -1,102 +1,123 @@
 <?php
-// On démarre la session pour pouvoir utiliser les infos de l'utilisateur si besoin
 session_start();
 ?>
 
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8"> <!-- Pour afficher correctement les accents -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">  <!-- Pour affichage responsive -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recherche</title>
 
-    <!-- Feuille de style principale -->
     <link id="theme-css" rel="stylesheet" href="style.css">
-
-    <!-- Bibliothèque d'icônes Boxicons -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <body class="recherche">
-    <!-- Inclusion du menu de navigation -->
     <?php include 'header.php'; ?>
-    
-    <div class="recherche-boite">
-        <h1>Trouvez votre séjour idéal :</h1>
-    
-        <!-- Formulaire pour rechercher un séjour -->
-        <form action="acceuil.php" method="POST">
-            
-            <!-- Choix de la destination -->
-            <label for="destination">Destination :</label>
-            <select id="destination" name="destination" required> 
-                <option value="" disabled selected>Choisissez une destination</option>
-                <!-- Liste fixe des destinations disponibles -->
-                <option value="Footbolis">Footbolis</option>
-                <option value="AquaWorld">AquaWorld</option>
-                <option value="Musicaria">Musicaria</option>
-                <option value="Adventuris">Adventuris</option>
-                <option value="Médiévalia">Médiévalia</option>
-                <option value="Dreamara">Dreamara</option>
-                <option value="Ludopolis">Ludopolis</option>
-                <option value="Gastrodelis">Gastrodelis</option>
-                <option value="Sportimax">Sportimax</option>
-                <option value="Cineralite">Cinerealite</option>
-            </select>
-    
-            <!-- Sélection de la date de départ -->
-            <div>
-                <label for="depart">Date de départ :</label>
-                <input type="date" id="depart" name="date_depart" required>
-            </div>
-    
-            <!-- Sélection de la date de retour -->
-            <div>
-                <label for="retour">Date de retour :</label> 
-                <input type="date" id="retour" name="date_retour" required>
-            </div>
-    
-            <!-- Section pour les hébergements proposés (sera remplie par JS) -->
-            <fieldset>
-                <legend>Hébergements disponibles</legend>
-                <div id="hebergementsList"></div>
-            </fieldset>
-    
-            <!-- Section pour les activités proposées (sera remplie par JS) -->
-            <fieldset>
-                <legend>Activités</legend>
-                <div id="activitiesList"></div>
-            </fieldset>
-    
-            <!-- Choix du moyen de transport -->
-            <label for="transport">Transport :</label>
-            <select id="transport" name="transport" required> 
-                <option value="" disabled selected>Choisissez votre transport pour vous y rendre</option>
-                <option value="voiture">Voiture volante spatiale</option>
-                <option value="portail">Portail interdimensionnel</option>
-                <option value="vaisseaux">Vaisseaux Spatial</option>
-                <option value="Train">Train magnétique interstellaire</option>
-                <option value="mongolfière">Montgolfière spatiale</option>
-            </select>
-            
-            <!-- Bouton pour envoyer le formulaire -->
-            <button type="submit" class="button">Rechercher</button>
-            
-            <!-- Affichage du résultat (sera géré avec du JavaScript plus tard) -->
-            <h3 id="resultat"></h3>
-        </form>
+
+    <div class="container-recherche">
+        <div class="recherche-boite">
+            <h1>Trouvez votre séjour idéal :</h1>
+
+            <form method="GET" action="recherche.php">
+                <input type="text" name="titre" placeholder="Nom du voyage" class="champ-recherche" />
+
+                <select name="note_min">
+                    <option value="">Note minimale</option>
+                    <option value="1">⭐ et +</option>
+                    <option value="2">⭐⭐ et +</option>
+                    <option value="3">⭐⭐⭐ et +</option>
+                    <option value="4">⭐⭐⭐⭐ et +</option>
+                    <option value="5">⭐⭐⭐⭐⭐</option>
+                </select>
+
+                <input type="number" name="prix_min" placeholder="Prix min (€)" min="0" />
+                <input type="number" name="prix_max" placeholder="Prix max (€)" min="0" />
+                <input type="number" name="duree_max" placeholder="Durée max (jours)" min="1" />
+
+                <select name="theme">
+                    <option value="">Thème</option>
+                    <option value="aventure">Aventure</option>
+                    <option value="culture">Culture</option>
+                    <option value="exploration">Exploration</option>
+                    <option value="festival">Festival</option>
+                    <option value="musique">Musique</option>
+                    <option value="nature">Nature</option>
+                    <option value="sport">Sport</option>
+                </select>
+
+                <select id="transport" name="transport">
+                    <option value="">Choisissez votre transport pour vous y rendre</option>
+                    <option value="voiture">Voiture volante spatiale</option>
+                    <option value="portail">Portail interdimensionnel</option>
+                    <option value="vaisseaux">Vaisseaux Spatial</option>
+                    <option value="Train">Train magnétique interstellaire</option>
+                    <option value="mongolfière">Montgolfière spatiale</option>
+                </select>
+                <button type="submit" class="button">Rechercher</button>
+            </form>
+        </div>
+
+        <?php
+        if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+            $filtres = $_GET;
+            $index = json_decode(file_get_contents("data/index_voyages.json"), true);
+
+            echo '<div class="resultats-filtrage">';
+            echo '<div class="tri-zone">';
+            echo '<label for="tri">Trier par :</label>';
+            echo '<select id="tri">';
+            echo '<option value="">-- Choisir --</option>';
+            echo '<option value="prix">Prix croissant</option>';
+            echo '<option value="prix_desc">Prix décroissant</option>';
+            echo '<option value="duree">Durée croissante</option>';
+            echo '<option value="duree_desc">Durée décroissante</option>';
+            echo '<option value="note">Note croissante</option>';
+            echo '<option value="note_desc">Note décroissante</option>';
+            echo '</select>';
+            echo '</div>';
+
+            echo '<div class="destination-recherche">';
+
+            foreach ($index as $id => $fichier) {
+                $voyage = json_decode(file_get_contents("data/" . $fichier), true);
+
+                // Filtres
+                if (!empty($filtres['titre']) && stripos($voyage['titre'], $filtres['titre']) === false) continue;
+                if (!empty($filtres['note_min']) && $voyage['note'] < (int)$filtres['note_min']) continue;
+                if (!empty($filtres['prix_min']) && $voyage['prix_total'] < (int)$filtres['prix_min']) continue;
+                if (!empty($filtres['prix_max']) && $voyage['prix_total'] > (int)$filtres['prix_max']) continue;
+                if (!empty($filtres['duree_max']) && $voyage['duree'] > (int)$filtres['duree_max']) continue;
+                if (!empty($filtres['theme']) && $voyage['theme'] !== $filtres['theme']) continue;
+                if (!empty($filtres['transport']) && $voyage['transport'] !== $filtres['transport']) continue;
+
+                // Affichage
+                echo '<a href="voyage_detail.php?id=' . $voyage['id'] . '" class="destination" 
+                    data-prix="' . $voyage['prix_total'] . '" 
+                    data-duree="' . $voyage['duree'] . '" 
+                    data-note="' . $voyage['note'] . '">';
+                echo '<img src="' . htmlspecialchars($voyage['image']) . '" alt="Image de ' . htmlspecialchars($voyage['titre']) . '">';
+                echo '<h3>' . htmlspecialchars($voyage['titre']) . '</h3>';
+                echo '<p>' . htmlspecialchars($voyage['description']) . '</p>';
+                echo '<p>' . htmlspecialchars($voyage['prix_total']) . ' €</p>';
+                echo '<p>Note : ' . str_repeat('⭐', (int)$voyage['note']) . '</p>';
+                echo '</a>';
+            }
+
+            echo '</div>'; // destination-recherche
+            echo '</div>'; // resultats-filtrage
+        }
+        ?>
     </div>
-    
-    <script>
-        // Ici, on pourra ajouter du JavaScript pour afficher les hébergements
-        // et activités selon la destination choisie
-    </script>
-    
-    <!-- Pied de page -->
+
     <footer>
-        <p>&copy 2025 Cosmo Trip. Tous droits réservés.</p>
+        <p>&copy; 2025 Cosmo Trip. Tous droits réservés.</p>
     </footer>
+
     <script src="js/theme.js"></script>
+    <script src="js/tri_recherche.js"></script>
 
 </body>
 </html>
+
