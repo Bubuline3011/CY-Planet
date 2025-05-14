@@ -1,38 +1,85 @@
-// Attend que le DOM soit complètement chargé avant d’exécuter le script
 document.addEventListener('DOMContentLoaded', function () {
-    // Récupère la liste déroulante de tri
+    const container = document.querySelector('.destination-recherche');
+    const form = document.getElementById('form-filtrage');
     const selectTri = document.getElementById('tri');
-    // Si aucun élément de tri n’est trouvé, on arrête le script
-    if (!selectTri) return;
 
-    // Écoute le changement de valeur du menu de tri
-    selectTri.addEventListener('change', function () {
-        // Récupère la valeur sélectionnée (ex: 'prix', 'duree_desc', etc.)
-        const critere = this.value;
-        // Récupère le conteneur des cartes de destination
-        const container = document.querySelector('.destination-recherche');
-        // Convertit les éléments .destination en tableau pour les trier
-        const cartes = Array.from(container.querySelectorAll('.destination'));
+    // Fonction d'affichage des cartes voyages
+    function afficherVoyages(voyagesAAfficher) {
+        container.innerHTML = '';
 
-        // Fonction utilitaire pour extraire une valeur numérique depuis un data-attribute
-        const getValeur = (el, attr) => parseFloat(el.dataset[attr]);
+        voyagesAAfficher.forEach(v => {
+            const carte = document.createElement('a');
+            carte.href = `voyage_detail.php?id=${v.id}`;
+            carte.className = 'destination';
+            carte.dataset.prix = v.prix_total;
+            carte.dataset.duree = v.duree;
+            carte.dataset.note = v.note;
 
-        // Trie les cartes selon le critère choisi
-        cartes.sort((a, b) => {
-            switch (critere) {
-                case 'prix': return getValeur(a, 'prix') - getValeur(b, 'prix'); // Tri croissant par prix
-                case 'prix_desc': return getValeur(b, 'prix') - getValeur(a, 'prix'); // Tri décroissant par prix
-                case 'duree': return getValeur(a, 'duree') - getValeur(b, 'duree'); // Tri croissant par durée
-                case 'duree_desc': return getValeur(b, 'duree') - getValeur(a, 'duree'); // Tri décroissant par durée
-                case 'note': return getValeur(a, 'note') - getValeur(b, 'note'); // Tri croissant par note
-                case 'note_desc': return getValeur(b, 'note') - getValeur(a, 'note'); // Tri décroissant par note
-                default: return 0; // Aucun tri si critère inconnu
-            }
+            carte.innerHTML = `
+                <img src="${v.image}" alt="Image de ${v.titre}">
+                <h3>${v.titre}</h3>
+                <p>${v.description}</p>
+                <p>${v.prix_total} €</p>
+                <p>Note : ${'⭐'.repeat(v.note)}</p>
+            `;
+            container.appendChild(carte);
+        });
+    }
+
+    // Fonction pour filtrer les voyages selon les champs du formulaire
+    function appliquerFiltresEtTri() {
+        const titre = form.querySelector('[name="titre"]').value.toLowerCase();
+        const noteMin = parseInt(form.querySelector('[name="note_min"]').value) || 0;
+        const prixMin = parseFloat(form.querySelector('[name="prix_min"]').value) || 0;
+        const prixMax = parseFloat(form.querySelector('[name="prix_max"]').value) || Infinity;
+        const dureeMax = parseInt(form.querySelector('[name="duree_max"]').value) || Infinity;
+        const theme = form.querySelector('[name="theme"]').value;
+
+        let filtres = voyages.filter(v => {
+            return (
+                (!titre || v.titre.toLowerCase().includes(titre)) &&
+                v.note >= noteMin &&
+                v.prix_total >= prixMin &&
+                v.prix_total <= prixMax &&
+                v.duree <= dureeMax &&
+                (!theme || v.theme === theme)
+            );
         });
 
-        // Vide le conteneur avant de réinsérer les cartes triées
-        container.innerHTML = '';
-        // Réinsère les cartes dans le bon ordre
-        cartes.forEach(carte => container.appendChild(carte));
+        // Trie si sélectionné
+        const critere = selectTri.value;
+        if (critere) {
+            const getValeur = (el, key) => parseFloat(el[key]) || 0;
+            filtres.sort((a, b) => {
+                switch (critere) {
+                    case 'prix': return getValeur(a, 'prix_total') - getValeur(b, 'prix_total');
+                    case 'prix_desc': return getValeur(b, 'prix_total') - getValeur(a, 'prix_total');
+                    case 'duree': return getValeur(a, 'duree') - getValeur(b, 'duree');
+                    case 'duree_desc': return getValeur(b, 'duree') - getValeur(a, 'duree');
+                    case 'note': return getValeur(a, 'note') - getValeur(b, 'note');
+                    case 'note_desc': return getValeur(b, 'note') - getValeur(a, 'note');
+                }
+            });
+        }
+
+        afficherVoyages(filtres);
+    }
+
+    // Empêche le formulaire de recharger la page
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+        appliquerFiltresEtTri();
     });
+
+    // Filtrage dynamique à chaque saisie ou changement
+    form.querySelectorAll('input, select').forEach(elem => {
+        elem.addEventListener('input', appliquerFiltresEtTri);
+    });
+
+    // Tri dynamique
+    selectTri.addEventListener('change', appliquerFiltresEtTri);
+
+    // Affichage initial
+    afficherVoyages(voyages);
 });
+
