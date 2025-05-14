@@ -1,18 +1,14 @@
-// Attend que le DOM soit complètement chargé avant d’exécuter le script
 document.addEventListener("DOMContentLoaded", function () {
-    // Récupère tous les champs de saisie dans les éléments ayant la classe .profil-champ
-    const champs = document.querySelectorAll(".profil-champ input");
-    // Récupère tous les boutons de modification (✎)
-    const modifierBtns = document.querySelectorAll(".modifier-btn");
-    // Récupère le bouton "Soumettre"
-    const boutonSoumettre = document.getElementById("bouton-soumettre");
+    const champs = document.querySelectorAll(".profil-champ input"); // Récupère les champs
+    const modifierBtns = document.querySelectorAll(".modifier-btn"); // Récupère les boutons de modification
+    const boutonSoumettre = document.getElementById("bouton-soumettre"); // Bouton de soumission
 
     // Objet pour stocker les valeurs originales des champs
     let valeursOriginales = {};
-    // Ensemble pour suivre les champs en cours de modification validée
+    // Ensemble pour suivre les champs modifiés validés
     let modificationsEnCours = new Set();
 
-    // Stocke les valeurs d’origine des champs identifiés par leur attribut name
+    // Stocke les valeurs d'origine des champs
     champs.forEach((champ) => {
         if (champ.name) {
             valeursOriginales[champ.name] = champ.value;
@@ -22,9 +18,9 @@ document.addEventListener("DOMContentLoaded", function () {
     // Vérifie si des modifications ont été validées pour afficher ou non le bouton "Soumettre"
     function verifierModifications() {
         if (modificationsEnCours.size > 0) {
-            boutonSoumettre.style.display = "block";
+            boutonSoumettre.style.display = "block"; // Affiche le bouton "Soumettre"
         } else {
-            boutonSoumettre.style.display = "none";
+            boutonSoumettre.style.display = "none"; // Masque le bouton si aucune modification
         }
     }
 
@@ -53,28 +49,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Action quand on clique sur ✔
         validerBtn.addEventListener("click", () => {
-            // Rends le champ à nouveau en lecture seule
-            champ.setAttribute("readonly", true);
-            // Marque ce champ comme modifié
-            if (champ.name) modificationsEnCours.add(champ.name);
-            // Vérifie si le bouton "Soumettre" doit être affiché
-            verifierModifications();
-            // Supprime les boutons ✔ et ✖
+            champ.setAttribute("readonly", true); // Rend le champ non modifiable
+            if (champ.name) modificationsEnCours.add(champ.name); // Marque ce champ comme modifié
+            verifierModifications(); // Vérifie si le bouton Soumettre doit être affiché
             validerBtn.remove();
             annulerBtn.remove();
         });
 
         // Action quand on clique sur ✖
         annulerBtn.addEventListener("click", () => {
-            // Rétablit la valeur d’origine du champ
-            if (champ.name) champ.value = valeursOriginales[champ.name];
-            // Remet le champ en lecture seule
-            champ.setAttribute("readonly", true);
-            // Retire le champ de la liste des modifications en cours
-            if (champ.name) modificationsEnCours.delete(champ.name);
-            // Vérifie si le bouton "Soumettre" doit être caché
+            champ.value = valeursOriginales[champ.name]; // Rétablit la valeur d’origine
+            champ.setAttribute("readonly", true); // Remet le champ en lecture seule
+            modificationsEnCours.delete(champ.name); // Retire le champ de la liste des modifications
             verifierModifications();
-            // Supprime les boutons ✔ et ✖
             validerBtn.remove();
             annulerBtn.remove();
         });
@@ -90,6 +77,42 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Au chargement initial, masque le bouton "Soumettre"
+    // Fonction pour soumettre les modifications via AJAX avec fetch()
+    function envoyerModifications() {
+        const formData = new FormData();
+        champs.forEach((champ) => {
+            if (champ.name && champ.value !== valeursOriginales[champ.name]) {
+                formData.append(champ.name, champ.value); // Ajoute les données modifiées
+            }
+        });
+
+        // Envoie les données via fetch
+        fetch("traitement_profil.php", {
+            method: "POST",
+            body: formData
+        })
+        .then(response => response.text())
+        .then(data => {
+            if (data === "success") {
+                alert("Les informations ont été mises à jour avec succès !");
+                window.location.reload(); // Recharger la page pour afficher les nouvelles données
+            } else {
+                alert("Une erreur est survenue, veuillez réessayer.");
+            }
+        })
+        .catch(error => {
+            console.error("Erreur:", error);
+            alert("Une erreur est survenue, veuillez réessayer.");
+        });
+    }
+
+    // Associe un événement de soumission du formulaire avec AJAX
+    boutonSoumettre.addEventListener("click", function (e) {
+        e.preventDefault(); // Empêche le rechargement de la page
+        envoyerModifications(); // Envoie les modifications via AJAX
+    });
+
+    // Masque le bouton "Soumettre" au chargement initial
     verifierModifications();
 });
+
