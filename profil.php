@@ -3,7 +3,7 @@ session_start();
 
 // Vérification de la connexion
 if (!isset($_SESSION['email'])) {
-    header("Location: connexion.php");
+    echo json_encode(['status' => 'error', 'message' => 'Utilisateur non connecté']);
     exit();
 }
 
@@ -12,7 +12,7 @@ $email = $_SESSION['email'];
 $utilisateurs = json_decode(file_get_contents("data/utilisateur.json"), true);
 $user = null;
 
-foreach ($utilisateurs as $u) {
+foreach ($utilisateurs as &$u) {
     if ($u['email'] === $email) {
         $user = $u;
         break;
@@ -20,9 +20,33 @@ foreach ($utilisateurs as $u) {
 }
 
 if (!$user) {
-    echo "Utilisateur introuvable.";
+    echo json_encode(['status' => 'error', 'message' => 'Utilisateur introuvable']);
     exit();
 }
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Mise à jour des informations utilisateur
+    if (isset($_POST['nom'])) $user['nom'] = $_POST['nom'];
+    if (isset($_POST['prenom'])) $user['prenom'] = $_POST['prenom'];
+    if (isset($_POST['email'])) $user['email'] = $_POST['email'];
+    if (isset($_POST['motdepasse'])) $user['motdepasse'] = $_POST['motdepasse'];
+    if (isset($_POST['age'])) $user['age'] = $_POST['age'];
+    if (isset($_POST['telephone'])) $user['telephone'] = $_POST['telephone'];
+
+    // Si l'email a changé, on met à jour la session
+    if (isset($_POST['email']) && $_POST['email'] !== $email) {
+        $_SESSION['email'] = $_POST['email'];
+    }
+
+    // Sauvegarde des modifications dans le fichier JSON
+    if (file_put_contents("data/utilisateur.json", json_encode($utilisateurs, JSON_PRETTY_PRINT))) {
+        echo json_encode(['status' => 'success', 'message' => 'Modifications enregistrées avec succès']);
+    } else {
+        echo json_encode(['status' => 'error', 'message' => 'Erreur lors de la sauvegarde des modifications']);
+    }
+    exit();
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -39,7 +63,7 @@ if (!$user) {
 
     <div class="profil-container">
         <h2>Mon Profil</h2>
-        <form id="profil-form" method="post" action="traitement_profil.php">
+        <form id="profil-form" method="post">
             <div class="profil-info">
                 <?php
                 $champs = [
@@ -88,6 +112,9 @@ if (!$user) {
                 ?>
             </ul>
 
+            <!-- Champ caché pour l'action -->
+            <input type="hidden" name="action" value="update">
+
             <!-- Bouton de soumission -->
             <div class="acces-admin">
                 <button id="bouton-soumettre" class="button-sauvegarder" style="display:none;">Soumettre les modifications</button>
@@ -110,7 +137,4 @@ if (!$user) {
     <script src="js/profil.js"></script>
 </body>
 </html>
-
-
-
 
