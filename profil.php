@@ -60,6 +60,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 <body class="profil">
     <?php include 'header.php'; ?>
+	<?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'banni'): ?>
+    <div class="message-erreur" style="margin: 20px auto; text-align: center; max-width: 600px;">
+        ⚠️ Vous avez été banni. Certaines fonctionnalités sont désactivées.
+    </div>
+<?php endif; ?>
 
     <div class="profil-container">
         <h2>Mon Profil</h2>

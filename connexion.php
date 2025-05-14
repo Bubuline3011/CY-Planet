@@ -25,33 +25,34 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST['motdepasse'] ?? '';
 
     // On vérifie si l'utilisateur existe dans le fichier JSON
-    foreach ($usersData as &$user) {
-        if ($user['email'] === $email && $user['motdepasse'] === $password) {
-            // Si c'est bon, on stocke ses infos dans la session
-            $_SESSION['email'] = $user['email'];
-            $_SESSION['role'] = $user['role'];
-            $_SESSION['prenom'] = $user['prenom'];
-            $_SESSION['nom'] = $user['nom'];
-            $_SESSION['connecte'] = true;
+    $utilisateurTrouve = false;
 
-            // On met à jour la date de dernière connexion
-            $user['derniere_connexion'] = date("Y-m-d");
-
-            // On réécrit le fichier JSON avec la nouvelle date
-            file_put_contents($usersFile, json_encode($usersData, JSON_PRETTY_PRINT));
-
-            // On redirige l'utilisateur selon son rôle
-            if ($user['role'] === 'admin') {
-                header("Location: admin.php");
-            } else {
-                header("Location: acceuil.php");
-            }
-            exit();
+foreach ($usersData as &$user) {
+    if ($user['email'] === $email && $user['motdepasse'] === $password) {
+        if ($user['role'] === 'banni') {
+            $erreur = "⚠️ Votre compte a été banni. Veuillez contacter un administrateur.";
+            $utilisateurTrouve = true;
+            break;
         }
-    }
 
-    // Si on ne trouve aucun utilisateur avec ces infos
-    $erreur = "Email ou mot de passe incorrect.";
+        // Sinon on connecte normalement
+        $_SESSION['email'] = $user['email'];
+        $_SESSION['role'] = $user['role'];
+        $_SESSION['prenom'] = $user['prenom'];
+        $_SESSION['nom'] = $user['nom'];
+        $_SESSION['connecte'] = true;
+
+        $user['derniere_connexion'] = date("Y-m-d");
+        file_put_contents($usersFile, json_encode($usersData, JSON_PRETTY_PRINT));
+
+        header("Location: " . ($_SESSION['role'] === 'admin' ? "admin.php" : "acceuil.php"));
+        exit();
+    }
+}
+
+if (!$utilisateurTrouve) {
+    $erreur = $erreur ?? "Email ou mot de passe incorrect.";
+}
 }
 ?>
 

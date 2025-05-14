@@ -688,7 +688,7 @@ thead th {
 }
 
 tbody tr {
-    background: #ffffff;
+    background: #f5e6ff;
     transition: background 0.3s ease;
 }
 
@@ -870,7 +870,7 @@ body.paiement, body.traitement-paiement, body.retour-paiement {
 .paiement-container .button:hover {
     background: linear-gradient(45deg, #ff9f1c, #ff4f00);
 }
-
+ 
 /* Messages de confirmation et d'erreur */
 .message-confirmation, .message-erreur {
     padding: 15px;
@@ -1340,6 +1340,33 @@ body.recherche {
 .destination-recherche .destination:hover h3 {
     color: #ff9f1c;
 }
+
+.loader {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #ccc;
+    border-top: 2px solid #333;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    vertical-align: middle;
+    margin-left: 5px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.select-role {
+    background-color: #f8f1ff;  /* léger violet pastel visible sur fond clair */
+    color: #333;
+    border: 2px solid #5a189a;
+    border-radius: 20px;
+    padding: 6px 12px;
+    font-weight: bold;
+}
+
 
 
 

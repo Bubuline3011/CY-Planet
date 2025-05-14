@@ -63,6 +63,7 @@ $utilisateursPage = array_slice($utilisateurs, $debut, $utilisateursParPage);
                     <th>Prénom</th>
                     <th>Email</th>
                     <th>Statut</th>
+                    <th>Chargement</th>
                     <th>Profil</th>
                 </tr>
             </thead>
@@ -75,12 +76,20 @@ $utilisateursPage = array_slice($utilisateurs, $debut, $utilisateursParPage);
                     <td><?= htmlspecialchars($user['nom']) ?></td>
                     <td><?= htmlspecialchars($user['prenom']) ?></td>
                     <td><?= htmlspecialchars($user['email']) ?></td>
+
+                    <!-- Champ modifiable dynamiquement -->
                     <td>
-                        <!-- Boutons d'action (ils ne font rien ici mais peuvent être liés à des scripts) -->
-                        <button class="role-btn vip-btn" data-role="vip">VIP</button>
-			<button class="role-btn ban-btn" data-role="banni">Bannir</button>
-			<button class="role-btn normal-btn" data-role="normal">Normal</button>
+                        <select class="select-role" data-email="<?= htmlspecialchars($user['email']) ?>">
+                            <option value="normal" <?= $user["role"] === "normal" ? "selected" : "" ?>>normal</option>
+                            <option value="vip" <?= $user["role"] === "vip" ? "selected" : "" ?>>vip</option>
+                            <option value="banni" <?= $user["role"] === "banni" ? "selected" : "" ?>>banni</option>
+                            <option value="admin" <?= $user["role"] === "admin" ? "selected" : "" ?>>admin</option>
+                        </select>
                     </td>
+
+                    <!-- Loader qui s'affiche pendant la requête -->
+                    <td><span class="loader" style="display: none;"></span></td>
+
                     <!-- Lien vers la page de profil de l'utilisateur -->
                     <td><a class="voir-btn" href="profil_utilisateur.php?email=<?= urlencode($user['email']) ?>">Voir</a></td>
                 </tr>
@@ -106,7 +115,10 @@ $utilisateursPage = array_slice($utilisateurs, $debut, $utilisateursParPage);
     <footer>
         <p>&copy; 2025 Cosmo Trip. Tous droits réservés.</p>
     </footer>
+
+    <!-- Scripts -->
     <script src="js/theme.js"></script>
     <script src="js/admin.js"></script>
 </body>
 </html>
+
