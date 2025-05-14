@@ -1,35 +1,49 @@
-// Attend que le DOM soit complètement chargé avant d’exécuter le script
+// Attend que le DOM soit complètement chargé
 document.addEventListener('DOMContentLoaded', () => {
-    // Sélectionne tous les boutons ayant la classe 'role-btn'
-    const buttons = document.querySelectorAll('.role-btn');
+    // Sélectionne tous les menus déroulants de rôle
+    const selectRoles = document.querySelectorAll('.select-role');
 
-    // Parcourt chaque bouton sélectionné
-    buttons.forEach(btn => {
-        // Ajoute un écouteur d’événement au clic sur le bouton
-        btn.addEventListener('click', () => {
-            // Trouve la ligne (tr) parente la plus proche du bouton
-            const row = btn.closest('tr');
-            // Récupère l’attribut 'data-email' de la ligne
-            const email = row.getAttribute('data-email');
-            // Récupère l’attribut 'data-role' du bouton
-            const role = btn.getAttribute('data-role');
+    selectRoles.forEach(select => {
+        select.addEventListener('change', () => {
+            const email = select.dataset.email;
+            const nouveauRole = select.value;
 
-            // Désactive le bouton pour empêcher d’autres clics
-            btn.disabled = true;
-            // Change le texte du bouton pour indiquer une mise à jour
-            btn.textContent = 'Mise à jour...';
+            // Récupère la ligne du tableau concernée
+            const row = select.closest('tr');
+            // Récupère le loader dans la cellule correspondante
+            const loader = row.querySelector('.loader');
 
-            // Simulation d’attente (3 secondes)
-            setTimeout(() => {
-                // Réactive le bouton après la simulation
-                btn.disabled = false;
-                // Met à jour le texte du bouton avec le rôle (première lettre en majuscule)
-                btn.textContent = role.charAt(0).toUpperCase() + role.slice(1);
+            // Affiche le loader
+            loader.style.display = 'inline-block';
+            select.disabled = true;
 
-                // Affiche dans la console (ou alert pour test)
-                console.log(`Simulé : ${email} devient ${role}`);
-                // alert(`Utilisateur ${email} devient ${role}`);
-            }, 3000); // Délai de 3000 millisecondes (3 secondes)
+            // Envoie une requête AJAX en POST
+            fetch('modifier_utilisateur.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `email=${encodeURIComponent(email)}&role=${encodeURIComponent(nouveauRole)}`
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    console.log(`✅ Rôle de ${email} mis à jour en "${nouveauRole}"`);
+                } else {
+                    console.error(`❌ Erreur : ${data.message}`);
+                    alert("Erreur lors de la mise à jour");
+                }
+            })
+            .catch(err => {
+                console.error("❌ Erreur AJAX :", err);
+                alert("Erreur réseau lors de la mise à jour");
+            })
+            .finally(() => {
+                // Cache le loader et réactive le select
+                loader.style.display = 'none';
+                select.disabled = false;
+            });
         });
     });
 });
+
