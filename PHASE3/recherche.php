@@ -20,7 +20,7 @@ session_start();
         <div class="recherche-boite">
             <h1>Trouvez votre séjour idéal :</h1>
 
-            <form method="GET" action="recherche.php">
+            <form id="form-filtrage">
                 <input type="text" name="titre" placeholder="Nom du voyage" class="champ-recherche" />
 
                 <select name="note_min">
@@ -47,73 +47,43 @@ session_start();
                     <option value="sport">Sport</option>
                 </select>
 
-                <select id="transport" name="transport">
-                    <option value="">Choisissez votre transport pour vous y rendre</option>
-                    <option value="voiture">Voiture volante spatiale</option>
-                    <option value="portail">Portail interdimensionnel</option>
-                    <option value="vaisseaux">Vaisseaux Spatial</option>
-                    <option value="Train">Train magnétique interstellaire</option>
-                    <option value="mongolfière">Montgolfière spatiale</option>
-                </select>
-                <button type="submit" class="button">Rechercher</button>
             </form>
         </div>
 
-        <?php
-        if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-            $filtres = $_GET;
-            $index = json_decode(file_get_contents("data/index_voyages.json"), true);
+        <div class="resultats-filtrage">
+            <div class="tri-zone">
+                <label for="tri">Trier par :</label>
+                <select id="tri">
+                    <option value="">-- Choisir --</option>
+                    <option value="prix">Prix croissant</option>
+                    <option value="prix_desc">Prix décroissant</option>
+                    <option value="duree">Durée croissante</option>
+                    <option value="duree_desc">Durée décroissante</option>
+                    <option value="note">Note croissante</option>
+                    <option value="note_desc">Note décroissante</option>
+                </select>
+            </div>
 
-            echo '<div class="resultats-filtrage">';
-            echo '<div class="tri-zone">';
-            echo '<label for="tri">Trier par :</label>';
-            echo '<select id="tri">';
-            echo '<option value="">-- Choisir --</option>';
-            echo '<option value="prix">Prix croissant</option>';
-            echo '<option value="prix_desc">Prix décroissant</option>';
-            echo '<option value="duree">Durée croissante</option>';
-            echo '<option value="duree_desc">Durée décroissante</option>';
-            echo '<option value="note">Note croissante</option>';
-            echo '<option value="note_desc">Note décroissante</option>';
-            echo '</select>';
-            echo '</div>';
-
-            echo '<div class="destination-recherche">';
-
-            foreach ($index as $id => $fichier) {
-                $voyage = json_decode(file_get_contents("data/" . $fichier), true);
-
-                // Filtres
-                if (!empty($filtres['titre']) && stripos($voyage['titre'], $filtres['titre']) === false) continue;
-                if (!empty($filtres['note_min']) && $voyage['note'] < (int)$filtres['note_min']) continue;
-                if (!empty($filtres['prix_min']) && $voyage['prix_total'] < (int)$filtres['prix_min']) continue;
-                if (!empty($filtres['prix_max']) && $voyage['prix_total'] > (int)$filtres['prix_max']) continue;
-                if (!empty($filtres['duree_max']) && $voyage['duree'] > (int)$filtres['duree_max']) continue;
-                if (!empty($filtres['theme']) && $voyage['theme'] !== $filtres['theme']) continue;
-                if (!empty($filtres['transport']) && $voyage['transport'] !== $filtres['transport']) continue;
-
-                // Affichage
-                echo '<a href="voyage_detail.php?id=' . $voyage['id'] . '" class="destination" 
-                    data-prix="' . $voyage['prix_total'] . '" 
-                    data-duree="' . $voyage['duree'] . '" 
-                    data-note="' . $voyage['note'] . '">';
-                echo '<img src="' . htmlspecialchars($voyage['image']) . '" alt="Image de ' . htmlspecialchars($voyage['titre']) . '">';
-                echo '<h3>' . htmlspecialchars($voyage['titre']) . '</h3>';
-                echo '<p>' . htmlspecialchars($voyage['description']) . '</p>';
-                echo '<p>' . htmlspecialchars($voyage['prix_total']) . ' €</p>';
-                echo '<p>Note : ' . str_repeat('⭐', (int)$voyage['note']) . '</p>';
-                echo '</a>';
-            }
-
-            echo '</div>'; // destination-recherche
-            echo '</div>'; // resultats-filtrage
-        }
-        ?>
+            <div class="destination-recherche"></div>
+        </div>
     </div>
 
     <footer>
         <p>&copy; 2025 Cosmo Trip. Tous droits réservés.</p>
     </footer>
+
+    <?php
+        // Chargement des données PHP côté client (phase 3 autorisée)
+        $index = json_decode(file_get_contents("data/index_voyages.json"), true);
+        $voyages = [];
+foreach ($index as $fichier) {
+    $voyages[] = json_decode(file_get_contents("data/" . $fichier), true);
+}
+
+    ?>
+    <script>
+        const voyages = <?php echo json_encode($voyages); ?>;
+    </script>
 
     <script src="js/theme.js"></script>
     <script src="js/tri_recherche.js"></script>
