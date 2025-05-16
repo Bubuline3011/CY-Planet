@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
             carte.innerHTML = `
                 <img src="${v.image}" alt="Image de ${v.titre}">
                 <h3>${v.titre}</h3>
-                <p>${v.description}</p>
+                <p>${v.specificites}</p>
                 <p>${v.prix_total} €</p>
                 <p>Note : ${'⭐'.repeat(v.note)}</p>
             `;
