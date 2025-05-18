@@ -25,6 +25,45 @@ document.addEventListener("DOMContentLoaded", function () {
         if (affichage) {
             affichage.textContent = total.toFixed(2);
         }
+        // Récupération des informations pour le backend
+const voyage = document.getElementById("voyage_id").value;
+const options = [];
+
+// On récupère toutes les options sélectionnées
+document.querySelectorAll("select[id^='option_']").forEach(function (select) {
+    const ids = select.id.split("_");
+    const etape_id = parseInt(ids[1]);
+    const option_id = parseInt(ids[2]);
+    const choix = select.value;
+    const nb_personnes = document.getElementById(`nb_${etape_id}_${option_id}`).value || 0;
+
+    options.push({
+        etape_id,
+        option_id,
+        choix,
+        nb_personnes
+    });
+});
+
+// Envoi des données au serveur pour le calcul
+fetch('PHASE4/calculate_price.php', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+        voyage,
+        options
+    })
+})
+.then(response => response.json())
+.then(data => {
+    // Mise à jour du prix total côté client
+    if (affichage) {
+        affichage.textContent = data.total;
+    }
+})
+.catch(error => console.error("Erreur lors du calcul asynchrone :", error));
     }
 
     // Événements sur tous les select et inputs de nombre
