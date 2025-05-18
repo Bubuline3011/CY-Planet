@@ -64,6 +64,7 @@ if (isset($_SESSION['email'])) {
     <meta charset="UTF-8">
     <title><?php echo htmlspecialchars($voyageData['titre']); ?></title>
     <link id="theme-css" rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body class="detail">
@@ -78,6 +79,7 @@ if (isset($_SESSION['email'])) {
 
         <form action="ajouter_panier.php" method="POST">
             <input type="hidden" name="voyage_id" value="<?php echo $voyageData['id']; ?>">
+            <input type="hidden" id="voyage_id" value="<?= $voyage_id ?>">
 
             <?php foreach ($voyageData['etapes'] as $etapeIndex => $etape): ?>
                 <fieldset style="margin-top: 30px;">
@@ -87,42 +89,16 @@ if (isset($_SESSION['email'])) {
 
                     <p><em><?php echo $etape['position']['nom_lieu']; ?> [<?php echo $etape['position']['gps']; ?>]</em></p>
 
-                    <?php foreach ($etape['options'] as $optionIndex => $option): ?>
-                        <div style="margin-bottom: 15px;">
-                            <label for="option_<?php echo $etapeIndex . '_' . $optionIndex; ?>">
-                                <?php echo ucfirst($option['type']); ?> : <?php echo $option['nom']; ?>
-                            </label>
-
-                            <select name="options[<?php echo $etapeIndex; ?>][<?php echo $optionIndex; ?>][choix_utilisateur]" 
-                                    id="option_<?php echo $etapeIndex . '_' . $optionIndex; ?>">
-                                <?php foreach ($option['valeurs_possibles'] as $valeur): ?>
-                                    <option 
-                                        value="<?php echo htmlspecialchars($valeur); ?>" 
-                                        data-prix="<?php echo isset($option['prix_par_valeur'][$valeur]) ? $option['prix_par_valeur'][$valeur] : 0; ?>"
-                                        <?php if (isset($option['choix_utilisateur']) && $valeur == $option['choix_utilisateur']) echo 'selected'; ?>>
-                                        <?php echo htmlspecialchars($valeur); ?>
-                                    </option>
-                                <?php endforeach; ?>
-                            </select>
-
-                            <input type="hidden" name="options[<?php echo $etapeIndex; ?>][<?php echo $optionIndex; ?>][type]" 
-                                   value="<?php echo $option['type']; ?>">
-                            <input type="hidden" name="options[<?php echo $etapeIndex; ?>][<?php echo $optionIndex; ?>][nom]" 
-                                   value="<?php echo $option['nom']; ?>">
-
-                            <label for="nb_<?php echo $etapeIndex . '_' . $optionIndex; ?>">Nombre de personnes :</label>
-                            <input type="number" id="nb_<?php echo $etapeIndex . '_' . $optionIndex; ?>" 
-                                   name="options[<?php echo $etapeIndex; ?>][<?php echo $optionIndex; ?>][personnes]" 
-                                   value="<?php echo isset($option['personnes']) ? $option['personnes'] : 1; ?>" 
-                                   min="0" required>
-                        </div>
-                    <?php endforeach; ?>
+                    <!-- Conteneur dynamique -->
+                    <div class="etape-container" data-etape-id="<?= $etape['id'] ?>">
+                        <div id="options_etape_<?= $etape['id'] ?>"></div> 
+                    </div>
                 </fieldset>
             <?php endforeach; ?>
 
             <!-- Prix estimé dynamique -->
             <p id="prix-estime" style="font-weight: bold; font-size: 1.2em; margin-top: 20px;">
-                Prix des options : <span id="valeur-prix-estime">0</span> €
+                Prix des options : <span id="valeur-prix-estime">0.00</span> €
             </p>
 
             <button type="submit">Ajouter au panier</button>
