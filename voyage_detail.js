@@ -36,4 +36,46 @@ document.addEventListener("DOMContentLoaded", function () {
     // Recalcul initial
     recalculerPrixTotal();
 });
+document.addEventListener("DOMContentLoaded", function () {
+    
+    // Fonction pour charger dynamiquement les options
+    function chargerOptions(voyage, etapeId) {
+        fetch(`PHASE4/fetch_options.php?voyage=${voyage}&etape=${etapeId}`)
+            .then(response => response.json())
+            .then(data => {
+                // Sélection du conteneur des options
+                const selectContainer = document.getElementById(`options_etape_${etapeId}`);
+                selectContainer.innerHTML = ''; // On vide le contenu existant
+                
+                // Pour chaque option, on génère une liste déroulante
+                data.forEach(option => {
+                    const select = document.createElement('select');
+                    select.id = `option_${etapeId}_${option.id}`;
+                    select.classList.add('form-select');
 
+                    option.valeurs_possibles.forEach(valeur => {
+                        const opt = document.createElement('option');
+                        opt.value = valeur;
+                        opt.textContent = valeur;
+                        opt.setAttribute('data-prix', option.prix_par_valeur[valeur]);
+                        select.appendChild(opt);
+                    });
+
+                    selectContainer.appendChild(select);
+
+                    // Ajout d'un écouteur pour le recalcul du prix si on change d'option
+                    select.addEventListener('change', recalculerPrixTotal);
+                });
+
+                // On recalcul le prix au cas où les options par défaut changent
+                recalculerPrixTotal();
+            });
+    }
+
+    // Chargement initial lors de l'affichage de l'étape
+    document.querySelectorAll(".etape-container").forEach(container => {
+        const etapeId = container.dataset.etapeId;
+        const voyage = document.getElementById("voyage_id").value;
+        chargerOptions(voyage, etapeId);
+    });
+});
