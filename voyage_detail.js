@@ -44,7 +44,10 @@ document.querySelectorAll("select[id^='option_']").forEach(function (select) {
         nb_personnes
     });
 });
-
+const affichage = document.getElementById("valeur-prix-estime");
+if (affichage) {
+    affichage.textContent = "Calcul en cours...";
+}
 // Envoi des données au serveur pour le calcul
 fetch('PHASE4/calculate_price.php', {
     method: 'POST',
