@@ -131,6 +131,15 @@ if (isset($_SESSION['email'])) {
 
     <script src="js/theme.js"></script>
     <script src="js/voyage_detail.js"></script>
+    <div class="etape-container" data-etape-id="1">
+    <h3>Étape 1 - Hôtel Galactique</h3>
+    <div id="options_etape_1"></div> <!-- Ici les options vont se charger -->
+</div>
+
+<div class="etape-container" data-etape-id="2">
+    <h3>Étape 2 - Visite du Hall of Fame</h3>
+    <div id="options_etape_2"></div> <!-- Ici les options vont se charger -->
+</div>
 </body>
 </html>
 
